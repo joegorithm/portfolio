@@ -29,3 +29,43 @@ body {
     border: rgba(255, 255, 255, 0.2) solid min(0.7vw, 0.7vh);
     border-radius: 500px;
 }
+
+.project-links {
+    position: absolute;
+    bottom: 2vh;
+    border-radius: 500px;
+}
+
+.projects-label {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: min(3vw, 3vh);
+    text-align: center;
+    padding: min(1vw, 1vh);
+}
+
+.button {
+    border: none;
+    padding: min(1vw, 1vh) min(4vw, 4vh);
+    border-radius: 500px;
+    text-decoration: none;
+    display: inline-block;
+    margin: min(0.5vw, 0.5vh);
+    color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    font-size: min(4vw, 4vh);
+    font-weight: 500;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.pickle-button {
+    background-color: rgb(74, 156, 29);
+    box-shadow: min(0.3vw, 0.3vh) min(0.6vw, 0.6vh) rgba(74, 156, 29, 0.5);
+}
+
+.clock-button {
+    background-color: #1e53ff;
+    box-shadow: min(0.3vw, 0.3vh) min(0.6vw, 0.6vh) rgba(30, 83, 255, 0.5);
+}
