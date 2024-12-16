@@ -1,0 +1,31 @@
+html, body {
+    margin: 0; /* Remove default margins */
+    height: 100%;
+}
+
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+}
+
+.jh-codes-image {
+    position: absolute;
+    max-width: 80vw; /* Image can be at most 90% of the viewport width */
+    max-height: 80vh; /* Image can be at most 90% of the viewport height */
+    object-fit: contain; /* Preserve aspect ratio */
+    padding-top: 20px;
+}
+
+.coming-soon-label {
+    position: absolute;
+    top: 2vh;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: min(5vw, 5vh);
+    font-weight: 450;
+    padding: min(1vw, 1vh) min(5vw, 5vh);
+    border: rgba(255, 255, 255, 0.2) solid min(0.7vw, 0.7vh);
+    border-radius: 500px;
+}
