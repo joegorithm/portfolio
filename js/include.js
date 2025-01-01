@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("nav").innerHTML = data;
         });
 
-    // fetch("/components/footer.html")
-    //     .then(response => response.text())
-    //     .then(data => {
-    //         document.querySelector("footer").innerHTML = data;
-    //     });
+    fetch("/components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("footer").innerHTML = data;
+        });
 });
