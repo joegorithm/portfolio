@@ -1,2 +1,4 @@
 # JH.codes
-My Personal Website
+<sup>My Personal Website</sup>
+
+View live site at **[jh.codes](https://jh.codes/)**.
