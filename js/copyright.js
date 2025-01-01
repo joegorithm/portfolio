@@ -5,7 +5,7 @@ document.addEventListener("footerLoaded", function () {
     function setCopyrightDate() {
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
-        copyright.textContent = "© " + currentYear + " Jonathan Hill 🎉";
+        copyright.textContent = "© " + currentYear + " Jonathan Hill";
     }
 
     setCopyrightDate();

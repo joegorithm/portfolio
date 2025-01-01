@@ -82,6 +82,13 @@ a {
 
 
 
+.temporary-landing-logo {
+    margin: 4rem 0;
+    width: 76vw;
+}
+
+
+
 /* Sidebar */
 nav {
     position: fixed;
@@ -172,11 +179,12 @@ section {
     /* margin: 15px; */
     color: var(--primary-text-color);
     font-size: 1.1rem;
-    line-height: 1.5rem;
 }
 
 p {
     color: var(--secondary-text-color);
+    line-height: 1.5rem;
+
 }
 
 header {
@@ -466,7 +474,7 @@ footer {
 }
 
 /* Responsive nav for landscape phones */
-@media (max-height: 29.5rem) and (min-width: 30rem) {
+@media (max-height: 29.5rem) and (min-width: 30.01rem) {
     nav {
         display: flex;
         flex-direction: column;
