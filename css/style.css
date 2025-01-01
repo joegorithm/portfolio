@@ -186,7 +186,7 @@ header {
     align-items: center;
     line-height: 1rem;
     color: var(--primary-text-color);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 header h1 {
@@ -269,6 +269,7 @@ footer {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    padding: 1rem 0;
 }
 
 .project-card {
