@@ -1,6 +1,20 @@
 let theme = localStorage.getItem("theme");
+let themeToggle;
 
-const themeToggle = document.querySelector(".nav-button-theme");
+document.addEventListener("sidebarLoaded", function () {
+    themeToggle = document.querySelector(".nav-button-theme");
+
+    themeToggle.addEventListener("click", () => {
+        theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+            enableLightTheme();
+            console.log(theme);
+        } else if (theme === "light") {
+            enableDarkTheme();
+            console.log(theme);
+        }
+    });
+});
 
 const enableDarkTheme = () => {
     document.body.classList.add("dark-theme");
@@ -30,14 +44,3 @@ if (theme === null) {
         enableLightTheme();
     }
 }
-
-themeToggle.addEventListener("click", () => {
-    theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-        enableLightTheme();
-        console.log(theme);
-    } else if (theme === "light") {
-        enableDarkTheme();
-        console.log(theme);
-    }
-});

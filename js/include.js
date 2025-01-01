@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.querySelector("nav").innerHTML = data;
+            document.dispatchEvent(new Event("sidebarLoaded"));
         });
 
     fetch("/components/footer.html")
