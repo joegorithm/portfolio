@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.querySelector("footer").innerHTML = data;
+            document.dispatchEvent(new Event("footerLoaded"));
         });
     
     fetch("/components/head.html")
