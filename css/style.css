@@ -30,17 +30,23 @@
     --background-color: var(--black-color);
     --primary-text-color: var(--white-color);
     --secondary-text-color: var(--light-gray-color);
+    --nav-button-hover-color: rgba(255, 255, 255, 0.06);
+    --selected-nav-button-color: #ffc8191a;
+    --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
     --element-background-color: #16171c;
 }
 
 .light-theme {
     --theme-color: var(--yellow-color);
-    --background-color: var(--white-color);
+    --background-color: var(--white-color); /* #dce0f2cc */
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
+    --nav-button-hover-color: rgba(255, 255, 255, 0.4);
+    --selected-nav-button-color: rgba(255, 255, 255, 0.5);
+    --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
-    --element-background-color: #dce0f2cc;
+    --element-background-color: rgb(233, 235, 245);
 }
 
 
@@ -118,7 +124,7 @@ nav {
 }
 
 .nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: var(--nav-button-hover-color);
     cursor: pointer;
 }
 
@@ -425,17 +431,17 @@ footer {
         width: 1.9rem;
         height: 1.9rem;
     }
+    .nav-icon-solid {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
     .nav-label {
         display: block;
-        color: white;
+        color: var(--nav-icon-color);
         font-family: "Rubik", sans-serif;
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 150%;
-    }
-
-    .nav-label-projects {
-        color: rgb(255, 200, 25);
     }
 
     .project-grid {

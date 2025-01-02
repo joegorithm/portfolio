@@ -1,10 +1,10 @@
 /* Selected Nav Button */
 .nav-button-home {
-    background-color: #ffc8191a;
+    background-color: var(--selected-nav-button-color);
 }
 
 .nav-button-home:hover {
-    background-color: #ffc81926;
+    background-color: var(--selected-nav-button-hover-color);
     cursor: pointer;
 }
 
@@ -14,4 +14,8 @@
 
 .nav-icon-solid-home {
     display: flex;
+}
+
+.nav-label-home {
+    color: rgb(255, 200, 25);
 }

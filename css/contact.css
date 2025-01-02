@@ -1,10 +1,10 @@
 /* Selected Nav Button */
 .nav-button-contact {
-    background-color: #ffc8191a;
+    background-color: var(--selected-nav-button-color);
 }
 
 .nav-button-contact:hover {
-    background-color: #ffc81926;
+    background-color: var(--selected-nav-button-hover-color);
     cursor: pointer;
 }
 
@@ -14,4 +14,8 @@
 
 .nav-icon-solid-contact {
     display: flex;
+}
+
+.nav-label-contact {
+    color: rgb(255, 200, 25);
 }
