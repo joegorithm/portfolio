@@ -1,0 +1,17 @@
+/* Selected Nav Button */
+.nav-button-contact {
+    background-color: #ffc8191a;
+}
+
+.nav-button-contact:hover {
+    background-color: #ffc81926;
+    cursor: pointer;
+}
+
+.nav-icon-contact {
+    display: none;
+}
+
+.nav-icon-solid-contact {
+    display: flex;
+}

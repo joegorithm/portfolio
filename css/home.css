@@ -1,17 +1,17 @@
 /* Selected Nav Button */
-.nav-button-about {
+.nav-button-home {
     background-color: #ffc8191a;
 }
 
-.nav-button-about:hover {
+.nav-button-home:hover {
     background-color: #ffc81926;
     cursor: pointer;
 }
 
-.nav-icon-about {
+.nav-icon-home {
     display: none;
 }
 
-.nav-icon-solid-about {
+.nav-icon-solid-home {
     display: flex;
 }

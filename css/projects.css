@@ -1,0 +1,17 @@
+/* Selected Nav Button */
+.nav-button-projects {
+    background-color: #ffc8191a;
+}
+
+.nav-button-projects:hover {
+    background-color: #ffc81926;
+    cursor: pointer;
+}
+
+.nav-icon-projects {
+    display: none;
+}
+
+.nav-icon-solid-projects {
+    display: flex;
+}
