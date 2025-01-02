@@ -2,6 +2,8 @@
 
 ## My Portfolio Website
 
+![JH logo design](image/jh-logo-design.png)
+
 > [!NOTE]
 > This site is a work in progress.
 
