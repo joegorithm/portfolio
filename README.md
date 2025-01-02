@@ -6,7 +6,7 @@
 > This site is a work in progress.
 
 ### Contributors:
-**Me**: Jonathan Hill (@joegorithm)
+**Me**: Jonathan Hill ([@joegorithm](https://github.com/joegorithm))
 
 ### What is the purpose of this project?
 This is my website that I will use as a central location to share _information_ about myself, develope my personal _brand_, and feature my past and upcoming coding _projects_.
