@@ -277,7 +277,7 @@ footer {
 .project-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
     padding: 1rem 0;
 }
 
@@ -442,10 +442,6 @@ footer {
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 150%;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
     }
 }
 
