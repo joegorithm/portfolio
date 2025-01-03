@@ -35,6 +35,15 @@
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
     --element-background-color: #16171c;
+
+    --html-tag-color: #E34F26;
+    --html-tag-background-color: rgba(227, 79, 38, 0.2);
+    --css-tag-color: hsl(281, 72%, 55%); /* Official color: #663399 */
+    --css-tag-background-color: rgba(102, 51, 153, 0.4);
+    --javascript-tag-color: rgba(247, 222, 30, 0.8);  /* Official color: #F7DF1E */
+    --javascript-tag-background-color: rgba(247, 222, 30, 0.1);
+    --processingjs-tag-color: #2378ff;
+    --processingjs-tag-background-color: rgba(43, 97, 246, 0.2);
 }
 
 .light-theme {
@@ -47,6 +56,15 @@
     --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
     --element-background-color: rgb(233, 235, 245);
+
+    --html-tag-color: #E34F26;
+    --html-tag-background-color: rgba(227, 79, 38, 0.2);
+    --css-tag-color: hsl(281, 72%, 55%); /* Official color: #663399 */
+    --css-tag-background-color: rgba(121, 47, 196, 0.2);
+    --javascript-tag-color: rgb(216, 162, 0);  /* Official color: #F7DF1E */
+    --javascript-tag-background-color: rgba(247, 204, 30, 0.4);
+    --processingjs-tag-color: #2378ff;
+    --processingjs-tag-background-color: rgba(43, 97, 246, 0.15);
 }
 
 
@@ -59,8 +77,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
-    /* font-family: "Rubik", sans-serif; */
-    font-family: "Comfortaa", sans-serif;
+    font-family: "Nunito", sans-serif;
+    /* font-family: "Comfortaa", sans-serif; */
     font-weight: 300;
     align-items: center;
 
@@ -173,13 +191,8 @@ nav {
 
 /* Main */
 section {
-    /* background-color: rgba(25, 25, 25, 0.8); */
-    /* backdrop-filter: blur(10px); */
-    /* border: solid rgba(255, 255, 255, 0.2) 1px; */
-    /* border-radius: 40px; */
-    /* margin: 15px; */
     color: var(--primary-text-color);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 p {
@@ -345,7 +358,7 @@ footer {
 .tool-tag {
     color: #ffffff;
     background-color: #ffffff1a;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-size: 0.9rem;
     font-weight: 500;
     line-height: 1rem;
@@ -354,23 +367,23 @@ footer {
 }
 
 .tool-tag-html {
-    color: #E34F26;
-    background-color: rgba(227, 79, 38, 0.1);
+    color: var(--html-tag-color);
+    background-color: var(--html-tag-background-color);
 }
 
 .tool-tag-css {
-    color: #663399;
-    background-color: rgba(102, 51, 153, 0.3);
+    color: var(--css-tag-color);
+    background-color: var(--css-tag-background-color);
 }
 
 .tool-tag-javascript {
-    color: #F7DF1E;
-    background-color: rgba(247, 222, 30, 0.1);
+    color: var(--javascript-tag-color);
+    background-color: var(--javascript-tag-background-color);
 }
 
 .tool-tag-processingjs {
-    color: #2b62f6;
-    background-color: rgba(43, 97, 246, 0.2);
+    color: var(--processingjs-tag-color);
+    background-color: var(--processingjs-tag-background-color);
 }
 
 .project-theme-default {
