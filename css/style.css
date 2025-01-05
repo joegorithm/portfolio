@@ -68,6 +68,10 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Setup */
 body {
@@ -209,8 +213,6 @@ section {
 
 p {
     color: var(--secondary-text-color);
-    /* line-height: 1.5rem; */
-
 }
 
 header {
@@ -218,7 +220,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    line-height: 1rem;
     color: var(--primary-text-color);
     /* margin-bottom: 1rem; */
 }
@@ -289,7 +290,6 @@ footer {
     background-color: var(--linkedin-theme-color);
 }
 
-
 .social-media-icon {
     width: 1.75rem;
     height: 1.75rem;
@@ -297,6 +297,40 @@ footer {
     align-items: center;
 }
 
+.footer-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1rem;
+    flex-wrap: wrap;
+}
+
+#copyright {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    line-height: 1.2;
+}
+
+.footer-links a {
+    color: var(--secondary-text-color);
+    border-bottom: 1px solid var(--secondary-text-color);
+}
+
+.footer-links a:hover {
+    color: var(--primary-text-color);
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.footer-links a:active {
+    color: var(--yellow-color);
+    border-bottom: 1px solid var(--yellow-color);
+}
 
 
 .project-grid {
@@ -334,16 +368,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* line-height: 0rem; */
 }
 
-/* .project-information {
-    padding: 10px;
-} */
 
-/* .project-options {
-    
-} */
+
 
 .project-options-button {
     background: none;
@@ -465,7 +493,7 @@ footer {
         font-family: "Rubik", sans-serif;
         font-size: 0.75rem;
         text-decoration: none;
-        line-height: 150%;
+        line-height: 1.5;
     }
 }
 
