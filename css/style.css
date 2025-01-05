@@ -221,7 +221,6 @@ header {
     flex-wrap: wrap;
     align-items: center;
     color: var(--primary-text-color);
-    /* margin-bottom: 1rem; */
 }
 
 header h1 {
@@ -503,18 +502,42 @@ footer {
     .social-media-button {
         margin: 0 0.15rem 0 0.15rem;
     }
-    
 }
 
 @media (max-width: 22.2rem) {
     .social-media-button {
         margin: 0 0.05rem 0 0.05rem;
     }
-    
+}
+
+@media (max-width: 21rem) {
+    footer {
+        padding: 0.75rem;
+    }
+    .social-media-buttons {
+        padding: 0.4rem;
+    }
+    .social-media-button {
+        margin: 0 0.03rem 0 0.03rem;
+    }
+}
+
+@media (max-width: 20.5rem) {
+    .social-media-button {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .social-media-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 }
 
 /* Responsive nav for very small screens */
 @media (max-width: 19.75rem) {
+    body {
+        margin: 0.5rem;
+    }
     nav {
         margin: 0;
         width: calc(100% - 1rem);
@@ -525,7 +548,12 @@ footer {
 
 /* Responsive nav for landscape phones */
 @media (max-height: 29.5rem) and (min-width: 30.01rem) {
+    body {
+        margin-left: 6.5rem;
+    }
     nav {
+        margin: 0 0 0 -6rem;
+        padding: 0.5rem;
         display: flex;
         flex-direction: column;
         /* align-items: center; */
@@ -541,5 +569,40 @@ footer {
     .nav-border-theme,
     .nav-border-theme * {
         display: none;
+    }
+    .nav-icon {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    .nav-icon-solid {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    .nav-label {
+        display: block;
+        color: var(--nav-icon-color);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.75rem;
+        text-decoration: none;
+        line-height: 1.5;
+    }
+}
+
+@media (hover: none) {
+    .nav-icon {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    .nav-icon-solid {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    .nav-label {
+        display: block;
+        color: var(--nav-icon-color);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.75rem;
+        text-decoration: none;
+        line-height: 1.5;
     }
 }
