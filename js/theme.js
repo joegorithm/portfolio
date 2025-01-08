@@ -8,10 +8,8 @@ document.addEventListener("sidebarLoaded", function () {
         theme = localStorage.getItem("theme");
         if (theme === "dark") {
             enableLightTheme();
-            console.log(theme);
         } else if (theme === "light") {
             enableDarkTheme();
-            console.log(theme);
         }
     });
 });
@@ -20,12 +18,15 @@ const enableDarkTheme = () => {
     document.body.classList.add("dark-theme");
     document.body.classList.remove("light-theme");
     localStorage.setItem("theme", "dark");
+    // document.getElementsByTagName('meta')["theme-color"].content = "#000000";
 }
 
 const enableLightTheme = () => {
     document.body.classList.add("light-theme");
     document.body.classList.remove("dark-theme");
     localStorage.setItem("theme", "light");
+    // document.getElementsByTagName('meta')["theme-color"].content = "#ff7cf0";
+
 }
 
 if (theme === "dark") {
