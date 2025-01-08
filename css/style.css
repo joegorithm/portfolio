@@ -91,6 +91,10 @@ body {
     background-size: 25px 25px; */
 }
 
+p, h1, h2, h3 {
+    margin: 0;
+}
+
 ::selection {
     background-color: rgba(255, 200, 25, 0.7);
     color: var(--primary-text-color);
@@ -206,6 +210,10 @@ nav {
 
 
 /* Main */
+.home-main * {
+    margin: revert;
+}
+
 section {
     color: var(--primary-text-color);
     font-size: 1.2rem;
@@ -225,6 +233,10 @@ header {
 
 header h1 {
     margin-right: 1rem;
+}
+
+.page-title {
+    margin: 1rem 0;
 }
 
 .address-bar {
@@ -297,6 +309,7 @@ footer {
 }
 
 .footer-information {
+    margin: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,7 +352,7 @@ footer {
     padding: 1rem 0;
 }
 
-.project-card {
+.project-tile {
     background-color: var(--element-background-color);
     border-radius: 2.5rem;
     padding: 1rem;
@@ -353,7 +366,7 @@ footer {
     padding: 1.25rem;
 }
 
-.project-card:hover {
+.project-tile:hover {
     background-color: rgba(29, 29, 33, 1);
 }
 
@@ -367,10 +380,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 1rem 0;
 }
-
-
-
 
 .project-options-button {
     background: none;
@@ -388,10 +399,15 @@ footer {
     opacity: 1;
 }
 
+.project-description {
+    margin: 1rem 0;
+}
+
 .project-tools {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .tool-tag {
@@ -443,6 +459,63 @@ footer {
 
 
 
+.certifications-list {
+    display: grid;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.certification-tile {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--element-background-color);
+    border-radius: 2.5rem;
+    padding: 1rem;
+}
+
+.certification-logo {
+    display: flex;
+    background-color: var(--codecademy-theme-color);
+    fill: white;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.certification-information {
+    width: calc(100% - 8rem);
+    padding: 10px;
+}
+
+.certification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+/* .certification-title {
+    
+} */
+
+.certification-link-button {
+    fill: var(--nav-icon-color);
+    opacity: 0.75;
+}
+
+.certification-link-button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.certification-link-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 
 
@@ -570,7 +643,7 @@ footer {
     .nav-border-theme * {
         display: none;
     }
-    .nav-icon {
+    /* .nav-icon {
         width: 1.9rem;
         height: 1.9rem;
     }
@@ -585,7 +658,7 @@ footer {
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 1.5;
-    }
+    } */
 }
 
 @media (hover: none) {
@@ -604,5 +677,16 @@ footer {
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 1.5;
+    }
+    .nav-label-theme {
+        display: none;
+    }
+    .nav-icon-logo {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .nav-icon-theme {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
