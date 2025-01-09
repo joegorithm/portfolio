@@ -498,9 +498,9 @@ footer {
     gap: 0.5rem;
 }
 
-/* .certification-title {
-    
-} */
+.certification-title {
+    color: white;
+}
 
 .certification-link-button {
     fill: var(--nav-icon-color);
