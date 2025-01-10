@@ -215,6 +215,8 @@ body {
     flex-direction: column;
     background-color: var(--background-color);
     font-family: "Nunito", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
+    font-family: "Inter", sans-serif;
     /* font-family: "Comfortaa", sans-serif; */
     font-weight: 300;
     align-items: center;
