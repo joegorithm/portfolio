@@ -35,6 +35,7 @@
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
     --element-background-color: #16171c;
+    --nav-shadow-color: #000000a6;
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -56,6 +57,7 @@
     --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
     --element-background-color: rgb(233, 235, 245);
+    --nav-shadow-color: #00000037;
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -262,6 +264,10 @@ a {
     width: 76vw;
 }
 
+
+.ui-element {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 
 /* Sidebar */
@@ -509,7 +515,7 @@ footer {
 }
 
 .project-tile:hover {
-    background-color: rgba(29, 29, 33, 1);
+    background-color: #1c1d25;
 }
 
 .project-icon {
@@ -684,7 +690,7 @@ footer {
         border-radius: 0;
         border-top-left-radius: 2.5rem;
         border-top-right-radius: 2.5rem;
-        box-shadow: 0 0 2rem #00000080;
+        box-shadow: 0 0 2rem var(--nav-shadow-color);
     }
     .nav-border-logo, 
     .nav-border-logo * {
