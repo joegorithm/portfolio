@@ -68,6 +68,7 @@
 }
 
 
+
 /* Nunito Regular */
 @font-face {
     font-family: 'Nunito';
@@ -135,7 +136,7 @@
 /* Nunito SemiBold */
 @font-face {
     font-family: 'Nunito';
-    src: url('f/font/nunito/static/Nunito-SemiBold.ttf') format('truetype');
+    src: url('/font/nunito/static/Nunito-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -272,6 +273,7 @@ nav {
     border-radius: 2.5rem;
     padding: 0.5rem;
     height: calc(100% - 3rem);
+    /* border: 1px solid #ffffff2e; */
 }
 
 .nav-border {
@@ -473,6 +475,16 @@ footer {
     color: var(--yellow-color);
     border-bottom: 1px solid var(--yellow-color);
 }
+
+.back-to-top-button {
+    border: none;
+    background-color: var(--nav-icon-color);
+    fill: var(--background-color);
+    border-radius: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+}
+
 
 
 .project-grid {
@@ -693,7 +705,7 @@ footer {
     .nav-label {
         display: block;
         color: var(--nav-icon-color);
-        /* font-family: "Rubik", sans-serif; */
+        font-weight: 500;
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 1.5;
@@ -784,7 +796,7 @@ footer {
     .nav-label {
         display: block;
         color: var(--nav-icon-color);
-        font-family: "Rubik", sans-serif;
+        font-weight: 500;
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 1.5;
@@ -803,7 +815,7 @@ footer {
     .nav-label {
         display: block;
         color: var(--nav-icon-color);
-        /* font-family: "Rubik", sans-serif; */
+        font-weight: 500;
         font-size: 0.75rem;
         text-decoration: none;
         line-height: 1.5;
