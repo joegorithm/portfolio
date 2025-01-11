@@ -214,8 +214,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
-    font-family: "Nunito", sans-serif;
-    font-family: "Space Grotesk", sans-serif;
+    /* font-family: "Nunito", sans-serif; */
+    /* font-family: "Space Grotesk", sans-serif; */
     font-family: "Inter", sans-serif;
     /* font-family: "Comfortaa", sans-serif; */
     font-weight: 300;
@@ -413,6 +413,7 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: 200ms ease;
 }
 
 .social-media-button:hover {
