@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Jonathan » jh.codes</title>
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <link href="/css/contact.css" rel="stylesheet">
-    <script src="../js/include.js" defer></script>
-    <script src="../js/theme.js" defer></script>
+    <script src="/js/include.js" defer></script>
+    <script src="/js/theme.js" defer></script>
     <script src="/js/sidebar.js" defer></script>
-    <script src="../js/copyright.js" defer></script>
+    <script src="/js/copyright.js" defer></script>
+    <script src="/js/contact-form.js" defer></script>
 </head>
 <body>
     <div class="all-content">
@@ -19,7 +20,22 @@
         </header>
         <main>
             <section>
-                <p>A Hare was making fun of the Tortoise one day for being so slow. “Do you ever get anywhere?” he asked with a mocking laugh. “Yes,” replied the Tortoise, “and I get there sooner than you think. I'll run you a race and prove it.” The Hare was much amused at the idea of running a race with the Tortoise, but for the fun of the thing he agreed. So the Fox, who had consented to act as judge, marked the distance and started the runners off. The Hare was soon far out of sight, and to make the Tortoise feel very deeply how ridiculous it was for him to try a race with a Hare, he lay down beside the course to take a nap until the Tortoise should catch up. The Tortoise meanwhile kept going slowly but steadily, and, after a time, passed the place where the Hare was sleeping. But the Hare slept on very peacefully; and when at last he did wake up, the Tortoise was near the goal. The Hare now ran his swiftest, but he could not overtake the Tortoise in time.</p>
+                <!-- <p>A Hare was making fun of the Tortoise one day for being so slow. “Do you ever get anywhere?” he asked with a mocking laugh. “Yes,” replied the Tortoise, “and I get there sooner than you think. I'll run you a race and prove it.” The Hare was much amused at the idea of running a race with the Tortoise, but for the fun of the thing he agreed. So the Fox, who had consented to act as judge, marked the distance and started the runners off. The Hare was soon far out of sight, and to make the Tortoise feel very deeply how ridiculous it was for him to try a race with a Hare, he lay down beside the course to take a nap until the Tortoise should catch up. The Tortoise meanwhile kept going slowly but steadily, and, after a time, passed the place where the Hare was sleeping. But the Hare slept on very peacefully; and when at last he did wake up, the Tortoise was near the goal. The Hare now ran his swiftest, but he could not overtake the Tortoise in time.</p> -->
+                <form name="contact-form" class="contact-form">
+                    <div class="form-input-entries">
+                        <label for="name">Name*</label>
+                        <input name="name" id="name" class="form-input" type="text" placeholder="Name" required>
+                        <label for="email">Email*</label>
+                        <input name="email" id="email" class="form-input" type="email" placeholder="Email" required>
+                        <label for="message">Message*</label>
+                        <textarea name="message" id="message" class="form-input" placeholder="Message" rows="5" required></textarea>
+                    </div>
+                    <input type="submit" id="submit" value="Send"></input>
+                </form>
+                  
+                <script>
+                    
+                </script>
             </section>
         </main>
         <footer class="ui-element"></footer>

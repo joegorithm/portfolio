@@ -35,6 +35,7 @@
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
     --element-background-color: #16171c;
+    --element-border-color: rgba(255, 255, 255, 0.1);
     --nav-shadow-color: #000000a6;
 
     --html-tag-color: #E34F26;
@@ -57,6 +58,7 @@
     --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
     --element-background-color: rgb(233, 235, 245);
+    --element-border-color: rgba(0, 0, 0, 0.1);
     --nav-shadow-color: #00000037;
 
     --html-tag-color: #E34F26;
@@ -268,7 +270,7 @@ a {
 
 
 .ui-element {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--element-border-color);
 }
 
 
