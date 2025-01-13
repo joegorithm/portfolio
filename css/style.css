@@ -237,7 +237,7 @@ p, h1, h2, h3 {
     color: var(--primary-text-color);
 }
 
-.nav-label, img {
+.nav-label, img, button {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;

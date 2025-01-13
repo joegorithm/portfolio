@@ -20,17 +20,28 @@
         </header>
         <main>
             <section>
-                <!-- <p>A Hare was making fun of the Tortoise one day for being so slow. “Do you ever get anywhere?” he asked with a mocking laugh. “Yes,” replied the Tortoise, “and I get there sooner than you think. I'll run you a race and prove it.” The Hare was much amused at the idea of running a race with the Tortoise, but for the fun of the thing he agreed. So the Fox, who had consented to act as judge, marked the distance and started the runners off. The Hare was soon far out of sight, and to make the Tortoise feel very deeply how ridiculous it was for him to try a race with a Hare, he lay down beside the course to take a nap until the Tortoise should catch up. The Tortoise meanwhile kept going slowly but steadily, and, after a time, passed the place where the Hare was sleeping. But the Hare slept on very peacefully; and when at last he did wake up, the Tortoise was near the goal. The Hare now ran his swiftest, but he could not overtake the Tortoise in time.</p> -->
                 <form name="contact-form" class="contact-form">
-                    <div class="form-input-entries">
-                        <label for="name">Name*</label>
+                    <div class="form-input-entry form-input-entry-name">
+                        <label for="name" class="form-label">Name<strong>*</strong></label>
                         <input name="name" id="name" class="form-input" type="text" placeholder="Name" required>
-                        <label for="email">Email*</label>
+                    </div>
+                    <div class="form-input-entry form-input-entry-email">
+                        <label for="email" class="form-label">Email<strong>*</strong></label>
                         <input name="email" id="email" class="form-input" type="email" placeholder="Email" required>
-                        <label for="message">Message*</label>
+                    </div>
+                    <div class="form-input-entry form-input-entry-message">
+                        <label for="message" class="form-label">Message<strong>*</strong></label>
                         <textarea name="message" id="message" class="form-input" placeholder="Message" rows="5" required></textarea>
                     </div>
-                    <input type="submit" id="submit" value="Send"></input>
+                    <div>
+                        <button type="submit" id="submit">
+                            Send
+                            <svg width="1.5rem" height="1.5rem" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. -->
+                                <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480l0-83.6c0-4 1.5-7.8 4.2-10.8L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </form>
                   
                 <script>
