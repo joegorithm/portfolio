@@ -535,6 +535,10 @@ footer {
     background-color: black;
 }
 
+.project-icon-clock {
+    background-color: #FF1236;
+}
+
 .project-information-header {
     display: flex;
     align-items: center;
