@@ -423,10 +423,20 @@ footer {
     width: 6rem;
     border-radius: 1.25rem;
     background-color: black;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
 }
 
 .project-icon-clock {
     background-color: #FF1236;
+}
+
+.project-icon-age-in-days {
+    background-color: rgb(66, 128, 205);
+}
+
+.project-icon-default {
+    background-color: var(--white);
 }
 
 .project-information-header {
@@ -538,6 +548,17 @@ footer {
     background-size: 6rem 6rem;
 }
 
+.project-theme-portfolio {
+    background-color: var(--theme-color);
+}
+
+.project-theme-clock {
+    background-color: #ff1236;
+}
+
+.project-theme-age-in-days {
+    background-color: #4281cd;
+}
 
 
 
