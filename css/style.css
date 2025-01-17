@@ -256,16 +256,8 @@ p {
 }
 
 header {
-    /* padding: 15px; */
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    color: var(--primary-text-color); */
-}
-
-header {
     color: var(--primary-text-color);
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 footer {
