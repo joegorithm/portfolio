@@ -43,11 +43,13 @@
 .form-input {
     font-family: "Inter", sans-serif;
     font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
     background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
     color: var(--primary-text-color);
-    border-radius: 1.6rem;
+    border-radius: 2rem;
     padding: 1rem;
 }
 
@@ -71,6 +73,12 @@
     background-color: var(--element-background-hover-color);
     box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5);
     outline: 1px solid var(--theme-color);
+}
+
+#message {
+    min-height: 10.5rem;
+    resize: vertical;
+    overflow: auto;
 }
 
 #submit {
