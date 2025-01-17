@@ -34,7 +34,8 @@
     --selected-nav-button-color: #ffc8191a;
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
-    --element-background-color: #16171c;
+    --element-background-color: rgba(166, 179, 225, 0.1); /* Previously #16171c */
+    --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
     --element-border-color: rgba(255, 255, 255, 0.1);
     --nav-shadow-color: #000000a6;
 
@@ -80,9 +81,7 @@ html {
 
 /* Setup */
 body {
-    margin: 1rem;
-    margin-bottom: 0;
-    margin-left: 7rem;
+    margin: 1rem 1rem 0rem 7rem;
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
@@ -105,7 +104,7 @@ p, h1, h2, h3 {
     color: var(--primary-text-color);
 }
 
-.nav-label, img, button {
+.nav-label, img, button, input::placeholder, textarea::placeholder {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -137,12 +136,13 @@ a {
 
 .temporary-landing-logo {
     margin: 4rem 0;
+    padding-top: 4vw;
     width: 76vw;
 }
 
 
 .ui-element {
-    background-color: rgba(166, 179, 225, 0.13);
+    background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
 }
@@ -257,40 +257,31 @@ p {
 
 header {
     /* padding: 15px; */
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     align-items: center;
+    color: var(--primary-text-color); */
+}
+
+header {
     color: var(--primary-text-color);
-}
-
-header h1 {
-    margin-right: 1rem;
-}
-
-.page-title {
-    margin: 1rem 0;
-}
-
-.address-bar {
-    font-family: monospace;
-    font-size: 1rem;
-    background-color: var(--element-background-color);
-    padding: 1rem 2rem;
-    /* border: rgb(53, 53, 53) solid 3px; */
-    border-radius: 2.5rem;
+    margin: 3rem 0;
 }
 
 footer {
-    background-color: var(--element-background-color);
     padding: 1rem;
     text-align: center;
     border-top-right-radius: 3rem;
     border-top-left-radius: 3rem;
+    background-color: var(--element-background-color);
+    backdrop-filter: blur(4rem);
+    border: 1px solid var(--element-border-color);
+    border-bottom: none;
 }
 
 .social-media-buttons {
-    background-color: #ffffff0d;
-    border-radius: 2.5rem;
+    /* background-color: var(--element-background-color); */
+    /* border-radius: 2.5rem; */
     padding: 0.5rem;
 }
 
@@ -396,7 +387,7 @@ footer {
 }
 
 .project-tile {
-    background-color: var(--element-background-color);
+    /* background-color: var(--element-background-color); */
     border-radius: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -416,7 +407,7 @@ footer {
 }
 
 .project-tile:hover {
-    background-color: #1c1d25;
+    background-color: var(--element-background-hover-color);
 }
 
 .project-icon {
