@@ -147,6 +147,51 @@ a {
     border: 1px solid var(--element-border-color);
 }
 
+.tooltip-element {
+    position: relative;
+    /* display: inline-block; */
+    justify-content: center;
+    display: flex;
+}
+
+.tooltip-element .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 120%;
+    pointer-events: none; /* Prevent interaction with the tooltip itself */
+    
+    white-space: nowrap;
+    text-align: center;
+    background-color: var(--black-color);
+    padding: 0.4rem 1rem;
+    color: var(--white-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 200000;
+    box-shadow: 0 0 0.5rem black;
+}
+
+.tooltip-element .tooltip-button {
+    bottom: 150%;
+}
+
+.tooltip-element .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -56%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--black-color) transparent transparent transparent;
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2));
+}
+
+.tooltip-element:hover .tooltip {
+    visibility: visible;
+}
 
 
 
@@ -360,14 +405,6 @@ footer {
     border-bottom: 1px solid var(--yellow-color);
 }
 
-.back-to-top-button {
-    border: none;
-    background-color: var(--nav-icon-color);
-    fill: var(--background-color);
-    border-radius: 1.5rem;
-    width: 3rem;
-    height: 3rem;
-}
 
 
 
@@ -407,7 +444,6 @@ footer {
     border-radius: 1.25rem;
     background-color: black;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-
 }
 
 .project-icon-clock {
@@ -443,6 +479,7 @@ footer {
 .project-options {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .project-options-button {
@@ -462,9 +499,9 @@ footer {
 }
 
 .project-time-status {
-    display: flex;
+    display: inline-flex;
     gap: 0.3rem;
-    margin: 0.5rem 0;
+    margin: 0.3rem 0 0 0;
     align-items: center;
 }
 

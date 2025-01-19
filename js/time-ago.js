@@ -1,6 +1,7 @@
 document.querySelectorAll(".project-time-status").forEach((element) => {
     const projectDate = element.querySelector(".project-time-date");
     const projectTimeIcon = element.querySelector(".project-time-icon");
+    const tooltip = element.querySelector(".tooltip");
     const startedDate = projectDate.dataset.started;
     const completedDate = projectDate.dataset.completed;
 
@@ -67,4 +68,11 @@ document.querySelectorAll(".project-time-status").forEach((element) => {
         projectTimeIcon.classList.add("project-time-icon-started");
         projectDate.textContent = `Started ${timeAgo}`;
     }
+
+    console.log(date);
+    const tooltipMonthOptions = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let tooltipMonth = tooltipMonthOptions[date.getMonth()];
+    let tooltipDate = date.getDate();
+    let tooltipYear = date.getFullYear();
+    tooltip.textContent = tooltipMonth + " " + tooltipDate + ", " + tooltipYear;
 });
