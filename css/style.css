@@ -461,8 +461,27 @@ footer {
     opacity: 1;
 }
 
-.project-date {
+.project-time-status {
+    display: flex;
+    gap: 0.3rem;
     margin: 0.5rem 0;
+    align-items: center;
+}
+
+.project-time-icon svg {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.project-time-icon-completed {
+    fill: rgb(50, 255, 100);
+}
+
+.project-time-icon-started {
+    fill: var(--theme-color);
+}
+
+.project-time-date {
     font-size: 0.8rem;
     color: var(--secondary-text-color);
 }
