@@ -36,7 +36,7 @@
     --nav-icon-color: var(--white-color);
     --element-background-color: rgba(166, 179, 225, 0.1); /* Previously #16171c */
     --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
-    --element-border-color: rgba(255, 255, 255, 0.1);
+    --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000a6;
 
     --html-tag-color: #E34F26;
@@ -168,9 +168,9 @@ a {
     font-size: 0.8rem;
     font-weight: 500;
     border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 200000;
-    box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
 }
 
 .tooltip-element .tooltip-button {
@@ -186,7 +186,7 @@ a {
     border-width: 8px;
     border-style: solid;
     border-color: var(--black-color) transparent transparent transparent;
-    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2));
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.3));
 }
 
 .tooltip-element:hover .tooltip {
@@ -529,7 +529,7 @@ footer {
 
 .project-tools {
     /* background-color: rgba(255, 0, 0, 0.511); */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--element-border-color);
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
