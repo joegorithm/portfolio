@@ -38,6 +38,7 @@
     --element-background-hover-color: rgba(166, 179, 225, 0.13); /* Previously #1c1d25 */
     --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000a6;
+    --nav-label-shadow-color: rgba(0, 0, 0, 0.25);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -58,9 +59,10 @@
     --selected-nav-button-color: rgba(255, 255, 255, 0.5);
     --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
-    --element-background-color: rgb(233, 235, 245);
+    --element-background-color: rgba(157, 168, 215, 0.2);
     --element-border-color: rgba(0, 0, 0, 0.1);
     --nav-shadow-color: #00000037;
+    --nav-label-shadow-color: rgba(255, 255, 255, 0.5);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -195,6 +197,8 @@ a {
 
 
 
+
+
 /* Sidebar */
 nav {
     position: fixed;
@@ -219,6 +223,7 @@ nav {
     opacity: 0;
     font-size: 1.5rem;
     font-weight: 500;
+    text-shadow: 0 0 0.5rem var(--nav-label-shadow-color);
     margin: 1rem;
     display: none;
 }
@@ -531,7 +536,7 @@ footer {
 }
 
 .project-time-icon-completed {
-    fill: rgb(50, 255, 100);
+    fill: rgb(175, 255, 55); /* rgb(50, 255, 100) */
 }
 
 .project-time-icon-started {
