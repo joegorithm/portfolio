@@ -35,7 +35,7 @@
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
     --element-background-color: rgba(166, 179, 225, 0.1); /* Previously #16171c */
-    --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
+    --element-background-hover-color: rgba(166, 179, 225, 0.13); /* Previously #1c1d25 */
     --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000a6;
 
@@ -314,6 +314,7 @@ footer {
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
     border-bottom: none;
+    /* overflow: hidden; */
 }
 
 .social-media-buttons {
@@ -421,6 +422,25 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    transition: background-color 150ms ease;
+}
+
+.glow {
+    transition: transform 100ms ease;
+    transition: opacity 150ms ease;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.7);
+    filter: blur(4rem);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 2rem;
+}
+
+.project-tile:hover .glow, .certification-tile:hover .glow, nav:hover .glow, footer:hover .glow {
+    opacity: 1;
 }
 
 .project-main {
@@ -613,6 +633,7 @@ footer {
     background-color: var(--element-background-color);
     border-radius: 2.5rem;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .certification-logo {
