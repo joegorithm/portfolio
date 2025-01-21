@@ -293,7 +293,7 @@ nav {
 
 /* Main */
 .home-main * {
-    margin: revert;
+    /* margin: revert; */
 }
 
 section {
