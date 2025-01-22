@@ -319,6 +319,7 @@ footer {
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
     border-bottom: none;
+    width: min(73rem, calc(100vw - 10rem));
     /* overflow: hidden; */
 }
 
@@ -694,6 +695,7 @@ footer {
     }
     body footer {
         padding-bottom: 80px;
+        width: min(73rem, calc(100vw - 3.5rem));
     }
     nav {
         margin: 0 0.75rem;
