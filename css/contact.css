@@ -51,15 +51,17 @@
     color: var(--primary-text-color);
     border-radius: 2rem;
     padding: 1rem;
+    caret-color: var(--theme-color);
 }
 
 .form-label {
     /* font-family: "Inter", sans-serif; */
     font-size: 1.5rem;
     font-weight: 600;
+    display: flex;
 }
 
-.form-label strong {
+.tooltip-element {
     color: var(--theme-color);
 }
 
