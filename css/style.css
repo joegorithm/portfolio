@@ -668,7 +668,7 @@ footer {
 }
 
 .certification-title {
-    color: white;
+    color: var(--primary-text-color);
 }
 
 .certification-link-button {
