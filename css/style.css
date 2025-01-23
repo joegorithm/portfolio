@@ -340,13 +340,18 @@ footer {
 }
 
 .footer-website-name-text {
-    color: white;
+    color: var(--primary-text-color);
     font-size: 4rem;
     font-weight: 700;
     margin-top: -0.5rem;
 }
 
+.footer-large-logo {
+    fill: var(--primary-text-color);
+}
+
 .footer-small-logo {
+    fill: var(--primary-text-color);
     display: none;
 }
 
