@@ -16,8 +16,8 @@
     --dark-gray-color: #363636;
 
     /* Social media theme colors */
-    --khan-academy-theme-color: #14BF96;
-    --github-theme-color: rgb(142, 70, 161); /* #1B1F24; */
+    --buy-me-a-coffee-theme-color: #FFDD00;
+    --github-theme-color: #000000; /* rgb(142, 70, 161) */ /* #1B1F24 */
     --codecademy-theme-color: #1F4056;
     --linkedin-theme-color: #2d64bc;
 
@@ -311,7 +311,7 @@ header {
 }
 
 footer {
-    padding: 1rem;
+    padding: 2rem 1rem;
     text-align: center;
     border-top-right-radius: 3rem;
     border-top-left-radius: 3rem;
@@ -320,16 +320,57 @@ footer {
     border: 1px solid var(--element-border-color);
     border-bottom: none;
     width: min(73rem, calc(100vw - 10rem));
-    /* overflow: hidden; */
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-information {
+    justify-content: space-between;
+    align-items: start;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-website-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-website-name-text {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: -0.5rem;
+}
+
+.footer-small-logo {
+    display: none;
+}
+
+@media (max-width: 42rem) {
+    .footer-large-logo {
+        display: none;
+    }
+    .footer-small-logo {
+        display: block;
+    }
+    .footer-information {
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 .social-media-buttons {
     /* border-radius: 2.5rem; */
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .social-media-button {
@@ -346,17 +387,18 @@ footer {
 }
 
 .social-media-button:hover {
-    fill: white;
+    /* fill: white; */
     cursor: pointer;
     scale: 1.2;
 }
 
-.social-media-button-email:hover {
+
+/* .social-media-button-email:hover {
     background-color: rgb(128, 128, 145);
 }
 
-.social-media-button-khan-academy:hover {
-    background-color: var(--khan-academy-theme-color);
+.social-media-button-buy-me-a-coffee:hover {
+    background-color: var(--buy-me-a-coffee-theme-color);
 }
 
 .social-media-button-github:hover {
@@ -369,6 +411,28 @@ footer {
 
 .social-media-button-linkedin:hover {
     background-color: var(--linkedin-theme-color);
+} */
+
+
+
+.social-media-button-buy-me-a-coffee:hover {
+    fill: black;
+}
+
+.social-media-button-buy-me-a-coffee:hover .social-media-svg-buy-me-a-coffee-yellow-part {
+    fill: #FFDD00;
+}
+
+.social-media-button-github:hover {
+    fill: var(--github-theme-color);
+}
+
+.social-media-button-codecademy:hover {
+    fill: var(--codecademy-theme-color);
+}
+
+.social-media-button-linkedin:hover {
+    fill: var(--linkedin-theme-color);
 }
 
 .social-media-icon {
@@ -376,40 +440,9 @@ footer {
     height: 1.75rem;
 }
 
-.footer-information {
-    margin: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0 1rem;
-    flex-wrap: wrap;
-}
-
 #copyright {
     flex-wrap: nowrap;
     flex-shrink: 0;
-}
-
-.footer-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    line-height: 1.2;
-}
-
-.footer-links a {
-    color: var(--secondary-text-color);
-    border-bottom: 1px solid var(--secondary-text-color);
-}
-
-.footer-links a:hover {
-    color: var(--primary-text-color);
-    border-bottom: 1px solid var(--primary-text-color);
-}
-
-.footer-links a:active {
-    color: var(--yellow-color);
-    border-bottom: 1px solid var(--yellow-color);
 }
 
 
@@ -753,27 +786,19 @@ footer {
 }
 
 /* Repsonsive social media buttons for smaller screens */
-@media (max-width: 23.125rem) {
-    .social-media-button {
-        margin: 0 0.15rem 0 0.15rem;
+@media (max-width: 32rem) {
+    .footer-website-name-text {
+        font-size: 3.5rem;
     }
-}
-
-@media (max-width: 22.2rem) {
-    .social-media-button {
-        margin: 0 0.05rem 0 0.05rem;
+    
+    .footer-small-logo {
+        width: 5rem;
     }
 }
 
 @media (max-width: 21rem) {
     footer {
         padding: 0.75rem;
-    }
-    .social-media-buttons {
-        padding: 0.4rem;
-    }
-    .social-media-button {
-        margin: 0 0.03rem 0 0.03rem;
     }
 }
 
