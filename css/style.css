@@ -543,8 +543,9 @@ footer {
     text-decoration: none;
 }
 
-.project-title-link:hover {
-    text-decoration: underline 0.25rem;
+.project-title-link:hover .project-title {
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
 }
 
 .project-options {
@@ -738,7 +739,8 @@ footer {
 }
 
 .certification-link:hover .certification-title {
-    text-decoration: underline 0.25rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
 }
 
 .certification-external-link-icon {
