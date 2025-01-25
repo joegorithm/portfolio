@@ -45,7 +45,7 @@
     --css-tag-color: hsl(281, 72%, 55%); /* Official color: #663399 */
     --css-tag-background-color: rgba(102, 51, 153, 0.4);
     --javascript-tag-color: rgba(247, 222, 30, 0.8);  /* Official color: #F7DF1E */
-    --javascript-tag-background-color: rgba(247, 222, 30, 0.1);
+    --javascript-tag-background-color: rgba(247, 222, 30, 0.12);
     --processingjs-tag-color: #2378ff;
     --processingjs-tag-background-color: rgba(43, 97, 246, 0.2);
 }
@@ -60,6 +60,7 @@
     --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
     --nav-icon-color: var(--black-color);
     --element-background-color: rgba(157, 168, 215, 0.2);
+    --element-background-hover-color: rgba(157, 168, 215, 0.1);
     --element-border-color: rgba(0, 0, 0, 0.1);
     --nav-shadow-color: #00000037;
     --nav-label-shadow-color: rgba(255, 255, 255, 0.5);
@@ -212,7 +213,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-wrap: nowrap;
 }
 
@@ -466,13 +467,13 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: background-color 150ms ease;
 }
 
 .glow {
     transition: transform 100ms ease;
-    transition: opacity 150ms ease;
+    transition: opacity 200ms ease;
     width: 3rem;
     height: 3rem;
     background: rgba(255, 255, 255, 0.7);
@@ -483,9 +484,9 @@ footer {
     border-radius: 2rem;
 }
 
-.project-tile:hover .glow, .certification-tile:hover .glow, nav:hover .glow, footer:hover .glow {
+/* .project-tile:hover .glow, .certification-tile:hover .glow, nav:hover .glow, footer:hover .glow {
     opacity: 1;
-}
+} */
 
 .project-main {
     padding: 1rem;
@@ -522,6 +523,12 @@ footer {
     background-color: var(--white);
 }
 
+.project-information {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .project-information-header {
     display: flex;
     align-items: center;
@@ -537,7 +544,7 @@ footer {
 }
 
 .project-title-link:hover {
-    text-decoration: underline;
+    text-decoration: underline 0.25rem;
 }
 
 .project-options {
@@ -562,37 +569,40 @@ footer {
     opacity: 1;
 }
 
-.project-time-status {
+.time-ago-status {
     display: inline-flex;
     gap: 0.3rem;
-    margin: 0.3rem 0 0 0;
+    /* margin: 0.3rem 0 0 0; */
     align-items: center;
 }
 
-.project-time-icon svg {
+.time-ago-icon svg {
     width: 0.9rem;
     height: 0.9rem;
 }
 
-.project-time-icon-completed {
-    fill: rgb(175, 255, 55); /* rgb(50, 255, 100) */
+.time-ago-icon-completed {
+    fill: var(--secondary-text-color); /* rgb(175, 255, 55) rgb(50, 255, 100) */
 }
 
-.project-time-icon-started {
-    fill: var(--theme-color);
+.time-ago-icon-started {
+    fill: var(--secondary-text-color);
 }
 
-.project-time-date {
+.time-ago-date {
     font-size: 0.8rem;
     color: var(--secondary-text-color);
 }
 
 .project-description {
-    margin: 1rem 0 0 0;
+    /* margin: 1rem 0 0 0; */
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.4rem;
+    color: var(--secondary-text-color);
 }
 
 .project-tools {
-    /* background-color: rgba(255, 0, 0, 0.511); */
     border-top: 1px solid var(--element-border-color);
     display: flex;
     flex-wrap: wrap;
@@ -675,15 +685,19 @@ footer {
     display: flex;
     gap: 1rem;
     background-color: var(--element-background-color);
+    transition: background-color 150ms ease;
     border-radius: 2.5rem;
     padding: 1rem;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.certification-tile:hover {
+    background-color: var(--element-background-hover-color);
 }
 
 .certification-logo {
     display: flex;
-    background-color: var(--codecademy-theme-color);
-    fill: white;
+    background-color: white;
     width: 6rem;
     height: 6rem;
     border-radius: 1.25rem;
@@ -691,9 +705,17 @@ footer {
     justify-content: center;
 }
 
+.certification-logo-codecademy {
+    background-color: var(--codecademy-theme-color);
+    fill: white;
+}
+
 .certification-information {
-    width: calc(100% - 8rem);
-    padding: 10px;
+    width: calc(100% - 7.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: space-between;
 }
 
 .certification-header {
@@ -705,23 +727,39 @@ footer {
     gap: 0.5rem;
 }
 
+.certification-link {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
 .certification-title {
     color: var(--primary-text-color);
 }
 
-.certification-link-button {
-    fill: var(--nav-icon-color);
-    opacity: 0.75;
+.certification-link:hover .certification-title {
+    text-decoration: underline 0.25rem;
 }
 
-.certification-link-button:hover {
-    cursor: pointer;
+.certification-external-link-icon {
+    fill: var(--nav-icon-color);
+    opacity: 0.75;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.certification-link:hover .certification-external-link-icon {
     opacity: 1;
 }
 
-.certification-link-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+
+.certification-issuer {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.certification-issuer:hover {
+    color: var(--primary-text-color);
 }
 
 

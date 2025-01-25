@@ -1,12 +1,13 @@
-document.querySelectorAll(".project-time-status").forEach((element) => {
-    const projectDate = element.querySelector(".project-time-date");
-    const projectTimeIcon = element.querySelector(".project-time-icon");
+document.querySelectorAll(".time-ago-status").forEach((element) => {
+    const timeAgoDate = element.querySelector(".time-ago-date");
+    const icon = element.querySelector(".time-ago-icon");
     const tooltip = element.querySelector(".tooltip");
-    const startedDate = projectDate.dataset.started;
-    const completedDate = projectDate.dataset.completed;
+    const startedDate = timeAgoDate.dataset.started;
+    const completedDate = timeAgoDate.dataset.completed;
+    const earnedDate = timeAgoDate.dataset.earned;
 
-    // Use the completed date if it exists, otherwise use the started date
-    const dateToUse = completedDate || startedDate;
+    // Use the completed date if it exists, otherwise use the started date if it exists, and use earned date if none of the others exist
+    const dateToUse = completedDate || startedDate || earnedDate;
     const date = new Date(dateToUse + "T00:00:00");
     const now = new Date();
 
@@ -51,22 +52,37 @@ document.querySelectorAll(".project-time-status").forEach((element) => {
     </svg>
     `;
 
-    const clockIcon= `
+    const clockIcon = `
     <svg width="0.9rem" height="0.9rem" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
         <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
     </svg>
     `;
 
+    const errorIcon = `
+    <svg width="0.9rem" height="0.9rem" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
+    </svg>
+    `;
+
     // Update the element with the time ago text and related icon
     if (completedDate) {
-        projectTimeIcon.innerHTML = checkmarkIcon;
-        projectTimeIcon.classList.add("project-time-icon-completed");
-        projectDate.textContent = `Completed ${timeAgo}`;
+        icon.innerHTML = checkmarkIcon;
+        icon.classList.add("time-ago-icon-completed");
+        timeAgoDate.textContent = `Completed ${timeAgo}`;
+    } else if (startedDate) {
+        icon.innerHTML = clockIcon;
+        icon.classList.add("time-ago-icon-started");
+        timeAgoDate.textContent = `Started ${timeAgo}`;
+    } else if (earnedDate) {
+        icon.innerHTML = checkmarkIcon;
+        icon.classList.add("time-ago-icon-completed");
+        timeAgoDate.textContent = `Earned ${timeAgo}`;
     } else {
-        projectTimeIcon.innerHTML = clockIcon;
-        projectTimeIcon.classList.add("project-time-icon-started");
-        projectDate.textContent = `Started ${timeAgo}`;
+        icon.innerHTML = errorIcon;
+        icon.classList.add("time-ago-icon-started");
+        timeAgoDate.textContent = `Invalid date`;
     }
 
     console.log(date);
