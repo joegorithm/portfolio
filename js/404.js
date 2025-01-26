@@ -1,4 +1,4 @@
-var touchscreen = getComputedStyle(document.documentElement).getPropertyValue("--touchscreen");
+var touchscreen = getComputedStyle(document.documentElement).getPropertyValue("--touchscreen").trim() || "false";
 
 const pupils = document.querySelectorAll(".face-eye-pupil");
 
