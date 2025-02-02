@@ -35,8 +35,8 @@
     --selected-nav-button-color: #ffc8191a;
     --selected-nav-button-hover-color: #ffc81926;
     --nav-icon-color: var(--white-color);
-    --element-background-color: rgba(166, 179, 225, 0.1); /* Previously #16171c */
-    --element-background-hover-color: rgba(166, 179, 225, 0.13); /* Previously #1c1d25 */
+    --element-background-color: rgba(166, 179, 225, 0.12); /* Previously #16171c */
+    --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
     --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000a6;
     --nav-label-shadow-color: rgba(0, 0, 0, 0.25);

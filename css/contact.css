@@ -55,6 +55,10 @@
     transition: background-color 150ms ease;
 }
 
+.form-input::placeholder {
+    color: rgba(183, 189, 211, 0.4);
+}
+
 .form-label {
     /* font-family: "Inter", sans-serif; */
     font-size: 1.5rem;
