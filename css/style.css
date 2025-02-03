@@ -718,6 +718,21 @@ footer {
     fill: white;
 }
 
+.certification-logo-small {
+    background-color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.certification-logo-small-codecademy {
+    background-color: var(--codecademy-theme-color);
+    fill: white;
+}
+
 .certification-information {
     width: calc(100% - 7.5rem);
     display: flex;
@@ -761,15 +776,45 @@ footer {
     opacity: 1;
 }
 
-
 .certification-issuer {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    width: fit-content;
+}
+
+.certification-issuer-text {
     font-size: 1rem;
     color: var(--secondary-text-color);
 }
 
-.certification-issuer:hover {
+.certification-issuer-link:hover .certification-issuer-text {
     color: var(--primary-text-color);
 }
+
+/* Responsive certification tile layout */
+@media (max-width: 41.5rem) {
+    .certification-tile {
+        border-radius: 1.5rem;
+    }
+    .certification-information {
+        width: 100%;
+    }
+    .certification-logo-link {
+        display: none;
+    }
+    .certification-logo-small {
+        display: flex;
+    }
+}
+
+@media (max-width: 34rem) {
+    .certification-title {
+        font-size: 1.4rem;
+    }
+}
+
+
 
 
 
