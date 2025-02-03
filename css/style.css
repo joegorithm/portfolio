@@ -38,7 +38,7 @@
     --element-background-color: rgba(166, 179, 225, 0.12); /* Previously #16171c */
     --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
     --element-border-color: rgba(255, 255, 255, 0.12);
-    --nav-shadow-color: #000000a6;
+    --nav-shadow-color: #000000be;
     --nav-label-shadow-color: rgba(0, 0, 0, 0.25);
 
     --tooltip-shadow-color: rgba(0, 0, 0, 0.7);
@@ -779,7 +779,7 @@ footer {
         margin: 0.75rem;
     }
     body footer {
-        padding-bottom: 80px;
+        padding-bottom: 5.5rem;
         width: min(73rem, calc(100vw - 3.5rem));
     }
     nav {
@@ -798,7 +798,7 @@ footer {
         border-radius: 0;
         border-top-left-radius: 2.5rem;
         border-top-right-radius: 2.5rem;
-        box-shadow: 0 0 2rem var(--nav-shadow-color);
+        box-shadow: 0 0.5rem 1rem 1rem var(--nav-shadow-color);
     }
     .nav-button {
         flex-direction: column;
