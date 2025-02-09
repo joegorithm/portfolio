@@ -710,11 +710,7 @@ footer {
     border-radius: 1.25rem;
     align-items: center;
     justify-content: center;
-}
-
-.certification-logo-codecademy {
-    background-color: var(--codecademy-theme-color);
-    fill: white;
+    overflow: hidden;
 }
 
 .certification-logo-small {
@@ -725,6 +721,16 @@ footer {
     align-items: center;
     justify-content: center;
     display: none;
+    overflow: hidden;
+}
+
+.certification-logo-microsoft {
+    background: none;
+}
+
+.certification-logo-codecademy {
+    background-color: var(--codecademy-theme-color);
+    fill: white;
 }
 
 .certification-logo-small-codecademy {
