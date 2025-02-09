@@ -17,5 +17,5 @@
 }
 
 .nav-label-about {
-    color: rgb(255, 200, 25);
+    color: var(--theme-color);
 }

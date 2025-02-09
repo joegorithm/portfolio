@@ -14,7 +14,7 @@
     --black-color: #000000;
     --white-color: #ffffff;
     --light-gray-color: #a4a4a4;
-    --dark-gray-color: #363636;
+    --dark-gray-color: #5f5f5f;
 
     /* Social media theme colors */
     --buy-me-a-coffee-theme-color: #FFDD00;
@@ -28,6 +28,9 @@
 
 .dark-theme {
     --theme-color: var(--yellow-color);
+    --logo-j-color: var(--yellow-color);
+    --logo-h-color: var(--white-color);
+
     --background-color: var(--black-color);
     --primary-text-color: var(--white-color);
     --secondary-text-color: var(--light-gray-color);
@@ -37,11 +40,14 @@
     --nav-icon-color: var(--white-color);
     --element-background-color: rgba(166, 179, 225, 0.12); /* Previously #16171c */
     --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
+    --mobile-nav-background-color: #16171c;
     --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000be;
     --nav-label-shadow-color: rgba(0, 0, 0, 0.25);
 
     --tooltip-shadow-color: rgba(0, 0, 0, 0.7);
+
+    --form-input-placeholder-color: rgba(183, 189, 211, 0.4);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -55,20 +61,26 @@
 
 .light-theme {
     --theme-color: var(--yellow-color);
-    --background-color: var(--white-color); /* #dce0f2cc */
+    --logo-j-color: var(--black-color);
+    --logo-h-color: var(--black-color);
+
+    --background-color: rgb(220, 220, 235); /* #dce0f2cc */
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
     --nav-button-hover-color: rgba(255, 255, 255, 0.4);
     --selected-nav-button-color: rgba(255, 255, 255, 0.5);
-    --selected-nav-button-hover-color: rgba(255, 255, 255, 0.8);
+    --selected-nav-button-hover-color: rgba(255, 255, 255, 0.5);
     --nav-icon-color: var(--black-color);
-    --element-background-color: rgba(157, 168, 215, 0.2);
-    --element-background-hover-color: rgba(157, 168, 215, 0.1);
-    --element-border-color: rgba(0, 0, 0, 0.1);
+    --element-background-color: rgba(255, 255, 255, 0.3);
+    --element-background-hover-color: rgba(255, 255, 255, 0.5);
+    --mobile-nav-background-color: rgb(240, 240, 251);
+    --element-border-color: rgba(255, 255, 255, 0.5);
     --nav-shadow-color: #00000037;
     --nav-label-shadow-color: rgba(255, 255, 255, 0.5);
 
     --tooltip-shadow-color: rgba(0, 0, 0, 0.3);
+
+    --form-input-placeholder-color: rgba(0, 0, 0, 0.3);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -362,6 +374,14 @@ footer {
     display: none;
 }
 
+.logo-j {
+    fill: var(--logo-j-color);
+}
+
+.logo-h {
+    fill: var(--logo-h-color);
+}
+
 @media (max-width: 42rem) {
     .footer-large-logo {
         display: none;
@@ -474,7 +494,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     /* overflow: hidden; */
-    transition: background-color 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
 }
 
 .glow {
@@ -835,7 +855,7 @@ footer {
     nav {
         margin: 0 0.75rem;
         /* padding-top: 0.25rem; */
-        background-color: #16171c;
+        background-color: var(--mobile-nav-background-color);
         position: fixed;
         bottom: -1.5rem;
         padding-bottom: 2rem;
