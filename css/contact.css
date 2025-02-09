@@ -22,16 +22,21 @@
 
 
 
-/* Contact Form */
-/* .contact-form {
-    
-} */
+main {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+}
 
+
+
+/* Contact Form */
 .contact-form {
-    display: flex;
+    display: var(--contact-form-display);
     flex-direction: column;
     gap: 1rem;
     margin: 1rem 0;
+    opacity: var(--form-opacity);
 }
 
 .form-input-entry {
@@ -111,4 +116,22 @@
 
 #submit:active {
     opacity: 0.7;
+}
+
+.contact-form-status-entry {
+    --contact-form-display: flex;
+}
+
+.contact-form-status-processing {
+    --contact-form-display: flex;
+    cursor: progress;
+    --form-opacity: 0.5;
+}
+
+.contact-form-status-complete {
+    --contact-form-display: none;
+}
+
+.contact-form-status-error {
+    --contact-form-display: flex;
 }

@@ -93,7 +93,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
-    /* font-family: "Space Grotesk", sans-serif; */
     font-family: "Inter", sans-serif;
     font-weight: 300;
     align-items: center;
@@ -622,7 +621,7 @@ footer {
     color: #ffffff;
     background-color: #ffffff1a;
     border: 1px solid #ffffff;
-    /* font-family: sans-serif; */
+    font-family: "Sometype Mono", monospace;
     font-size: 0.9rem;
     font-weight: 300;
     padding: 0.3rem 1rem;
