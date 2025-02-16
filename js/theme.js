@@ -1,21 +1,45 @@
 let theme = localStorage.getItem("theme");
-let themeToggle;
+let navThemeToggle;
+let footerThemeToggle;
+let sidebarLoaded;
+let footerLoaded;
+
+document.addEventListener("sidebarLoaded", function () {
+    sidebarLoaded = true;
+    checkBothLoaded();
+});
+
+document.addEventListener("footerLoaded", function () {
+    footerLoaded = true;
+    checkBothLoaded();
+});
 
 // Listen for sidebarLoaded event to ensure the sidebar is loaded before attempting to access the theme toggle button
-document.addEventListener("sidebarLoaded", function () {
-    themeToggle = document.querySelector(".nav-button-theme");
-
-    updateThemeLabel();
-
-    themeToggle.addEventListener("click", () => {
-        theme = localStorage.getItem("theme");
-        if (theme === "dark") {
-            enableLightTheme();
-        } else if (theme === "light") {
-            enableDarkTheme();
-        }
-    });
-});
+function checkBothLoaded() {
+    if (sidebarLoaded && footerLoaded) {
+        navThemeToggle = document.querySelector(".nav-button-theme");
+        footerThemeToggle = document.querySelector(".footer-theme-toggle");
+    
+        updateThemeLabel();
+    
+        navThemeToggle.addEventListener("click", () => {
+            theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                enableLightTheme();
+            } else if (theme === "light") {
+                enableDarkTheme();
+            }
+        });
+        footerThemeToggle.addEventListener("click", () => {
+            theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                enableLightTheme();
+            } else if (theme === "light") {
+                enableDarkTheme();
+            }
+        });
+    }
+}
 
 // Enable dark theme function
 const enableDarkTheme = () => {

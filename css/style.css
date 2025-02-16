@@ -27,6 +27,9 @@
 }
 
 .dark-theme {
+    --sun-icon-display: flex;
+    --moon-icon-display: none;
+
     --theme-color: var(--yellow-color);
     --logo-j-color: var(--yellow-color);
     --logo-h-color: var(--white-color);
@@ -62,6 +65,9 @@
 }
 
 .light-theme {
+    --sun-icon-display: none;
+    --moon-icon-display: flex;
+
     --theme-color: var(--yellow-color);
     --logo-j-color: var(--black-color);
     --logo-h-color: var(--black-color);
@@ -322,6 +328,14 @@ nav {
     margin-left: 0.375rem;
 }
 
+.nav-icon-theme-sun {
+    display: var(--sun-icon-display);
+}
+
+.nav-icon-theme-moon {
+    display: var(--moon-icon-display);
+}
+
 
 
 
@@ -399,6 +413,81 @@ footer {
 
 .logo-h {
     fill: var(--logo-h-color);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-theme-toggle {
+    border: none;
+    background: var(--theme-color);
+    padding: 0.1rem 0.5rem;
+    border-radius: 2.5rem;
+    font-weight: 700;
+    color: var(--black-color);
+    transition: scale 200ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-theme-toggle::before {
+    position: absolute;
+    display: flex;
+    content: "";
+    justify-content: center;
+    align-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 0.3rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%);
+    transition: transform 200ms ease;
+}
+
+.footer-theme-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    z-index: 2;;
+    fill: rgba(0, 0, 0, 0.3);
+    transition: fill 300ms ease, rotate 200ms ease, scale 300ms ease;
+}
+
+.footer-theme-toggle:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.footer-theme-toggle:active {
+    background-color: rgba(255, 201, 25, 0.8);
+}
+
+.dark-theme {
+    .footer-theme-toggle::before {
+        transform: translateX(50%) rotate(180deg);
+    }
+    .footer-theme-icon-moon {
+        fill: var(--black-color);
+        stroke: black;
+        stroke-width: 0.03rem;
+        scale: 1.2;
+        rotate: 360deg;
+    }
+}
+
+.light-theme {
+    .footer-theme-icon-sun {
+        fill: var(--black-color);
+        stroke: black;
+        stroke-width: 0.03rem;
+        scale: 1.2;
+        rotate: -360deg;
+    }
 }
 
 @media (max-width: 42rem) {

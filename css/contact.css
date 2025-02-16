@@ -117,8 +117,8 @@ main {
 }
 
 #submit:hover, #submit:focus {
-    scale: 1.05;
     cursor: pointer;
+    scale: 1.05;
 }
 
 #submit:active {
