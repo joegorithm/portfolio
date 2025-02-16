@@ -175,11 +175,12 @@ a {
 
 .decorative-sinusoidal-wave {
     display: none;
-    position: fixed;
+    position: sticky;
     top: -5vw;
-    left: 0;
     width: 100vw;
     filter: drop-shadow(0 0 0.5rem var(--nav-shadow-color));
+    margin: -10vw 0 0 0;
+    z-index: 100;
 }
 
 
