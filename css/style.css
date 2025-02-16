@@ -171,6 +171,19 @@ a {
     border: 1px solid var(--element-border-color);
 }
 
+
+
+.decorative-sinusoidal-wave {
+    display: none;
+    position: fixed;
+    top: -5vw;
+    left: 0;
+    width: 100vw;
+    filter: drop-shadow(0 0 0.5rem var(--nav-shadow-color));
+}
+
+
+
 .tooltip-element {
     position: relative;
     /* display: inline-block; */
@@ -856,6 +869,9 @@ footer {
     body footer {
         padding-bottom: 5.5rem;
         width: min(73rem, calc(100vw - 3.5rem));
+    }
+    .decorative-sinusoidal-wave {
+        display: block;
     }
     nav {
         margin: 0 0.75rem;
