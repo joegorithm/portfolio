@@ -1,6 +1,7 @@
 /* Selected Nav Button */
 .nav-button-contact {
     background-color: var(--selected-nav-button-color);
+    box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color);
 }
 
 .nav-button-contact:hover {
@@ -17,7 +18,7 @@
 }
 
 .nav-label-contact {
-    color: rgb(255, 200, 25);
+    color: var(--selected-nav-icon-color);
 }
 
 

@@ -40,6 +40,8 @@
     --nav-button-hover-color: rgba(255, 255, 255, 0.06);
     --selected-nav-button-color: #ffc8191a;
     --selected-nav-button-hover-color: #ffc81926;
+    --selected-nav-button-border-color: var(--theme-color);
+    --selected-nav-icon-color: var(--theme-color);
     --nav-icon-color: var(--white-color);
     --element-background-color: rgba(166, 179, 225, 0.12); /* Previously #16171c */
     --element-background-hover-color: rgba(166, 179, 225, 0.15); /* Previously #1c1d25 */
@@ -72,18 +74,20 @@
     --logo-j-color: var(--black-color);
     --logo-h-color: var(--black-color);
 
-    --background-color: rgb(220, 220, 235); /* #dce0f2cc */
+    --background-color: rgb(255, 255, 255); /* #dce0f2cc */
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
-    --nav-button-hover-color: rgba(255, 255, 255, 0.4);
-    --selected-nav-button-color: rgba(255, 255, 255, 0.5);
-    --selected-nav-button-hover-color: rgba(255, 255, 255, 0.5);
+    --nav-button-hover-color: rgba(187, 187, 187, 0.2);
+    --selected-nav-button-color: rgba(255, 201, 25, 0.3);
+    --selected-nav-button-hover-color: rgba(255, 201, 25, 0.4);
+    --selected-nav-button-border-color: var(--theme-color);
+    --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--black-color);
-    --element-background-color: rgba(255, 255, 255, 0.3);
-    --element-background-hover-color: rgba(255, 255, 255, 0.5);
-    --mobile-nav-background-color: rgb(240, 240, 251);
-    --element-border-color: rgba(255, 255, 255, 0.5);
-    --nav-shadow-color: #00000037;
+    --element-background-color: rgba(222, 227, 237, 0.4);
+    --element-background-hover-color: rgba(206, 212, 225, 0.4);
+    --mobile-nav-background-color: rgb(255, 255, 255);
+    --element-border-color: rgba(181, 191, 200, 0.5);
+    --nav-shadow-color: rgba(0, 0, 0, 0.1);
     --nav-label-shadow-color: rgba(255, 255, 255, 0.5);
 
     --tooltip-shadow-color: rgba(0, 0, 0, 0.3);
@@ -175,6 +179,7 @@ a {
     background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 
@@ -258,6 +263,7 @@ nav {
     gap: 0.5rem;
     /* overflow: hidden; */
     text-wrap: nowrap;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .nav-label {
@@ -312,7 +318,7 @@ nav {
 }
 
 .nav-icon-solid {
-    fill: var(--yellow-color);
+    fill: var(--selected-nav-icon-color);
     display: none;
     /* width: 2.5rem; */
     /* height: 2.5rem; */
@@ -375,6 +381,7 @@ footer {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .footer-information {
