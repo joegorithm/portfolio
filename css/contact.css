@@ -27,22 +27,23 @@ main {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+    margin: 2rem 0;
 }
 
 
 
 /* Contact Form */
-/* .contact-form-section {
+.contact-form-section {
     border: 1px solid var(--element-border-color);
     border-radius: 2rem;
-    padding: 2rem;
-} */
+    padding: 1rem;
+}
 
 .contact-form {
     display: var(--contact-form-display);
     flex-direction: column;
     gap: 1.2rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
     opacity: var(--form-opacity);
 }
 
@@ -149,7 +150,6 @@ main {
 /* More ways to connect section */
 .more-ways-to-connect-section {
     margin: 1rem 0;
-    opacity: 0.5;
 }
 
 .more-ways-to-connect-list {
@@ -171,12 +171,12 @@ main {
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 1rem
+    gap: 1rem;
+    transition: background-color 200ms ease;
 }
 
 .more-ways-to-connect-list div:hover {
     background-color: var(--element-background-hover-color);
-    cursor: not-allowed;
 }
 
 .more-ways-to-connect-icon {
