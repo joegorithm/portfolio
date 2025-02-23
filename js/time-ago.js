@@ -85,7 +85,6 @@ document.querySelectorAll(".time-ago-status").forEach((element) => {
         timeAgoDate.textContent = `Invalid date`;
     }
 
-    console.log(date);
     const tooltipMonthOptions = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let tooltipMonth = tooltipMonthOptions[date.getMonth()];
     let tooltipDate = date.getDate();

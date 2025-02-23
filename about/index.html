@@ -14,375 +14,375 @@
     <script src="/js/glow.js" defer></script>
 </head>
 <body>
-    <!-- Sinusoidal wave SVG -->
-    <svg class="decorative-sinusoidal-wave" width="100vw" viewBox="0 0 1300 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0 100 
-                 Q 50 150, 100 100 
-                 T 200 100 
-                 T 300 100 
-                 T 400 100 
-                 T 500 100 
-                 T 600 100 
-                 T 700 100
-                 T 800 100 
-                 T 900 100
-                 T 1000 100
-                 T 1100 100
-                 T 1200 100
-                 T 1300 100
-                 L 1300 0 L 0 0 Z" 
-              fill="var(--theme-color)"/>
-    </svg>
-    <div class="all-content">
-        <header>
-            <h1 class="page-title">About</h1>
-            <!-- <h2>Other ways to connect and support me</h2> -->
-        </header>
-        <main>
-            <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptates optio iure quo placeat dicta esse corporis. Rem excepturi ut maxime dicta atque, accusantium reprehenderit qui dolores molestiae architecto illum.</p>
-            </section>
-            <section class="certifications-list">
-                <h2>Certifications</h2>
-
-                <!-- Certification Tile: Code Foundations -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/5b55e668646caa552f8e4d1d" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-codecademy">
-                            <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
-                                <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
+    <div class="page-container">
+        <div class="all-content">
+            <main>
+                <section class="profile-section">
+                    <img class="profile-image" src="/media/jonathan-hill.png" alt="Portrait of Jonathan Hill">
+                    <div class="profile-text">
+                        <div class="profile-bio-intro">
+                            <svg class="profile-bio-intro-wave-icon" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17,5c-.429,0-.826-.279-.957-.711-.373-1.234-1.111-1.974-2.323-2.329-.53-.155-.834-.711-.679-1.241,.156-.53,.713-.833,1.241-.679,1.843,.54,3.114,1.809,3.677,3.671,.16,.529-.14,1.087-.668,1.247-.096,.029-.194,.043-.29,.043ZM4.96,22.281c.155-.53-.149-1.085-.679-1.241-1.212-.355-1.951-1.095-2.323-2.329-.16-.529-.718-.825-1.247-.668-.529,.16-.828,.718-.668,1.247,.562,1.862,1.834,3.131,3.677,3.671,.094,.027,.188,.041,.281,.041,.433,0,.832-.283,.959-.72ZM22.957,7c0-1.105-.895-2-2-2s-2,.895-2,2v2.853L10.518,1.439c-.586-.586-1.535-.586-2.121,0-.586,.585-.586,1.536,0,2.121l5.569,5.552c.242,.243,.242,.637,0,.879s-.638,.243-.881,0c-.01-.01-7.566-7.552-7.566-7.552-.586-.586-1.535-.586-2.121,0-.586,.585-.586,1.536,0,2.121l7.572,7.549c.242,.243,.242,.637,0,.879-.243,.243-.638,.243-.881,0-.005-.005-6.569-6.55-6.569-6.55-.586-.586-1.535-.586-2.121,0-.586,.585-.586,1.536,0,2.121,0,0,6.571,6.542,6.574,6.545,.243,.243,.243,.638,0,.881s-.636,.243-.879,0l-3.573-3.548c-.585-.586-1.535-.586-2.121,0s-.586,1.535,0,2.121l6.929,6.904c1.69,1.69,3.911,2.535,6.131,2.535s4.441-.845,6.131-2.535c1.528-1.527,2.369-3.559,2.369-5.719V7Z"/>
                             </svg>
+                            <h1>Hi, I'm <span class="profile-bio-intro-jonathan">Jonathan</span>.</h1>
                         </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/5b55e668646caa552f8e4d1d" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Code Foundations</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                        <p class="profile-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos omnis, ad impedit ducimus optio eos consectetur sit? Earum libero nam, quos perspiciatis facilis adipisci repudiandae repellat soluta totam animi quia? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste fuga rerum amet odio culpa. Molestiae aspernatur recusandae, soluta sunt doloribus quidem natus deserunt laudantium magni velit, reprehenderit quisquam aperiam dolores! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, perferendis fugit!</p>
+                            <a href="/contact">
+                                <button class="button">
+                                    Say Hello
+                                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                        <path d="M512 240c0 114.9-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6C73.6 471.1 44.7 480 16 480c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c0 0 0 0 0 0s0 0 0 0s0 0 0 0c0 0 0 0 0 0l.3-.3c.3-.3 .7-.7 1.3-1.4c1.1-1.2 2.8-3.1 4.9-5.7c4.1-5 9.6-12.4 15.2-21.6c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208z"/>
                                     </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
+                                </button>
                             </a>
-                        </div>
-                        <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-small-codecademy">
-                                <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                    </div>
+                </section>
+                <section>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptates optio iure quo placeat dicta esse corporis. Rem excepturi ut maxime dicta atque, accusantium reprehenderit qui dolores molestiae architecto illum.</p>
+                </section>
+                <section class="certifications-list">
+                    <h2>Certifications</h2>
+    
+                    <!-- Certification Tile: Code Foundations -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/5b55e668646caa552f8e4d1d" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-codecademy">
+                                <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
                                     <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Codecademy</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2025-02-09"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/5b55e668646caa552f8e4d1d" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Code Foundations</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-small-codecademy">
+                                    <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                                        <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Codecademy</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2025-02-09"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Introduction to GitHub -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/VDXFUCBM" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-microsoft">
-                            <svg width="6rem" height="6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
-                                <path fill="#f35325" d="M0 0h10v10H0z"/>
-                                <path fill="#81bc06" d="M11 0h10v10H11z"/>
-                                <path fill="#05a6f0" d="M0 11h10v10H0z"/>
-                                <path fill="#ffba08" d="M11 11h10v10H11z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/VDXFUCBM" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Introduction to GitHub</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://learn.microsoft.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-microsoft">
-                                <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
+    
+                    <!-- Certification Tile: Introduction to GitHub -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/VDXFUCBM" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-microsoft">
+                                <svg width="6rem" height="6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
                                     <path fill="#f35325" d="M0 0h10v10H0z"/>
                                     <path fill="#81bc06" d="M11 0h10v10H11z"/>
                                     <path fill="#05a6f0" d="M0 11h10v10H0z"/>
                                     <path fill="#ffba08" d="M11 11h10v10H11z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Microsoft Learn</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2025-02-08"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/VDXFUCBM" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Introduction to GitHub</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://learn.microsoft.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-microsoft">
+                                    <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
+                                        <path fill="#f35325" d="M0 0h10v10H0z"/>
+                                        <path fill="#81bc06" d="M11 0h10v10H11z"/>
+                                        <path fill="#05a6f0" d="M0 11h10v10H0z"/>
+                                        <path fill="#ffba08" d="M11 11h10v10H11z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Microsoft Learn</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2025-02-08"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Introduction to Git -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/FV9CEUYX" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-microsoft">
-                            <svg width="6rem" height="6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
-                                <path fill="#f35325" d="M0 0h10v10H0z"/>
-                                <path fill="#81bc06" d="M11 0h10v10H11z"/>
-                                <path fill="#05a6f0" d="M0 11h10v10H0z"/>
-                                <path fill="#ffba08" d="M11 11h10v10H11z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/FV9CEUYX" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Introduction to Git</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://learn.microsoft.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-microsoft">
-                                <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
+    
+                    <!-- Certification Tile: Introduction to Git -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/FV9CEUYX" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-microsoft">
+                                <svg width="6rem" height="6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
                                     <path fill="#f35325" d="M0 0h10v10H0z"/>
                                     <path fill="#81bc06" d="M11 0h10v10H11z"/>
                                     <path fill="#05a6f0" d="M0 11h10v10H0z"/>
                                     <path fill="#ffba08" d="M11 11h10v10H11z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Microsoft Learn</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2025-02-08"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://learn.microsoft.com/api/achievements/share/en-us/Jonathan-Hill/FV9CEUYX" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Introduction to Git</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://learn.microsoft.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-microsoft">
+                                    <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" alt="Microsoft logo">
+                                        <path fill="#f35325" d="M0 0h10v10H0z"/>
+                                        <path fill="#81bc06" d="M11 0h10v10H11z"/>
+                                        <path fill="#05a6f0" d="M0 11h10v10H0z"/>
+                                        <path fill="#ffba08" d="M11 11h10v10H11z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Microsoft Learn</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2025-02-08"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Learn How to Code -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/11a686a7fd57b8c214f7f92749388d42" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-codecademy">
-                            <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
-                                <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/11a686a7fd57b8c214f7f92749388d42" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Learn How to Code</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-small-codecademy">
-                                <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+    
+                    <!-- Certification Tile: Learn How to Code -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/11a686a7fd57b8c214f7f92749388d42" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-codecademy">
+                                <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
                                     <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Codecademy</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2025-01-25"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/11a686a7fd57b8c214f7f92749388d42" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Learn How to Code</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-small-codecademy">
+                                    <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                                        <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Codecademy</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2025-01-25"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Learn Git and GitHub -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/a8ab218d5950c29861635cc0bf12fd13" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-codecademy">
-                            <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
-                                <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/a8ab218d5950c29861635cc0bf12fd13" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Learn Git and GitHub</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-small-codecademy">
-                                <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+    
+                    <!-- Certification Tile: Learn Git and GitHub -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/a8ab218d5950c29861635cc0bf12fd13" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-codecademy">
+                                <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
                                     <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Codecademy</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2025-01-04"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/a8ab218d5950c29861635cc0bf12fd13" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Learn Git and GitHub</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-small-codecademy">
+                                    <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                                        <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Codecademy</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2025-01-04"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Learn The Command Line -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/c87ba0541f8be78bc2f4ba1128233f6f" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-codecademy">
-                            <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
-                                <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/c87ba0541f8be78bc2f4ba1128233f6f" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Learn The Command Line</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-small-codecademy">
-                                <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+    
+                    <!-- Certification Tile: Learn The Command Line -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/c87ba0541f8be78bc2f4ba1128233f6f" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-codecademy">
+                                <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
                                     <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Codecademy</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2024-12-30"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/c87ba0541f8be78bc2f4ba1128233f6f" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Learn The Command Line</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-small-codecademy">
+                                    <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                                        <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
+                                    </svg>
+                                </div>
+                                <span class="certification-issuer-text">Codecademy</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2024-12-30"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Certification Tile: Learn HTML -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo certification-logo-codecademy">
-                            <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
-                                <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Learn HTML</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                    </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small certification-logo-small-codecademy">
-                                <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+    
+                    <!-- Certification Tile: Learn HTML -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo certification-logo-codecademy">
+                                <svg role="img" width="4rem" height="4rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
                                     <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                 </svg>
                             </div>
-                            <span class="certification-issuer-text">Codecademy</span>
                         </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date" data-earned="2024-12-26"></span>
-                                <span class="tooltip"></span>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="https://www.codecademy.com/profiles/Jonathan-Hill/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Learn HTML</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certification Tile: Title -->
-                <div class="certification-tile ui-element" data-hover-effect>
-                    <div class="glow"></div>
-                    <a href="#" target="_blank" class="certification-logo-link">
-                        <div class="certification-logo">
-                            <img src="/image/image-icon.png" width="90rem" height="90rem">
-                        </div>
-                    </a>
-                    <div class="certification-information">
-                        <div class="certification-header">
-                            <a href="#" target="_blank" class="certification-link">
-                                <h2 class="certification-title">Title</h2>
-                                <div class="tooltip-element">
-                                    <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                            <a href="https://www.codecademy.com" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small certification-logo-small-codecademy">
+                                    <svg role="img" width="1rem" height="1rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" alt="Codecademy logo">
+                                        <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.515c0 .094.058.17.172.17h5.594c.096 0 .172-.044.172-.164v-1.515c0-.105-.057-.166-.173-.166v-.014zM16.463 2.463c.016.034.03.067.047.12v18.79c0 .06-.02.096-.037.114a.168.168 0 01-.135.06H.153c-.038 0-.075 0-.097-.02A.181.181 0 010 21.393V2.564c0-.076.04-.134.096-.15h16.242c.04 0 .096.017.115.034v.016zM1.818 19.573c0 .072.038.135.096.152h12.643c.058-.019.096-.076.096-.154V4.402c0-.073-.039-.134-.098-.15H1.915c-.056.02-.096.073-.096.15l-.003 15.17zm5.174-8.375c.65 0 1.014.177 1.396.62.058.074.153.093.23.034l1.034-.92c.075-.044.058-.164.02-.224-.635-.764-1.554-1.244-2.74-1.244-1.59 0-2.79.795-3.255 2.206-.165.495-.24 1.126-.24 1.98 0 .854.075 1.483.255 1.98.465 1.425 1.665 2.204 3.255 2.204 1.2 0 2.115-.48 2.745-1.216.045-.074.06-.165-.015-.226l-1.037-.915c-.073-.047-.163-.047-.224.027-.39.45-.795.69-1.454.69-.706 0-1.245-.345-1.47-1.035-.136-.39-.166-.87-.166-1.483 0-.615.045-1.068.18-1.47.24-.66.766-1.008 1.486-1.008z"/>
                                     </svg>
-                                    <span class="tooltip tooltip-button">View Certificate</span>
                                 </div>
+                                <span class="certification-issuer-text">Codecademy</span>
                             </a>
-                        </div>
-                        <a href="#" target="_blank" class="certification-issuer">
-                            <div class="certification-logo-small">
-                                <img src="/image/image-icon.png" width="22rem" height="22rem" alt="Project logo">
-                            </div>
-                            <span class="certification-issuer-text">Issuer</span>
-                        </a>
-                        <div class="certification-time-ago">
-                            <div class="time-ago-status tooltip-element">
-                                <span class="time-ago-icon"></span>
-                                <span class="time-ago-date"></span>
-                                <span class="tooltip"></span>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date" data-earned="2024-12-26"></span>
+                                    <span class="tooltip"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <footer></footer>
+    
+                    <!-- Certification Tile: Title -->
+                    <div class="certification-tile ui-element" data-hover-effect>
+                        <div class="glow"></div>
+                        <a href="#" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo">
+                                <img src="/image/image-icon.png" width="90rem" height="90rem">
+                            </div>
+                        </a>
+                        <div class="certification-information">
+                            <div class="certification-header">
+                                <a href="#" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">Title</h2>
+                                    <div class="tooltip-element">
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+                                        </svg>
+                                        <span class="tooltip tooltip-button">View Certificate</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="#" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small">
+                                    <img src="/image/image-icon.png" width="22rem" height="22rem" alt="Project logo">
+                                </div>
+                                <span class="certification-issuer-text">Issuer</span>
+                            </a>
+                            <div class="certification-time-ago">
+                                <div class="time-ago-status tooltip-element">
+                                    <span class="time-ago-icon"></span>
+                                    <span class="time-ago-date"></span>
+                                    <span class="tooltip"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer></footer>
+        </div>
     </div>
     <nav data-hover-effect></nav>
 </body>

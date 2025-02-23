@@ -24,6 +24,8 @@
 
     /* Project theme colors */
     --pickle-theme-color: #4a9c1d;
+
+    --hover: true;
 }
 
 .dark-theme {
@@ -115,7 +117,8 @@ html {
 
 /* Setup */
 body {
-    margin: 1rem 1rem 0rem 7rem;
+    margin: 0rem 0rem 0rem 0rem/* calc(6rem + 2px) */;
+    /* padding: 2rem; */
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
@@ -124,9 +127,40 @@ body {
     align-items: center;
     caret-color: var(--theme-color); /* test */
 
+    font-size: 1.25rem;
+    line-height: 1.5;
+
     /* background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-position: 0 0, 50px 50px;
     background-size: 25px 25px; */
+}
+
+.page-container {
+    /* margin: 1rem calc(0.5rem + 2vw) 0 calc(6.5rem + 2vw + 2px); */
+    margin: 2rem calc(2rem) 0 calc(8rem + 2px);
+    width: calc(100vw - 10rem - 2px);
+    justify-items: center;
+}
+
+@media (max-width: 60rem) {
+    .page-container {
+        margin: 1rem 1rem 0 calc(7rem + 2px);
+        width: calc(100vw - 8rem - 2px);
+    }
+}
+
+@media (max-width: 30rem) {
+    .page-container {
+        margin: 1rem 0.5rem 0 0.5rem;
+        width: calc(100vw - 1rem);
+    }
+}
+
+.all-content {
+    max-width: 75rem;
+    width: 100%;
+    /* margin: 1rem 2rem 0rem 2rem; */
+    /* background-color: blue; */
 }
 
 p, h1, h2, h3 {
@@ -152,6 +186,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 h1, h2, h3, h4, h5, h6 {
     /* font-family: "Comfortaa", sans-serif; */
     font-weight: 700;
+    line-height: 1.2;
 }
 
 h1 {
@@ -162,16 +197,46 @@ a {
     text-decoration: none;
 }
 
-.all-content {
-    max-width: 75rem;
+.button {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 2.5rem;
+    background-color: var(--theme-color);
+    color: black;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    transition: 200ms ease;
+}
+
+.button svg {
+    fill: black;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.button:hover, .button:focus {
+    cursor: pointer;
+    /* scale: 1.05; */
+    box-shadow: 0 0 0 0.5rem rgba(255, 200, 25, 0.4);
+}
+
+.button:active {
+    opacity: 0.7;
 }
 
 
 
 .temporary-landing-logo {
-    margin: 4rem 0;
-    padding-top: 4vw;
-    width: 76vw;
+    margin: 10rem 0 4rem 0;
+    padding: 4vw;
+    width: calc(100% - 8vw);
+    background-color: #000000;
+    border-radius: 4vw;
 }
 
 
@@ -204,7 +269,9 @@ a {
 }
 
 .tooltip-element .tooltip {
-    visibility: hidden;
+    display: none;
+    /* opacity: 0; */
+    /* transition: opacity 200ms ease; */
     position: absolute;
     bottom: 120%;
     pointer-events: none; /* Prevent interaction with the tooltip itself */
@@ -229,7 +296,7 @@ a {
 .tooltip-element .tooltip::after {
     content: "";
     position: absolute;
-    bottom: -54%;
+    bottom: -47%;
     left: 50%;
     margin-left: -8px;
     border-width: 8px;
@@ -239,7 +306,8 @@ a {
 }
 
 .tooltip-element:hover .tooltip {
-    visibility: visible;
+    display: block;
+    /* opacity: 1; */
 }
 
 
@@ -253,17 +321,24 @@ nav {
     background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
-    margin: 0 0 0 -6rem;
+    margin: 2rem 0 0 1rem/* calc(-7rem - 2px) */;
     border-radius: 2.5rem;
     padding: 0.5rem;
-    height: calc(100% - 3rem);
+    height: calc(100% - 5rem);
     width: 4rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    /* overflow: hidden; */
+    overflow: hidden;
     text-wrap: nowrap;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 60rem) {
+    nav {
+        margin: 1rem 0 0 1rem;
+        height: calc(100% - 3rem);
+    }
 }
 
 .nav-label {
@@ -275,7 +350,8 @@ nav {
     font-weight: 500;
     text-shadow: 0 0 0.5rem var(--nav-label-shadow-color);
     margin: 1rem;
-    display: none;
+    /* display: none; */
+    /* opacity: 0; */
 }
 
 @media (min-width: 31rem) and (hover: hover) and (pointer: fine) {
@@ -284,10 +360,13 @@ nav {
     }
     nav:hover {
         width: 15rem;
+        /* padding: 0.75rem; */
+        /* margin: 0.75rem 0 0 0.75rem; */
+        /* border-radius: 2.75rem; */
     }
 
     nav:hover .nav-label {
-        display: block;
+        /* display: block; */
         opacity: 1;
     }
 }
@@ -305,7 +384,7 @@ nav {
     align-items: center;
 }
 
-.nav-button:hover {
+.nav-button:hover, .nav-button:focus {
     background-color: var(--nav-button-hover-color);
     cursor: pointer;
 }
@@ -356,7 +435,6 @@ nav {
 
 section {
     color: var(--primary-text-color);
-    font-size: 1.2rem;
 }
 
 p {
@@ -377,7 +455,7 @@ footer {
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
     border-bottom: none;
-    width: min(73rem, calc(100vw - 10rem));
+    /* width: 100%; */
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -401,6 +479,7 @@ footer {
 .footer-website-name-text {
     color: var(--primary-text-color);
     font-size: 4rem;
+    line-height: 1;
     font-weight: 700;
     margin-top: -0.5rem;
 }
@@ -426,6 +505,12 @@ footer {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+#copyright {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    font-size: 1rem;
 }
 
 .footer-theme-toggle {
@@ -587,11 +672,6 @@ footer {
     height: 1.75rem;
 }
 
-#copyright {
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-}
-
 /* Repsonsive footer for smaller screens */
 @media (max-width: 32rem) {
     .footer-website-name-text {
@@ -636,9 +716,10 @@ footer {
 
 
 .project-grid {
+    --grid-min-column-width: 20rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
     padding: 1rem 0;
 }
 
@@ -1002,9 +1083,10 @@ footer {
 @media (max-width: 30rem) {
     body {
         margin: 0.5rem;
+        margin-bottom: 0;
     }
     body footer {
-        padding-bottom: 5.5rem;
+        padding-bottom: 7rem;
         width: min(73rem, calc(100vw - 3rem));
     }
     .decorative-sinusoidal-wave {
@@ -1070,6 +1152,9 @@ footer {
 }
 
 @media (max-width: 30rem) or (hover: none) {
+    :root {
+        --hover: false;
+    }
     .nav-button {
         flex-direction: column;
         justify-content: center;
@@ -1092,7 +1177,7 @@ footer {
         margin: 0;
     }
     .nav-label {
-        display: block;
+        display: block !important;
         color: var(--nav-icon-color);
         font-weight: 500;
         font-size: 0.75rem;
@@ -1112,8 +1197,11 @@ footer {
 }
 
 @media (hover: none) {
+    :root {
+        --hover: false;
+    }
     .nav-label {
-        display: block;
+        display: block !important;
         color: var(--nav-icon-color);
         font-weight: 500;
         font-size: 0.75rem;
