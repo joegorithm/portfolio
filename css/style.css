@@ -321,7 +321,7 @@ nav {
     background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
-    margin: 2rem 0 0 1rem/* calc(-7rem - 2px) */;
+    margin: 2rem 0 0 1rem;
     border-radius: 2.5rem;
     padding: 0.5rem;
     height: calc(100% - 5rem);
@@ -332,6 +332,7 @@ nav {
     overflow: hidden;
     text-wrap: nowrap;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    min-width: 4rem;
 }
 
 @media (max-width: 60rem) {
@@ -350,8 +351,6 @@ nav {
     font-weight: 500;
     text-shadow: 0 0 0.5rem var(--nav-label-shadow-color);
     margin: 1rem;
-    /* display: none; */
-    /* opacity: 0; */
 }
 
 @media (min-width: 31rem) and (hover: hover) and (pointer: fine) {
@@ -360,13 +359,9 @@ nav {
     }
     nav:hover {
         width: 15rem;
-        /* padding: 0.75rem; */
-        /* margin: 0.75rem 0 0 0.75rem; */
-        /* border-radius: 2.75rem; */
     }
 
     nav:hover .nav-label {
-        /* display: block; */
         opacity: 1;
     }
 }
