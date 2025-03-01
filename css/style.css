@@ -879,6 +879,11 @@ footer {
     border-radius: 1rem;
 }
 
+.tool-tag:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 .tool-tag-html {
     color: var(--html-tag-color);
     background-color: var(--html-tag-background-color);
