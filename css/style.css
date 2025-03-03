@@ -5,7 +5,111 @@
     outline: 1px dashed rgb(0, 255, 0);
 } */
 
+.tool-tile-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
+.tool-tile {
+    padding: 1rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 5rem;
+    height: 5rem;
+    font-family: "Sometype Mono", monospace;
+}
+
+.tool-tile-html {
+    background-color: rgba(227, 79, 38, 0.2);
+    border: 1px solid #E34F26;
+    color: #E34F26;
+    fill: #E34F26;
+}
+
+.tool-tile-css {
+    background-color: rgba(171, 58, 223, 0.2);
+    border: 1px solid #ab3adf; /* Official: #663399 */
+    color: #ab3adf; /* Official: #663399 */
+    fill: #ab3adf; /* Official: #663399 */
+}
+
+.tool-tile-javascript {
+    background-color: rgba(247, 222, 30, 0.2);
+    border: 1px solid #F7DF1E;
+    color: #F7DF1E;
+    fill: #F7DF1E;
+}
+
+.tool-tile-github {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+.tool-tile-git {
+    background-color: rgba(240, 78, 50, 0.2);
+    border: 1px solid #F05032;
+    color: #F05032;
+    fill: #F05032;
+}
+
+.tool-tile-bash {
+    /* background-color: rgba(77, 170, 37, 0.2);
+    border: 1px solid #4EAA25;
+    color: #4EAA25;
+    fill: #4EAA25; */
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+.tool-tile-cplusplus {
+    background-color: rgba(0, 131, 231, 0.2);
+    border: 1px solid #0083e7; /* Official: #00599C */
+    color: #0083e7; /* Official: #00599C */
+    fill: #0083e7; /* Official: #00599C */
+}
+
+.tool-tile-python {
+    background-color: rgba(0, 131, 231, 0.2);
+    border: 1px solid #0083e7; /* Official: #3776AB */
+    color: #0083e7; /* Official: #3776AB */
+    fill: #0083e7; /* Official: #3776AB */
+}
+
+/* .tool-tile-icon {
+    width: 4rem;
+    height: auto;
+} */
+
+/* .tool-tile-icon-html {
+    fill: #E34F26;
+}
+
+.tool-tile-icon-css {
+    fill: #ab3adf;
+}
+
+.tool-tile-icon-javascript {
+    fill: #F7DF1E;
+}
+
+.tool-tile-icon-github {
+    fill: #ffffff;
+}
+
+.tool-tile-icon-git {
+    fill: #F05032;
+} */
 
 
 /* Variables */
