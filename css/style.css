@@ -52,17 +52,17 @@
 }
 
 .tool-tile-github {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
-    color: #ffffff;
-    fill: #ffffff;
+    background-color: var(--github-background-color);
+    border-color: var(--github-theme-color);
+    color: var(--github-theme-color);
+    fill: var(--github-theme-color);
 }
 
 .tool-tile-github-copilot {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
-    color: #ffffff;
-    fill: #ffffff;
+    background-color: var(--github-background-color);
+    border-color: var(--github-theme-color);
+    color: var(--github-theme-color);
+    fill: var(--github-theme-color);
     font-size: 0.7rem;
 }
 
@@ -74,14 +74,10 @@
 }
 
 .tool-tile-bash {
-    /* background-color: rgba(77, 170, 37, 0.2);
+    background-color: rgba(77, 170, 37, 0.2);
     border-color: #4EAA25;
     color: #4EAA25;
-    fill: #4EAA25; */
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
-    color: #ffffff;
-    fill: #ffffff;
+    fill: #4EAA25;
 }
 
 .tool-tile-cplusplus {
@@ -110,6 +106,13 @@
     border-color: #0098FF;
     color: #0098FF;
     fill: #0098FF;
+}
+
+.tool-tile-p5js {
+    background-color: rgba(237, 34, 91, 0.2);
+    border-color: #ED225D;
+    color: #ED225D;
+    fill: #ED225D;
 }
 
 /* .tool-tile-icon {
@@ -196,6 +199,9 @@
     --javascript-tag-background-color: rgba(247, 222, 30, 0.12);
     --processingjs-tag-color: #2378ff;
     --processingjs-tag-background-color: rgba(43, 97, 246, 0.2);
+
+    --github-theme-color: #ffffff;
+    --github-background-color: rgba(255, 255, 255, 0.15);
 }
 
 .light-theme {
@@ -236,6 +242,9 @@
     --javascript-tag-background-color: rgba(247, 204, 30, 0.4);
     --processingjs-tag-color: #2378ff;
     --processingjs-tag-background-color: rgba(43, 97, 246, 0.15);
+
+    --github-theme-color: #000000;
+    --github-background-color: rgba(0, 0, 0, 0.075);
 }
 
 
