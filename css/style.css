@@ -12,7 +12,7 @@
 }
 
 .tool-tile {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
@@ -21,69 +21,95 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    width: 5rem;
+    width: 6rem;
     height: 5rem;
     font-family: "Sometype Mono", monospace;
+    font-weight: 500;
+    line-height: 1.25;
+    border-width: 0.1rem;
+    border-style: solid;
 }
 
 .tool-tile-html {
     background-color: rgba(227, 79, 38, 0.2);
-    border: 1px solid #E34F26;
+    border-color: #E34F26;
     color: #E34F26;
     fill: #E34F26;
 }
 
 .tool-tile-css {
     background-color: rgba(171, 58, 223, 0.2);
-    border: 1px solid #ab3adf; /* Official: #663399 */
+    border-color: #ab3adf; /* Official: #663399 */
     color: #ab3adf; /* Official: #663399 */
     fill: #ab3adf; /* Official: #663399 */
 }
 
 .tool-tile-javascript {
     background-color: rgba(247, 222, 30, 0.2);
-    border: 1px solid #F7DF1E;
+    border-color: #F7DF1E;
     color: #F7DF1E;
     fill: #F7DF1E;
 }
 
 .tool-tile-github {
     background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid #ffffff;
+    border-color: #ffffff;
     color: #ffffff;
     fill: #ffffff;
 }
 
+.tool-tile-github-copilot {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    color: #ffffff;
+    fill: #ffffff;
+    font-size: 0.7rem;
+}
+
 .tool-tile-git {
     background-color: rgba(240, 78, 50, 0.2);
-    border: 1px solid #F05032;
+    border-color: #F05032;
     color: #F05032;
     fill: #F05032;
 }
 
 .tool-tile-bash {
     /* background-color: rgba(77, 170, 37, 0.2);
-    border: 1px solid #4EAA25;
+    border-color: #4EAA25;
     color: #4EAA25;
     fill: #4EAA25; */
     background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid #ffffff;
+    border-color: #ffffff;
     color: #ffffff;
     fill: #ffffff;
 }
 
 .tool-tile-cplusplus {
     background-color: rgba(0, 131, 231, 0.2);
-    border: 1px solid #0083e7; /* Official: #00599C */
+    border-color: #0083e7; /* Official: #00599C */
     color: #0083e7; /* Official: #00599C */
     fill: #0083e7; /* Official: #00599C */
 }
 
 .tool-tile-python {
     background-color: rgba(0, 131, 231, 0.2);
-    border: 1px solid #0083e7; /* Official: #3776AB */
+    border-color: #0083e7; /* Official: #3776AB */
     color: #0083e7; /* Official: #3776AB */
     fill: #0083e7; /* Official: #3776AB */
+}
+
+.tool-tile-arduino {
+    background-color: rgba(0, 136, 143, 0.25);
+    border-color: #00878F; /* Official: #00979D */
+    color: #00878F; /* Official: #00979D */
+    fill: #00878F; /* Official: #00979D */
+}
+
+.tool-tile-vs-code {
+    background-color: rgba(0, 153, 255, 0.2);
+    border-color: #0098FF;
+    color: #0098FF;
+    fill: #0098FF;
 }
 
 /* .tool-tile-icon {
@@ -189,8 +215,8 @@
     --selected-nav-button-border-color: var(--theme-color);
     --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--black-color);
-    --element-background-color: rgba(222, 227, 237, 0.4);
-    --element-background-hover-color: rgba(206, 212, 225, 0.4);
+    --element-background-color: rgba(255, 255, 255, 0.4);
+    --element-background-hover-color: rgba(223, 229, 241, 0.4);
     --mobile-nav-background-color: rgb(255, 255, 255);
     --element-border-color: rgba(181, 191, 200, 0.5);
     --nav-shadow-color: rgba(0, 0, 0, 0.1);
@@ -969,18 +995,24 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 1rem 1rem 1.5rem;
 }
 
 .tool-tag {
     color: #ffffff;
     background-color: #ffffff1a;
     border: 1px solid #ffffff;
+    fill: white;
+    border-width: 0.1rem;
+    border-style: solid;
     font-family: "Sometype Mono", monospace;
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0.3rem 1rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
+
+    display: flex;
+    gap: 0.5rem
 }
 
 .tool-tag:hover {
@@ -991,25 +1023,29 @@ footer {
 .tool-tag-html {
     color: var(--html-tag-color);
     background-color: var(--html-tag-background-color);
-    border: 1px solid var(--html-tag-color);
+    border-color: var(--html-tag-color);
+    fill: var(--html-tag-color);
 }
 
 .tool-tag-css {
     color: var(--css-tag-color);
     background-color: var(--css-tag-background-color);
-    border: 1px solid var(--css-tag-color);
+    border-color: var(--css-tag-color);
+    fill: var(--css-tag-color);
 }
 
 .tool-tag-javascript {
     color: var(--javascript-tag-color);
     background-color: var(--javascript-tag-background-color);
-    border: 1px solid var(--javascript-tag-color);
+    border-color: var(--javascript-tag-color);
+    fill: var(--javascript-tag-color);
 }
 
 .tool-tag-processingjs {
     color: var(--processingjs-tag-color);
     background-color: var(--processingjs-tag-background-color);
-    border: 1px solid var(--processingjs-tag-color);
+    border-color: var(--processingjs-tag-color);
+    fill: var(--processingjs-tag-color);
 }
 
 /* .project-theme-default {
