@@ -1,7 +1,7 @@
 /* Selected Nav Button */
 .nav-button-home {
     background-color: var(--selected-nav-button-color);
-    box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color);
+    /* box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color); */
 }
 
 .nav-button-home:hover {

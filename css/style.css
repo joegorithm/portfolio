@@ -210,8 +210,8 @@
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
     --nav-button-hover-color: rgba(187, 187, 187, 0.2);
-    --selected-nav-button-color: rgba(255, 201, 25, 0.3);
-    --selected-nav-button-hover-color: rgba(255, 201, 25, 0.4);
+    --selected-nav-button-color: var(--theme-color);
+    --selected-nav-button-hover-color: rgba(255, 201, 25, 0.8);
     --selected-nav-button-border-color: var(--theme-color);
     --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--black-color);
