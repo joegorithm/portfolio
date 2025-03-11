@@ -30,6 +30,11 @@
     border-style: solid;
 }
 
+.tool-tile span::selection {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* color: var(--primary-text-color); */
+}
+
 .tool-tile-html {
     background-color: rgba(227, 79, 38, 0.2);
     border-color: #E34F26;
@@ -256,8 +261,7 @@ html {
 
 /* Setup */
 body {
-    margin: 0rem 0rem 0rem 0rem/* calc(6rem + 2px) */;
-    /* padding: 2rem; */
+    margin: 0;
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
@@ -474,7 +478,7 @@ nav {
     min-width: 4rem;
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 60rem), (max-height: 40rem) {
     nav {
         margin: 1rem 0 0 1rem;
         height: calc(100% - 3rem);
@@ -1276,23 +1280,16 @@ footer {
 
 /* Responsive nav for landscape phones */
 @media (max-height: 29.5rem) and (min-width: 30.01rem) {
-    body {
-        margin-left: 6.5rem;
-    }
     nav {
-        margin: 0 0 0 -6rem;
+        margin: 0.5rem 0 0 0.5rem;
         padding: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
         justify-content: space-between;
+        height: calc(100% - 2rem);
     }
+    
     .nav-button-logo, 
     .nav-button-logo * {
         display: none;
-    }
-    .nav-button-home {
-        padding: 0;
     }
     .nav-button-theme,
     .nav-button-theme * {
@@ -1300,6 +1297,7 @@ footer {
     }
 }
 
+/* Responsive nav for portrait phones and any touch screen devices */
 @media (max-width: 30rem) or (hover: none) {
     :root {
         --hover: false;
