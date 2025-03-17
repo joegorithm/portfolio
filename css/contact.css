@@ -102,31 +102,6 @@ main {
     overflow: auto;
 }
 
-#submit {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    padding: 0.5rem 2rem;
-    border-radius: 2.5rem;
-    background-color: var(--theme-color);
-    color: black;
-    font-weight: 700;
-    font-size: 1.5rem;
-    font-family: "Inter", sans-serif;
-    transition: 200ms ease;
-}
-
-#submit:hover, #submit:focus {
-    cursor: pointer;
-    scale: 1.05;
-}
-
-#submit:active {
-    opacity: 0.7;
-}
-
 .contact-form-status-entry {
     --contact-form-display: flex;
 }
