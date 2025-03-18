@@ -678,7 +678,7 @@ footer {
     border-radius: 1rem;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    transform: translateX(-60%);
+    transform: translateX(-1rem);
     transition: transform 200ms ease;
 }
 
@@ -700,7 +700,7 @@ footer {
 
 .dark-theme {
     .footer-theme-toggle::before {
-        transform: translateX(60%);
+        transform: translateX(1rem);
     }
     .footer-theme-icon-moon {
         fill: var(--black-color);
