@@ -1203,7 +1203,7 @@ footer {
     color: var(--secondary-text-color);
 }
 
-.certification-issuer-link:hover .certification-issuer-text {
+.certification-issuer:hover .certification-issuer-text {
     color: var(--primary-text-color);
 }
 
