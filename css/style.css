@@ -285,7 +285,8 @@ body {
     /* margin: 1rem calc(0.5rem + 2vw) 0 calc(6.5rem + 2vw + 2px); */
     margin: 2rem calc(2rem) 0 calc(8rem + 2px);
     width: calc(100vw - 10rem - 2px);
-    justify-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 60rem) {
@@ -306,7 +307,6 @@ body {
     max-width: 75rem;
     width: 100%;
     /* margin: 1rem 2rem 0rem 2rem; */
-    /* background-color: blue; */
 }
 
 p, h1, h2, h3 {
