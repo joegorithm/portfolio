@@ -1070,15 +1070,15 @@ footer {
     color: var(--secondary-text-color);
 }
 
-.project-tools {
+.project-technologies {
     border-top: 1px solid var(--element-border-color);
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 1rem 1rem;
+    padding: 1rem;
 }
 
-.tool-tag {
+.technology-tag {
     color: #ffffff;
     background-color: #ffffff1a;
     border: 1px solid #ffffff;
@@ -1095,33 +1095,33 @@ footer {
     gap: 0.5rem
 }
 
-.tool-tag:hover {
+.technology-tag:hover {
     opacity: 0.9;
     cursor: pointer;
 }
 
-.tool-tag-html {
+.technology-tag-html {
     color: var(--html-tag-color);
     background-color: var(--html-tag-background-color);
     border-color: var(--html-tag-color);
     fill: var(--html-tag-color);
 }
 
-.tool-tag-css {
+.technology-tag-css {
     color: var(--css-tag-color);
     background-color: var(--css-tag-background-color);
     border-color: var(--css-tag-color);
     fill: var(--css-tag-color);
 }
 
-.tool-tag-javascript {
+.technology-tag-javascript {
     color: var(--javascript-tag-color);
     background-color: var(--javascript-tag-background-color);
     border-color: var(--javascript-tag-color);
     fill: var(--javascript-tag-color);
 }
 
-.tool-tag-processingjs {
+.technology-tag-processingjs {
     color: var(--processingjs-tag-color);
     background-color: var(--processingjs-tag-background-color);
     border-color: var(--processingjs-tag-color);
