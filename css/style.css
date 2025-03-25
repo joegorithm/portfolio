@@ -948,7 +948,7 @@ footer {
     gap: 0.3rem;
     justify-content: center;
     padding: 0.5rem 0;
-
+    align-items: start;
 }
 
 .project-title {
@@ -1038,16 +1038,13 @@ footer {
 .time-ago-icon {
     /* width: 0.9rem; */
     /* height: 0.9rem; */
-    /* background-color: blue; */
     justify-content: center;
 }
 
 .time-ago-icon svg {
     width: 0.9rem;
     height: 0.9rem;
-    /* background-color: red; */
     overflow: visible;
-
 }
 
 .time-ago-icon-completed {
