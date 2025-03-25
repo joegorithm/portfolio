@@ -501,12 +501,11 @@ nav {
     font-size: 1.5rem;
     font-weight: 500;
     text-shadow: 0 0 0.5rem var(--nav-label-shadow-color);
-    margin: 1rem;
 }
 
 @media (min-width: 31rem) and (hover: hover) and (pointer: fine) {
     nav, .nav-label {
-        transition: 200ms ease;
+        transition: width 200ms ease, opacity 200ms ease;
     }
     nav:hover {
         width: 15rem;
@@ -514,6 +513,10 @@ nav {
 
     nav:hover .nav-label {
         opacity: 1;
+    }
+
+    nav:hover .nav-button {
+        gap: 1rem;
     }
 }
 
@@ -525,9 +528,10 @@ nav {
     background: none;
     border: none;
     display: flex;
-    justify-content: center;
     justify-content: left;
     align-items: center;
+    gap: 2rem;
+    transition: gap 200ms ease;
 }
 
 .nav-button:hover, .nav-button:focus {
