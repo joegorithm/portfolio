@@ -507,6 +507,10 @@ nav {
     nav, .nav-label {
         transition: width 200ms ease, opacity 200ms ease;
     }
+    .nav-button {
+        gap: 2rem;
+        transition: gap 200ms ease;
+    }
     nav:hover {
         width: 15rem;
     }
@@ -530,8 +534,7 @@ nav {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 2rem;
-    transition: gap 200ms ease;
+    
 }
 
 .nav-button:hover, .nav-button:focus {
