@@ -2,7 +2,7 @@
 
 ## My Portfolio Website
 
-![JH logo design](image/jh-logo-design.png)
+![JH logo design](image/readme-logo.png)
 
 > [!NOTE]
 > This site is a work in progress.
