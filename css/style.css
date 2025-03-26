@@ -228,8 +228,8 @@
     --selected-nav-button-border-color: var(--theme-color);
     --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--black-color);
-    --element-background-color: rgba(255, 255, 255, 0.4);
-    --element-background-hover-color: rgba(223, 229, 241, 0.4);
+    --element-background-color: rgb(255, 255, 255);
+    --element-background-hover-color: rgb(240, 244, 252);
     --mobile-nav-background-color: rgb(255, 255, 255);
     --element-border-color: rgba(181, 191, 200, 0.5);
     --nav-shadow-color: rgba(0, 0, 0, 0.1);
