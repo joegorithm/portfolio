@@ -34,17 +34,24 @@ main {
 
 /* Contact Form */
 .contact-form-section {
+    background-color: var(--element-background-color);
     border: 1px solid var(--element-border-color);
     border-radius: 2rem;
     padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .contact-form {
     display: var(--contact-form-display);
     flex-direction: column;
     gap: 1.2rem;
-    margin: 1rem 0 0 0;
     opacity: var(--form-opacity);
+    
 }
 
 .form-input-entry {
@@ -62,7 +69,7 @@ main {
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
     color: var(--primary-text-color);
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 1rem;
     caret-color: var(--theme-color);
     transition: background-color 150ms ease;
@@ -70,10 +77,10 @@ main {
 
 .form-input::placeholder {
     color: var(--form-input-placeholder-color);
+    font-weight: 200;
 }
 
 .form-label {
-    /* font-family: "Inter", sans-serif; */
     font-size: 1.5rem;
     font-weight: 600;
     display: flex;
@@ -89,9 +96,8 @@ main {
 }
 
 .form-input:active, .form-input:focus {
-    /* background-color: #1c1d25; */
     background-color: var(--element-background-hover-color);
-    box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5);
+    /* box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5); */
     border: 1px solid #00000000;
     outline: 1px solid var(--theme-color);
 }
@@ -101,6 +107,93 @@ main {
     resize: vertical;
     overflow: auto;
 }
+
+
+
+.custom-dropdown {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    position: relative;
+    background: url("/icon/chevron-down-icon.svg") no-repeat right 1rem center;
+    background-size: 1rem;
+    z-index: 5;
+
+
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    background-color: var(--element-background-color);
+    backdrop-filter: blur(4rem);
+    border: 1px solid var(--element-border-color);
+    color: var(--primary-text-color);
+    border-radius: 1rem;
+    caret-color: var(--theme-color);
+    transition: background-color 150ms ease;
+}
+
+.custom-dropdown:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+.custom-dropdown:active, .custom-dropdown:focus {
+    background-color: var(--element-background-hover-color);
+    /* box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5); */
+    border: 1px solid #00000000;
+    outline: 1px solid var(--theme-color);
+}
+
+.dropdown-selected {
+    /* background: white; */
+    /* padding: 10px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    position: relative;
+    padding: 1rem;
+}
+
+.dropdown-placeholder {
+    color: var(--subtle-text-color);
+    font-weight: 200;
+}
+
+.dropdown-options {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -1px;
+    top: 4rem;
+    width: 100%;
+    
+    background: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    /* border-top: none; */
+    border-radius: 1rem;
+    box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.dropdown-options li {
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-options li:hover, .highlight {
+    background: var(--element-border-color);
+}
+
+/* Show dropdown when open */
+.custom-dropdown.open .dropdown-options {
+    display: block;
+}
+
+
 
 .contact-form-status-entry {
     --contact-form-display: flex;
@@ -134,6 +227,10 @@ main {
     list-style-type: none;
     margin: 0.5rem 0;
     padding: 0;
+}
+
+.more-ways-to-connect-list a {
+    border-radius: 3rem;
 }
 
 .more-ways-to-connect-list div {
