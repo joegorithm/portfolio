@@ -23,9 +23,9 @@ I am currently only using plain `HTML`, `CSS`, and `JavaScript`, but I hope to i
 
 ## Featured components:
 
-| Collapsible sidebar | Light/dark mode toggle |
-| ------------------- | ---------------------- |
-| ![Collapsible sidebar demo GIF](media/sidebar.gif) | ![Light/dark mode toggle demo GIF](media/theme-toggle.gif) |
+| Collapsible sidebar | Light/dark mode toggle | Contact form |
+| ------------------- | ---------------------- | ------------ |
+| ![Collapsible sidebar demo GIF](media/sidebar.gif) | ![Light/dark mode toggle demo GIF](media/theme-toggle.gif) | ![Contact form screenshot](media/contact-form.png) |
 
 ## Contributors:
 
