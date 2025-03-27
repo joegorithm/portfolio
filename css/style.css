@@ -1173,14 +1173,14 @@ footer {
     background: none;
 }
 
-.certification-logo-codecademy {
+.certification-logo-codecademy, .certification-logo-small-codecademy {
     background-color: var(--codecademy-theme-color);
     fill: white;
 }
 
-.certification-logo-small-codecademy {
-    background-color: var(--codecademy-theme-color);
-    fill: white;
+.certification-logo-github, .certification-logo-small-github {
+    background-color: var(--github-theme-color);
+    fill: var(--background-color);
 }
 
 .certification-information {
