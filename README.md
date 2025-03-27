@@ -7,10 +7,6 @@
 > [!NOTE]
 > This site is a work in progress.
 
-## Contributors:
-
-**Me**: Jonathan Hill ([@joegorithm](https://github.com/joegorithm))
-
 ## What is the purpose of this project?
 
 This is my website that I will use as a central location to share _information_ about myself, develope my personal _brand_, and feature my past and upcoming coding _projects_.
@@ -27,13 +23,13 @@ I am currently only using plain `HTML`, `CSS`, and `JavaScript`, but I hope to i
 
 ## Featured components:
 
-### Collapsible sidebar
+| Collapsible sidebar | Light/dark mode toggle |
+| ------------------- | ---------------------- |
+| ![Collapsible sidebar demo GIF](media/sidebar.gif) | ![Light/dark mode toggle demo GIF](media/theme-toggle.gif) |
 
-![Collapsible sidebar demo GIF](media/sidebar.gif)
+## Contributors:
 
-### Light/dark mode toggle
-
-![Light/dark mode toggle demo GIF](media/theme-toggle.gif)
+**Me**: Jonathan Hill ([@joegorithm](https://github.com/joegorithm))
 
 ## Where can I see the result?
 
