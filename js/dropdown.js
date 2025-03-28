@@ -33,11 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     options.querySelectorAll("li")[currentIndex].classList.add("highlight"); // Highlight current option
                 } else if (e.key === "Enter") {
                     e.preventDefault(); // Prevent default behavior
-                    selected.textContent = options.querySelectorAll("li")[currentIndex].textContent; // Set selected text
+                    selected.innerHTML = options.querySelectorAll("li")[currentIndex].innerHTML; // Set selected text
                     hiddenInput.value = options.querySelectorAll("li")[currentIndex].dataset.value; // Store value for form submission
                     selected.classList.remove("dropdown-placeholder"); // Remove placeholder styling
                     dropdown.classList.remove("open"); // Close dropdown
                     dropdown.blur();
+
+                    // Show project input if category is "Project Feedback"
+                    const category = document.querySelector(".form-input-entry-category .dropdown-selected");
+                    const project = document.querySelector(".form-input-entry-project");
+                    if (category.textContent === "Project Feedback") {
+                        project.classList.remove("form-input-entry-project-hidden");
+                    } else {
+                        project.classList.add("form-input-entry-project-hidden");
+                        // Reset project input value
+                        project.querySelector("input[type=hidden]").value = "";
+                        // Reset project input text
+                        project.querySelector(".dropdown-selected").textContent = "Project";
+                        // Reset project input styling
+                        project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder");
+                    }
                 } else if (e.key === "Escape") {
                     e.preventDefault(); // Prevent default behavior
                     dropdown.classList.remove("open"); // Close dropdown
@@ -84,8 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Reset project input styling
                     project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder");
                 }
-                // console.log(category.textContent);
-                // console.log(project.querySelector("input[type=hidden]").value);
             });
         });
     });
