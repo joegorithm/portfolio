@@ -961,7 +961,7 @@ footer {
 
 .project-type {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--subtle-text-color);
 }
