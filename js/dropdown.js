@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const options = dropdown.querySelector(".dropdown-options");
         const hiddenInput = dropdown.querySelector("input[type=hidden]");
 
+        hiddenInput.value = "N/A"; // Initialize hidden input value
+
         let currentIndex = -1; // Index of currently highlighted option
 
         // Handle dropdown keyboard navigation
@@ -45,13 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (category.textContent === "Project Feedback") {
                         project.classList.remove("form-input-entry-project-hidden");
                     } else {
-                        project.classList.add("form-input-entry-project-hidden");
-                        // Reset project input value
-                        project.querySelector("input[type=hidden]").value = "";
-                        // Reset project input text
-                        project.querySelector(".dropdown-selected").textContent = "Project";
-                        // Reset project input styling
-                        project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder");
+                        project.classList.add("form-input-entry-project-hidden"); // Hide project input
+                        project.querySelector("input[type=hidden]").value = "N/A"; // Reset project input value
+                        project.querySelector(".dropdown-selected").textContent = "Project"; // Reset project input text
+                        project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder"); // Reset project input styling
                     }
                 } else if (e.key === "Escape") {
                     e.preventDefault(); // Prevent default behavior
@@ -91,13 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (category.textContent === "Project Feedback") {
                     project.classList.remove("form-input-entry-project-hidden");
                 } else {
-                    project.classList.add("form-input-entry-project-hidden");
-                    // Reset project input value
-                    project.querySelector("input[type=hidden]").value = "";
-                    // Reset project input text
-                    project.querySelector(".dropdown-selected").textContent = "Project";
-                    // Reset project input styling
-                    project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder");
+                    project.classList.add("form-input-entry-project-hidden"); // Hide project input
+                    project.querySelector("input[type=hidden]").value = "N/A"; // Reset project input value
+                    project.querySelector(".dropdown-selected").textContent = "Project"; // Reset project input text
+                    project.querySelector(".dropdown-selected").classList.add("dropdown-placeholder"); // Reset project input styling
                 }
             });
         });
