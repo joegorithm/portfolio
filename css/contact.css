@@ -55,6 +55,8 @@ main {
 }
 
 .form-input-entry {
+    position: relative;
+
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
@@ -102,6 +104,25 @@ main {
     outline: 1px solid var(--theme-color);
 }
 
+.form-input.error {
+    border: 1px solid rgba(255, 0, 0);
+    caret-color: rgb(255, 0, 0);
+}
+
+.form-input.error:active, .form-input.error:focus {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid #00000000;
+    outline: 1px solid rgba(255, 0, 0);
+}
+
+input.form-input:-webkit-autofill {
+    background-color: none !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 201, 25, 0.25) inset !important;
+    -webkit-text-fill-color: var(--primary-text-color) !important;
+    border-color: rgba(255, 201, 25, 0.25);
+    transition: background-color 9999s ease-in-out 0s; /* Prevent flash of yellow */
+}
+
 #message {
     min-height: 10.5rem;
     resize: vertical;
@@ -145,9 +166,20 @@ main {
 
 .custom-dropdown:active, .custom-dropdown:focus {
     background-color: var(--element-background-hover-color);
-    /* box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5); */
     border: 1px solid #00000000;
     outline: 1px solid var(--theme-color);
+}
+
+.custom-dropdown.error {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid rgba(255, 0, 0);
+    caret-color: rgb(255, 0, 0);
+}
+
+.custom-dropdown.error:active, .custom-dropdown.error:focus {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid #00000000;
+    outline: 1px solid rgba(255, 0, 0);
 }
 
 .dropdown-selected {

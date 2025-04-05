@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const options = dropdown.querySelector(".dropdown-options");
         const hiddenInput = dropdown.querySelector("input[type=hidden]");
 
-        hiddenInput.value = "N/A"; // Initialize hidden input value
-
         let currentIndex = -1; // Index of currently highlighted option
 
         // Handle dropdown keyboard navigation
