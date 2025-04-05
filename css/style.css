@@ -318,7 +318,7 @@ p, h1, h2, h3 {
     color: var(--primary-text-color);
 }
 
-.nav-label, img, button, input::placeholder, textarea::placeholder {
+.nav-label, img, button, .button, input::placeholder, textarea::placeholder {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -357,6 +357,7 @@ a {
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
     transition: 200ms ease;
+    width: fit-content;
 }
 
 .button svg {
