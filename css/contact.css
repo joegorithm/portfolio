@@ -41,6 +41,7 @@ main {
     padding: 1rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     min-height: 20rem;
+    height: fit-content;
 }
 
 .contact-form-section h2 {
@@ -350,20 +351,49 @@ input.form-input:-webkit-autofill {
 
 .runaway-button {
     position: absolute;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
     z-index: 30;
     top: 0;
     transition: transform 1000ms linear(0, 0.008 1.1%, 0.031 2.2%, 0.129 4.8%, 0.257 7.2%, 0.671 14.2%, 0.789 16.5%, 0.881 18.6%, 0.957 20.7%, 1.019 22.9%, 1.063 25.1%, 1.094 27.4%, 1.114 30.7%, 1.112 34.5%, 1.018 49.9%, 0.99 59.1%, 1);
 }
 
 .runaway-button:hover {
-    box-shadow: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
 
 
 /* More ways to connect section */
 .more-ways-to-connect-section {
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
+}
+
+.buy-me-a-coffee-tile {
+    background-color: var(--theme-color);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.buy-me-a-coffee-tile:hover {
+    background-color: var(--theme-color);
+    cursor: pointer;
+}
+
+.buy-me-a-coffee-tile h3 {
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.buy-me-a-coffee-tile svg {
+    width: 100%;
+    max-width: 20rem;
 }
 
 .more-ways-to-connect-list {
@@ -375,28 +405,53 @@ input.form-input:-webkit-autofill {
     padding: 0;
 }
 
-.more-ways-to-connect-list a {
-    border-radius: 3rem;
-}
-
-.more-ways-to-connect-list div {
+.more-ways-to-connect-tile {
     background-color: var(--element-background-color);
     border: 1px solid var(--element-border-color);
     padding: 1rem 1.5rem;
-    border-radius: 3rem;
+    border-radius: 2.4rem;
     color: var(--primary-text-color);
     font-size: 1.4em;
     font-weight: 600;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     transition: background-color 200ms ease;
 }
 
-.more-ways-to-connect-list div:hover {
+@media (max-width: 30rem) {
+    .more-ways-to-connect-tile {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.25rem;
+        border-radius: 1.5rem;
+    }
+}
+
+.more-ways-to-connect-tile:hover {
     background-color: var(--element-background-hover-color);
+}
+
+.more-ways-to-connect-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .more-ways-to-connect-icon {
     fill: var(--primary-text-color);
+}
+
+.more-ways-to-connect-username {
+    color: var(--subtle-text-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.more-ways-to-connect-username:hover {
+    text-decoration: underline;
+    color: var(--secondary-text-color);
 }
