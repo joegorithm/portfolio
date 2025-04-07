@@ -1,6 +1,11 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzr8n_WqcuFDBdkqWuS53T3ZxF-GpMly4IxEZ7fjvLlmplr8ibA7F-P_PNcvpfuQQKK/exec';
 const form = document.forms['contact-form'];
 const entireContactPage = document.querySelector(".contact-form-page");
+const formStatusBackground = document.querySelector(".form-status-background");
+const formStatusLoader = document.querySelector(".form-status-loader");
+const formStatus = document.querySelector(".form-status");
+const runawayButton = document.querySelector(".runaway-button");
+
 function validateForm() {
     const name = document.querySelector("#name");
     const email = document.querySelector("#email");
@@ -101,15 +106,21 @@ function validateForm() {
 
 form.addEventListener('submit', e => {
     if (validateForm()) {
-        entireContactPage.classList.remove("contact-form-status-entry");
-        entireContactPage.classList.add("contact-form-status-processing");
+        formStatusBackground.style.display = "flex";
+        formStatusBackground.style.backdropFilter = "blur(0.5rem)";
+        formStatusLoader.style.display = "block";
+        formStatus.style.display = "none";
+
+        // entireContactPage.classList.remove("contact-form-status-entry");
+        // entireContactPage.classList.add("contact-form-status-processing");
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            alert('Form submitted successfully!');
-            form.reset(); // Clear the form after submission
-            entireContactPage.classList.remove("contact-form-status-processing");
-            entireContactPage.classList.add("contact-form-status-complete");
+            formStatus.style.display = "flex";
+            formStatusLoader.style.display = "none";
+            //form.reset(); // Clear the form after submission
+            // entireContactPage.classList.remove("contact-form-status-processing");
+            // entireContactPage.classList.add("contact-form-status-complete");
         })
         .catch(error => {
             alert('Failed to submit form. Please try again.');
@@ -121,3 +132,21 @@ form.addEventListener('submit', e => {
         e.preventDefault();
     }
 })
+
+runawayButton.addEventListener("click", (e) => {
+    formStatus.style.display = "none";
+    formStatusBackground.style.display = "none";
+    form.reset();
+
+    // Reset custom dropdowns
+    const category = document.querySelector(".form-input-entry-category");
+    const project = document.querySelector(".form-input-entry-project");
+    function resetDropdown(dropdown, label) {
+        dropdown.querySelector(".dropdown-selected").textContent = label; // Reset selected text
+        dropdown.querySelector("input[type=hidden]").value = "N/A"; // Reset hidden input value
+        dropdown.querySelector(".dropdown-selected").classList.add("dropdown-placeholder"); // Reset placeholder styling
+    }
+    resetDropdown(category, "Category");
+    resetDropdown(project, "Project");
+    project.classList.add("form-input-entry-project-hidden");
+});

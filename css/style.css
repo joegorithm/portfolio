@@ -196,6 +196,9 @@
     --form-input-placeholder-color: rgba(183, 189, 211, 0.4);
 
     --text-selection-color: rgba(255, 200, 25, 0.6);
+    
+    --form-status-background-color: rgba(0, 0, 0, 0.4);
+    --button-disabled-color: rgba(255, 255, 255, 0.05);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -240,6 +243,9 @@
     --form-input-placeholder-color: rgba(0, 0, 0, 0.3);
 
     --text-selection-color: rgba(255, 200, 25, 0.8);
+
+    --form-status-background-color: rgba(255, 255, 255, 0.4);
+    --button-disabled-color: rgba(0, 0, 0, 0.1);
 
     --html-tag-color: #E34F26;
     --html-tag-background-color: rgba(227, 79, 38, 0.2);
@@ -353,6 +359,7 @@ a {
     border-radius: 2.5rem;
     background-color: var(--theme-color);
     color: black;
+    fill: black;
     font-weight: 700;
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
@@ -361,7 +368,6 @@ a {
 }
 
 .button svg {
-    fill: black;
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -374,6 +380,16 @@ a {
 
 .button:active {
     opacity: 0.7;
+}
+
+.button:disabled {
+    background-color: var(--button-disabled-color);
+    opacity: 0.1;
+    color: var(--element-background-color);
+    fill: var(--element-background-color);
+    opacity: 1;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 
