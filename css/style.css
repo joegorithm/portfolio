@@ -1148,7 +1148,7 @@ footer {
     gap: 1rem;
     background-color: var(--element-background-color);
     transition: background-color 150ms ease;
-    border-radius: 2.5rem;
+    border-radius: 2rem;
     padding: 1rem;
     /* overflow: hidden; */
 }
