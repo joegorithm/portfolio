@@ -157,6 +157,7 @@
     /* Social media theme colors */
     --buy-me-a-coffee-theme-color: #FFDD00;
     --github-theme-color: #000000; /* rgb(142, 70, 161) */ /* #1B1F24 */
+    --deeplearning-ai-theme-color: rgb(246, 91, 102);
     --codecademy-theme-color: #1F4056;
     --linkedin-theme-color: #2d64bc;
 
@@ -1195,6 +1196,11 @@ footer {
 .certification-logo-github, .certification-logo-small-github {
     background-color: var(--github-theme-color);
     fill: var(--background-color);
+}
+
+.certification-logo-deeplearning-ai, .certification-logo-small-deeplearning-ai {
+    background-color: var(--deeplearning-ai-theme-color);
+    fill: white;
 }
 
 .certification-information {
