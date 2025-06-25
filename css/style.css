@@ -1037,6 +1037,9 @@ footer {
     line-height: 1;
     font-weight: 700;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .project-title:hover {
@@ -1107,6 +1110,23 @@ footer {
     opacity: 1;
 }
 
+.work-in-progress-label {
+    /* position: absolute; */
+    /* top: -1.5rem; */
+    /* left: 0.5rem; */
+    /* left: 0.2rem; */
+    background-color: rgba(255, 201, 25, 0.4);
+    color: var(--primary-text-color);
+    font-size: 0.6rem;
+    font-weight: 500;
+    height: 1rem;
+    align-items: center;
+    display: flex;
+    padding: 0rem 0.3rem;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+}
+
 .time-ago-status {
     box-sizing: border-box;
     display: inline-flex;
@@ -1140,6 +1160,8 @@ footer {
     font-size: 0.8rem;
     /* font-weight: 500; */
     color: var(--secondary-text-color);
+    text-wrap: nowrap;
+
 }
 
 /* .time-ago-date-started {
