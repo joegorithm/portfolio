@@ -417,7 +417,7 @@ input.form-input:-webkit-autofill {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     transition: background-color 200ms ease;
 }
 
@@ -438,7 +438,7 @@ input.form-input:-webkit-autofill {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
 }
 
 .more-ways-to-connect-icon {

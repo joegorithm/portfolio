@@ -12,6 +12,7 @@
 }
 
 .tool-tile {
+    position: relative;
     padding: 1rem 0.5rem;
     border-radius: 1rem;
     justify-content: center;
@@ -120,6 +121,71 @@
     fill: #ED225D;
 }
 
+.tool-tile-figma {
+    background-color: rgba(128, 82, 246, 0.2);
+    border-color: rgb(128, 82, 246);
+    color: rgb(128, 82, 246);
+    fill: rgb(128, 82, 246);
+}
+
+.tool-tile-jupyter {
+    background-color: rgba(243, 118, 38, 0.2);
+    border-color: #F37626;
+    color: #F37626;
+    fill: #F37626;
+}
+
+.tool-tile-google-analytics {
+    background-color: rgba(250, 171, 0, 0.2);
+    border-color: #faab00;
+    color: #faab00;
+    fill: #faab00;
+    font-size: 0.64rem;
+}
+
+.tool-tile-react {
+    background-color: rgba(97, 218, 251, 0.2);
+    border-color: #61DAFB;
+    color: #61DAFB;
+    fill: #61DAFB;
+}
+
+.tool-tile-nodejs {
+    background-color: rgba(95, 160, 79, 0.2);
+    border-color: #5fa04f;
+    color: #5fa04f;
+    fill: #5fa04f;
+}
+
+.tool-tile-pytorch {
+    background-color: rgba(222, 52, 18, 0.2);
+    border-color: #DE3412;
+    color: #DE3412;
+    fill: #DE3412;
+}
+
+.tool-tile-future {
+    background-color: var(--future-tech-background-color);
+    border-color: var(--future-tech-color);
+    color: var(--future-tech-color);
+    fill: var(--future-tech-color);
+}
+
+.future-tech-label {
+    padding: 0 0.3rem;
+    border-radius: 0.3rem;
+    background-color: var(--github-theme-color);
+    color: var(--background-color);
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.5rem;
+    position: absolute;
+    rotate: -20deg;
+}
+
 /* .tool-tile-icon {
     width: 4rem;
     height: auto;
@@ -212,6 +278,8 @@
 
     --github-theme-color: #ffffff;
     --github-background-color: rgba(255, 255, 255, 0.15);
+    --future-tech-color: rgba(255, 255, 255, 0.3);
+    --future-tech-background-color: rgba(255, 255, 255, 0.15);
 }
 
 .light-theme {
@@ -259,6 +327,8 @@
 
     --github-theme-color: #000000;
     --github-background-color: rgba(0, 0, 0, 0.075);
+    --future-tech-color: rgba(0, 0, 0, 0.3);
+    --future-tech-background-color: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -875,7 +945,7 @@ footer {
 .project-grid {
     --grid-min-column-width: 20rem;
     display: grid;
-    gap: 2.5rem 1rem ;
+    gap: 3rem 1.5rem ;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
     padding: 2rem 0 1.5rem 0;
 }
@@ -1063,12 +1133,18 @@ footer {
 
 .time-ago-icon-started {
     fill: var(--secondary-text-color);
+    /* fill: #faab00; */
 }
 
 .time-ago-date {
     font-size: 0.8rem;
+    /* font-weight: 500; */
     color: var(--secondary-text-color);
 }
+
+/* .time-ago-date-started {
+    color: #faab00;
+} */
 
 .project-description {
     font-size: 1rem;
