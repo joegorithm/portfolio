@@ -9,6 +9,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    padding: 1rem 0;
 }
 
 .tool-tile {
@@ -701,9 +702,9 @@ nav {
 
 
 /* Main */
-.home-main * {
+/* .home-main * {
     margin: revert;
-}
+} */
 
 section {
     color: var(--primary-text-color);
@@ -1430,7 +1431,7 @@ footer {
 
 /* About — Certifications */
 
-.certifications-list {
+.certifications-grid {
     display: grid;
     padding: 1rem 0;
     gap: 1rem;
@@ -1469,6 +1470,8 @@ footer {
 }
 
 .certification-logo-link {
+    height: 6rem;
+    width: 6rem;
     border-radius: 1.25rem;
 }
 
@@ -1527,6 +1530,7 @@ footer {
 
 .certification-title {
     color: var(--primary-text-color);
+    margin: 0;
 }
 
 .certification-link:hover .certification-title {
