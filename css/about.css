@@ -37,11 +37,16 @@
     }
 } */
 
+
 .profile-image {
     max-width: 100%;
     height: auto;
     border-radius: 20%;
     justify-self: center;
+}
+
+.profile-image:hover {
+    cursor: not-allowed;
 }
 
 .profile-text {
