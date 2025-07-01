@@ -31,137 +31,198 @@
     border-style: solid;
 }
 
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tool-tag {
+    color: #ffffff;
+    background-color: #ffffff1a;
+    border: 1px solid #ffffff;
+    fill: white;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-family: "Sometype Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: scale 200ms ease, box-shadow 200ms ease;
+}
+
+.tool-tag:hover {
+    /* opacity: 0.9; */
+    scale: 1.075;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.tool-tag:active {
+    opacity: 0.8;
+    scale: 0.95;
+}
+
 .tool-tile span::selection {
     background-color: rgba(255, 255, 255, 0.5);
     /* color: var(--primary-text-color); */
 }
 
-.tool-tile-html {
+.tool-html {
     background-color: rgba(227, 79, 38, 0.2);
     border-color: #E34F26;
     color: #E34F26;
     fill: #E34F26;
 }
 
-.tool-tile-css {
+.tool-css {
     background-color: rgba(171, 58, 223, 0.2);
     border-color: #ab3adf; /* Official: #663399 */
     color: #ab3adf; /* Official: #663399 */
     fill: #ab3adf; /* Official: #663399 */
 }
 
-.tool-tile-javascript {
+.tool-javascript {
     background-color: rgba(247, 222, 30, 0.2);
     border-color: #F7DF1E;
     color: #F7DF1E;
     fill: #F7DF1E;
 }
 
-.tool-tile-github {
+.tool-github {
     background-color: var(--github-background-color);
     border-color: var(--github-theme-color);
     color: var(--github-theme-color);
     fill: var(--github-theme-color);
 }
 
-.tool-tile-github-copilot {
+.tool-github-copilot {
     background-color: var(--github-background-color);
     border-color: var(--github-theme-color);
     color: var(--github-theme-color);
     fill: var(--github-theme-color);
+}
+
+.tool-tile-grid .tool-github-copilot {
     font-size: 0.7rem;
 }
 
-.tool-tile-git {
+.tool-git {
     background-color: rgba(240, 78, 50, 0.2);
     border-color: #F05032;
     color: #F05032;
     fill: #F05032;
 }
 
-.tool-tile-bash {
+.tool-bash {
     background-color: rgba(77, 170, 37, 0.2);
     border-color: #4EAA25;
     color: #4EAA25;
     fill: #4EAA25;
 }
 
-.tool-tile-cplusplus {
+.tool-cpp {
     background-color: rgba(0, 131, 231, 0.2);
     border-color: #0083e7; /* Official: #00599C */
     color: #0083e7; /* Official: #00599C */
     fill: #0083e7; /* Official: #00599C */
 }
 
-.tool-tile-python {
+.tool-python {
     background-color: rgba(0, 131, 231, 0.2);
     border-color: #0083e7; /* Official: #3776AB */
     color: #0083e7; /* Official: #3776AB */
     fill: #0083e7; /* Official: #3776AB */
 }
 
-.tool-tile-arduino {
+.tool-arduino {
     background-color: rgba(0, 136, 143, 0.25);
     border-color: #00878F; /* Official: #00979D */
     color: #00878F; /* Official: #00979D */
     fill: #00878F; /* Official: #00979D */
 }
 
-.tool-tile-vs-code {
+.tool-vs-code {
     background-color: rgba(0, 153, 255, 0.2);
     border-color: #0098FF;
     color: #0098FF;
     fill: #0098FF;
 }
 
-.tool-tile-p5js {
+.tool-p5js {
     background-color: rgba(237, 34, 91, 0.2);
     border-color: #ED225D;
     color: #ED225D;
     fill: #ED225D;
 }
 
-.tool-tile-figma {
+.tool-figma {
     background-color: rgba(128, 82, 246, 0.2);
     border-color: rgb(128, 82, 246);
     color: rgb(128, 82, 246);
     fill: rgb(128, 82, 246);
 }
 
-.tool-tile-jupyter {
+.tool-jupyter {
     background-color: rgba(243, 118, 38, 0.2);
     border-color: #F37626;
     color: #F37626;
     fill: #F37626;
 }
 
-.tool-tile-google-analytics {
+.tool-google-analytics {
     background-color: rgba(250, 171, 0, 0.2);
     border-color: #faab00;
     color: #faab00;
     fill: #faab00;
+}
+
+.tool-tile-grid .tool-google-analytics {
     font-size: 0.64rem;
 }
 
-.tool-tile-react {
+.tool-react {
     background-color: rgba(97, 218, 251, 0.2);
     border-color: #61DAFB;
     color: #61DAFB;
     fill: #61DAFB;
 }
 
-.tool-tile-nodejs {
+.tool-nodejs {
     background-color: rgba(95, 160, 79, 0.2);
     border-color: #5fa04f;
     color: #5fa04f;
     fill: #5fa04f;
 }
 
-.tool-tile-pytorch {
+.tool-pytorch {
     background-color: rgba(222, 52, 18, 0.2);
     border-color: #DE3412;
     color: #DE3412;
     fill: #DE3412;
+}
+
+.tool-processingjs {
+    color: var(--processingjs-tag-color);
+    background-color: var(--processingjs-tag-background-color);
+    border-color: var(--processingjs-tag-color);
+    fill: var(--processingjs-tag-color);
+}
+
+.tool-powershell {
+    background-color: rgba(0, 118, 215, 0.2);
+    border-color: #0078D7;
+    color: #0078D7;
+    fill: #0078D7;
+}
+
+.tool-tile-grid .tool-processingjs {
+    font-size: 0.7rem;
 }
 
 .tool-tile-future {
@@ -186,39 +247,14 @@
     rotate: -20deg;
 }
 
-/* .tool-tile-icon {
-    width: 4rem;
-    height: auto;
-} */
-
-/* .tool-tile-icon-html {
-    fill: #E34F26;
-}
-
-.tool-tile-icon-css {
-    fill: #ab3adf;
-}
-
-.tool-tile-icon-javascript {
-    fill: #F7DF1E;
-}
-
-.tool-tile-icon-github {
-    fill: #ffffff;
-}
-
-.tool-tile-icon-git {
-    fill: #F05032;
-} */
-
 
 /* Variables */
 :root {
     --yellow-color: #ffc819;
     --black-color: #000000;
     --white-color: #ffffff;
-    --light-gray-color: #a4a4a4;
-    --dark-gray-color: rgb(91, 92, 95);
+    --light-gray-color: #9898a1;
+    --dark-gray-color: rgb(89, 90, 94);
 
     /* Social media theme colors */
     --buy-me-a-coffee-theme-color: #FFDD00;
@@ -253,6 +289,7 @@
     --nav-icon-color: var(--white-color);
     --element-background-color: rgb(20, 22, 26); /* Previously rgba(166, 179, 225, 0.12); And previously #16171c */
     --element-background-hover-color: rgb(25, 27, 33); /* Previously rgba(166, 179, 225, 0.15); And previously #1c1d25 */
+    --nested-element-background-hover-color: rgb(31, 34, 42);
     --mobile-nav-background-color: #16171c;
     --element-border-color: rgba(255, 255, 255, 0.12);
     --nav-shadow-color: #000000be;
@@ -302,6 +339,7 @@
     --nav-icon-color: var(--black-color);
     --element-background-color: rgb(255, 255, 255);
     --element-background-hover-color: rgb(240, 244, 252);
+    --nested-element-background-hover-color: rgb(231, 235, 244);
     --mobile-nav-background-color: rgb(255, 255, 255);
     --element-border-color: rgba(181, 191, 200, 0.5);
     --nav-shadow-color: rgba(0, 0, 0, 0.1);
@@ -671,6 +709,26 @@ section {
     color: var(--primary-text-color);
 }
 
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-header-link {
+    color: var(--theme-color);
+    font-weight: 500;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-header-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: var(--theme-color);
+}
+
 p {
     color: var(--secondary-text-color);
 }
@@ -943,7 +1001,7 @@ footer {
 
 
 .project-grid {
-    --grid-min-column-width: 20rem;
+    --grid-min-column-width: 30rem; /* Formerly 20rem */
     display: grid;
     gap: 3rem 1.5rem ;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
@@ -1142,8 +1200,8 @@ footer {
 }
 
 .time-ago-icon svg {
-    width: 0.9rem;
-    height: 0.9rem;
+    /* width: 0.9rem;
+    height: 0.9rem; */
     overflow: visible;
 }
 
@@ -1156,12 +1214,15 @@ footer {
     /* fill: #faab00; */
 }
 
+.time-ago-icon-graduate {
+    fill: var(--secondary-text-color);
+}
+
 .time-ago-date {
     font-size: 0.8rem;
     /* font-weight: 500; */
     color: var(--secondary-text-color);
     text-wrap: nowrap;
-
 }
 
 /* .time-ago-date-started {
@@ -1177,13 +1238,10 @@ footer {
 
 .project-technologies {
     border-top: 1px solid var(--element-border-color);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
     padding: 1rem;
 }
 
-.technology-tag {
+/* .technology-tag {
     color: #ffffff;
     background-color: #ffffff1a;
     border: 1px solid #ffffff;
@@ -1198,14 +1256,11 @@ footer {
 
     display: flex;
     gap: 0.5rem
-}
+} */
 
-.technology-tag:hover {
-    opacity: 0.9;
-    cursor: pointer;
-}
 
-.technology-tag-html {
+
+/* .technology-tag-html {
     color: var(--html-tag-color);
     background-color: var(--html-tag-background-color);
     border-color: var(--html-tag-color);
@@ -1231,29 +1286,175 @@ footer {
     background-color: var(--processingjs-tag-background-color);
     border-color: var(--processingjs-tag-color);
     fill: var(--processingjs-tag-color);
+} */
+
+
+
+
+/* About — Education */
+
+.education-section {
+    /* display: grid; */
+    /* padding: 1rem 0; */
+    /* gap: 1rem; */
+}
+
+.education-list {
+    display: grid;
+    padding: 1rem 0;
+    gap: 1rem;
+    --grid-min-column-width: 34rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
+}
+
+.education-tile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--element-background-color);
+    transition: background-color 150ms ease;
+    border-radius: 2rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.education-tile:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+.education-banner {
+    width: 100%;
+    height: 10rem;
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.education-banner-oit {
+    background-color: rgb(255, 211, 81);
+    
+}
+
+.education-banner-rcc {
+    background-color: rgb(0, 110, 182);
+}
+
+.education-logo {
+    border-radius: 1.25rem;
+    display: block;
+}
+
+.education-logo-oit {
+    width: 12rem;
+    height: 12rem;
+    padding-top: 0.5rem;
+}
+
+.education-logo-rcc {
+    width: 18rem;
+    height: 18rem;
+}
+
+.education-information {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.education-institution, .education-major {
+    color: var(--primary-text-color);
+}
+
+.education-institution:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
+}
+
+.education-major:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.20rem;
+}
+
+.education-degree {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--element-border-color);
+    border-radius: 1.25rem;
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.education-degree:hover {
+    background-color: var(--nested-element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.education-type, .education-duration {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--subtle-text-color);
+}
+
+.education-relevant-coursework {
+    font-size: 0.9rem;
+    /* font-weight: 500; */
+    color: var(--secondary-text-color);
+}
+
+.education-relevant-coursework-list {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.education-relevant-coursework-tools {
+    display: inline-flex;
+    gap: 0.2rem;
+}
+
+.education-relevant-coursework-tools .tool-tag {
+    font-size: 0.6rem;
+    font-weight: 6 00;
+    padding: 0.1rem 0.3rem;
+    gap: 0.2rem;
+    display: flex;
+}
+.education-relevant-coursework-tools svg {
+    width: 0.7rem;
+    height: 0.7rem;
+    
 }
 
 
-
+/* About — Certifications */
 
 .certifications-list {
     display: grid;
     padding: 1rem 0;
     gap: 1rem;
+    --grid-min-column-width: 34rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
 }
 
 .certification-tile {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
     background-color: var(--element-background-color);
     transition: background-color 150ms ease;
     border-radius: 2rem;
-    padding: 1rem;
     /* overflow: hidden; */
 }
 
 .certification-tile:hover {
     background-color: var(--element-background-hover-color);
+}
+
+.certification-main {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .certification-logo {

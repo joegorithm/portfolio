@@ -125,32 +125,3 @@
         font-size: 2rem;
     }
 }
-
-
-
-.education-section {
-    display: grid;
-    padding: 1rem 0;
-    gap: 1rem;
-}
-
-.education-tile {
-    padding: 1rem;
-    border-radius: 2rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.education-logo {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 1.25rem;
-    display: block;
-}
-
-.education-information {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
