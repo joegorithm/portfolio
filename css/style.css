@@ -1731,3 +1731,67 @@ footer {
         height: 2.5rem;
     }
 }
+
+
+
+/* Search Bar */
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-bar {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 4rem;
+    padding: 1.5rem;
+    height: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--primary-text-color);
+    font-size: 1.25rem;
+    font-weight: 300;
+    transition: background-color 200ms ease, border 200ms ease;
+}
+
+.search-bar::placeholder {
+    color: var(--form-input-placeholder-color);
+    font-weight: 200;
+}
+
+.search-bar:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+.search-bar:active, .search-bar:focus {
+    border: 1px solid #00000000;
+    background-color: var(--element-background-hover-color);
+    outline: 1px solid var(--theme-color);
+}
+
+.search-button {
+    position: absolute;
+    right: 0.5rem;
+    background-color: var(--theme-color);
+    border: none;
+    border-radius: 2rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    fill: black;
+}
