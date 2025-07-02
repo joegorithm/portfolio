@@ -1294,11 +1294,11 @@ footer {
 
 /* About — Education */
 
-.education-section {
-    /* display: grid; */
-    /* padding: 1rem 0; */
-    /* gap: 1rem; */
-}
+/* .education-section {
+    display: grid;
+    padding: 1rem 0;
+    gap: 1rem;
+} */
 
 .education-list {
     display: grid;
