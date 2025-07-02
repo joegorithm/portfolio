@@ -209,7 +209,7 @@ function renderCertifications() {
                     </div>
                     <div class="tool-tags project-technologies" data-technologies="${certifications[tile].tools}"></div>
                 </div>
-            `
+            `;
         });
     });
 }

@@ -1017,7 +1017,7 @@ footer {
 
 
 .project-grid {
-    --grid-min-column-width: 30rem; /* Formerly 20rem */
+    --grid-min-column-width: 20rem; /* Formerly tested with 20rem and then 30rem */
     display: grid;
     gap: 3rem 1.5rem ;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
@@ -1072,7 +1072,6 @@ footer {
     width: 6rem;
     height: 6rem;
     border-radius: 1.25rem;
-    background-color: black;
 }
 
 .project-logo-portfolio {
@@ -1085,10 +1084,6 @@ footer {
 
 .project-logo-age-in-days {
     background-color: rgb(66, 128, 205);
-}
-
-.project-logo-default {
-    background-color: white;
 }
 
 .project-header {
@@ -1245,7 +1240,7 @@ footer {
     color: #faab00;
 } */
 
-.project-description {
+.project-summary {
     font-size: 1rem;
     font-weight: 200;
     line-height: 1.4rem;
