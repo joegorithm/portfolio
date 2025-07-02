@@ -12,6 +12,10 @@
     padding: 1rem 0;
 }
 
+.tool-tile-link {
+    border-radius: 1rem;
+}
+
 .tool-tile {
     position: relative;
     padding: 1rem 0.5rem;
@@ -30,12 +34,22 @@
     line-height: 1.25;
     border-width: 0.1rem;
     border-style: solid;
+    transition: scale 200ms ease, box-shadow 200ms ease;
+}
+
+.tool-tile:hover {
+    scale: 1.05;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .tool-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+.tool-tag-link {
+    border-radius: 2rem;
 }
 
 .tool-tag {
@@ -231,6 +245,7 @@
     border-color: var(--future-tech-color);
     color: var(--future-tech-color);
     fill: var(--future-tech-color);
+    cursor: not-allowed;
 }
 
 .future-tech-label {

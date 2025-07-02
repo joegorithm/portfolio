@@ -111,7 +111,7 @@ function renderTechnologies() {
         for (var i = 0; i < technology.length; i++) {
             const tech = technologies.find(t => t.id === technology[i].toLowerCase());
             if (tech) {
-                element.innerHTML += `<a href="/search?tool=${tech.id}"><div class="tool-tag ${tech.class}">${tech.svg}<span>${tech.name}</span></div></a>`;
+                element.innerHTML += `<a class="tool-tag-link" href="/search?tool=${tech.id}"><div class="tool-tag ${tech.class}">${tech.svg}<span>${tech.name}</span></div></a>`;
             } else {
                 element.innerHTML += `<p style="color: var(--form-input-placeholder-color); font-size: 1rem; font-weight: 200;">No associated technologies or tools</p>`;
             }
