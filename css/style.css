@@ -1349,29 +1349,10 @@ footer {
     overflow: hidden;
 }
 
-.education-banner-oit {
-    background-color: rgb(255, 211, 81);
-    
-}
-
-.education-banner-rcc {
-    background-color: rgb(0, 110, 182);
-}
-
 .education-logo {
     border-radius: 1.25rem;
     display: block;
-}
-
-.education-logo-oit {
-    width: 12rem;
-    height: 12rem;
-    padding-top: 0.5rem;
-}
-
-.education-logo-rcc {
-    width: 18rem;
-    height: 18rem;
+    height: 10rem;
 }
 
 .education-information {
