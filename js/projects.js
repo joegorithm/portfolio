@@ -41,7 +41,7 @@ const projects = {
     },
     "matricat": {
         id: "matricat",
-        title: "Matricat.com",
+        title: "Matricat",
         category: "Web App",
         url: "https://matricat.com",
         github: "https://github.com/joegorithm/matrix",
@@ -77,6 +77,19 @@ const projects = {
         summary: "A simple countdown timer web application.",
         description: "TBD",
         tools: "html, css, javascript"
+    },
+    "castleguessr": {
+        id: "castleguessr",
+        title: "CastleGuessr",
+        category: "Canvas Game",
+        url: "https://www.khanacademy.org/computer-programming/castleguessr/5190186573283328",
+        github: "#",
+        started: "2023-01-20",
+        completed: "2023-02-24",
+        logo: "/logos/castleguessr-logo.png",
+        summary: "A game where you guess the locations of medieval castles in the British Isles.",
+        description: "",
+        tools: "javascript, processingjs"
     }
 };
 

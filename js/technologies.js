@@ -24,7 +24,7 @@ function renderTechnologies() {
             },
             {
                 id: "processingjs",
-                name: "ProcessingJS",
+                name: "Processing.js",
                 class: "tool-processingjs",
                 svg: `<svg width="1rem" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M180 0H0V180H180V0ZM22 15H38H87L102 30V103L87 118H38V168H22V15ZM87 30V103H38V30H87ZM123 109H117V116H123V109ZM123 122H117H111V129H117V162H98V168H117V162H123V122ZM165 122H139V129H132V135H139V142H158V148H132V155H158V148H165V142H158V135H139V129H165V122Z" fill="#2378FF"/></svg>`
             },
