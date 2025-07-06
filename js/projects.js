@@ -9,9 +9,9 @@ const projects = {
         started: "2023-03-15",
         completed: "2023-04-24",
         logo: "/logos/pickle-logo.png",
-        summary: "A simple game based on the concept of Wordle but only including food-themed words.",
+        summary: "A word game based on the concept of Wordle but only including food-themed words.",
         description: "TBD",
-        tools: "html, css, javascript, processingjs"
+        tools: "javascript, processingjs"
     },
     "portfolio": {
         id: "portfolio",

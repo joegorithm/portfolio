@@ -35,11 +35,15 @@
     border-width: 0.1rem;
     border-style: solid;
     transition: scale 200ms ease, box-shadow 200ms ease;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .tool-tile:hover {
     scale: 1.05;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .tool-tags {
@@ -69,13 +73,16 @@
     align-items: center;
     gap: 0.5rem;
     transition: scale 200ms ease, box-shadow 200ms ease;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .tool-tag:hover {
-    /* opacity: 0.9; */
     scale: 1.075;
     cursor: pointer;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .tool-tag:active {
@@ -83,9 +90,12 @@
     scale: 0.95;
 }
 
-.tool-tile span::selection {
-    background-color: rgba(255, 255, 255, 0.5);
-    /* color: var(--primary-text-color); */
+.tool-tag-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 1rem;
 }
 
 .tool-html {
@@ -240,6 +250,155 @@
     font-size: 0.7rem;
 }
 
+/* make checkboxes dissapear */
+.tool-tag-checkbox input[type="checkbox"] {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--subtle-text-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tool-tag-checkbox input[type="checkbox"]:checked {
+    border: none;
+    background-color: var(--theme-color);
+}
+
+.tool-tag-checkbox input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(/icon/checkmark.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: opacity 200ms ease, transform 700ms linear(0, 0.008 0.9%, 0.033 1.9%, 0.137 4.1%, 0.278 6.2%, 0.72 12.1%, 0.836 13.9%, 0.935 15.7%, 1.015 17.5%, 1.076 19.3%, 1.119 21.1%, 1.146 23%, 1.158 25.4%, 1.149 28.2%, 1.017 40.5%, 0.991 44.2%, 0.978 48.1%, 0.976 53.7%, 1.003 72.7%, 1);
+}
+
+.tool-tag-checkbox input[type="checkbox"]:checked::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.tool-tag-checkbox input[type="checkbox"]:not(:checked)::after {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-tag {
+    border-color: var(--tool-tag-selected-foreground-color);
+    color: var(--tool-tag-selected-foreground-color);
+    fill: var(--tool-tag-selected-foreground-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    outline-offset: 1px;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-html {
+    background-color: #E34F26;
+    outline: 2px solid #E34F26;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-css {
+    background-color: #ab3adf;
+    outline: 2px solid #ab3adf;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-javascript {
+    background-color: #F7DF1E;
+    outline: 2px solid #F7DF1E;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-github {
+    background-color: var(--github-theme-color);
+    outline: 2px solid var(--github-theme-color);
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-github-copilot {
+    background-color: var(--github-theme-color);
+    outline: 2px solid var(--github-theme-color);
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-git {
+    background-color: #F05032;
+    outline: 2px solid #F05032;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-bash {
+    background-color: #4EAA25;
+    outline: 2px solid #4EAA25;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-cpp {
+    background-color: #0083e7;
+    outline: 2px solid #0083e7;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-python {
+    background-color: #0083e7;
+    outline: 2px solid #0083e7;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-arduino {
+    background-color: #00878F;
+    outline: 2px solid #00878F;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-vs-code {
+    background-color: #0098FF;
+    outline: 2px solid #0098FF;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-p5js {
+    background-color: #ED225D;
+    outline: 2px solid #ED225D;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-figma {
+    background-color: rgb(128, 82, 246);
+    outline: 2px solid rgb(128, 82, 246);
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-jupyter {
+    background-color: #F37626;
+    outline: 2px solid #F37626;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-google-analytics {
+    background-color: #faab00;
+    outline: 2px solid #faab00;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-react {
+    background-color: #61DAFB;
+    outline: 2px solid #61DAFB;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-nodejs {
+    background-color: #5fa04f;
+    outline: 2px solid #5fa04f;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-pytorch {
+    background-color: #DE3412;
+    outline: 2px solid #DE3412;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-processingjs {
+    background-color: var(--processingjs-tag-color);
+    outline: 2px solid var(--processingjs-tag-color);
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-powershell {
+    background-color: #0078D7;
+    outline: 2px solid #0078D7;
+}
+
+
+
 .tool-tile-future {
     background-color: var(--future-tech-background-color);
     border-color: var(--future-tech-color);
@@ -262,6 +421,8 @@
     position: absolute;
     rotate: -20deg;
 }
+
+
 
 
 /* Variables */
@@ -333,6 +494,9 @@
     --github-background-color: rgba(255, 255, 255, 0.15);
     --future-tech-color: rgba(255, 255, 255, 0.3);
     --future-tech-background-color: rgba(255, 255, 255, 0.15);
+
+    --useless-black-rectangle-border-color: rgba(255, 255, 255, 0.2);
+    --tool-tag-selected-foreground-color: rgba(0, 0, 0, 0.7);
 }
 
 .light-theme {
@@ -354,8 +518,8 @@
     --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--black-color);
     --element-background-color: rgb(255, 255, 255);
-    --element-background-hover-color: rgb(240, 244, 252);
-    --nested-element-background-hover-color: rgb(231, 235, 244);
+    --element-background-hover-color: white; /* Formerly rgb(240, 244, 252); */
+    --nested-element-background-hover-color: white; /* Formerly rgb(231, 235, 244); */
     --mobile-nav-background-color: rgb(255, 255, 255);
     --element-border-color: rgba(181, 191, 200, 0.5);
     --nav-shadow-color: rgba(0, 0, 0, 0.1);
@@ -383,6 +547,9 @@
     --github-background-color: rgba(0, 0, 0, 0.075);
     --future-tech-color: rgba(0, 0, 0, 0.3);
     --future-tech-background-color: rgba(0, 0, 0, 0.1);
+    
+    --useless-black-rectangle-border-color: rgba(0, 0, 0, 0.13);
+    --tool-tag-selected-foreground-color: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -532,7 +699,7 @@ a {
     background-color: var(--element-background-color);
     backdrop-filter: blur(4rem);
     border: 1px solid var(--element-border-color);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); */
 }
 
 
@@ -612,9 +779,8 @@ nav {
     gap: 0.5rem;
     overflow: hidden;
     text-wrap: nowrap;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     min-width: 4rem;
-    z-index: 20;
+    z-index: 2000;
 }
 
 @media (max-width: 60rem), (max-height: 40rem) {
@@ -636,7 +802,7 @@ nav {
 
 @media (min-width: 31rem) and (hover: hover) and (pointer: fine) {
     nav, .nav-label {
-        transition: width 200ms ease, opacity 200ms ease;
+        transition: width 200ms ease, opacity 200ms ease, box-shadow 200ms ease;
     }
     .nav-button {
         gap: 2rem;
@@ -644,6 +810,8 @@ nav {
     }
     nav:hover {
         width: 15rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
     }
 
     nav:hover .nav-label {
@@ -766,7 +934,7 @@ footer {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); */
 }
 
 .footer-information {
@@ -1019,7 +1187,7 @@ footer {
 .project-grid {
     --grid-min-column-width: 20rem; /* Formerly tested with 20rem and then 30rem */
     display: grid;
-    gap: 3rem 1.5rem ;
+    gap: 2.5rem 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
     padding: 2rem 0 1.5rem 0;
 }
@@ -1031,6 +1199,11 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
+}
+
+.project-tile:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    scale: 1.02;
 }
 
 .glow {
@@ -1313,13 +1486,13 @@ footer {
 .education-grid {
     display: grid;
     padding: 1rem 0;
-    gap: 1rem;
+    gap: 1.5rem;
     /* grid-template-columns: 3fr 3fr 1fr; */
 }
 
 .education-list {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     --grid-min-column-width: 31rem;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
 }
@@ -1329,7 +1502,7 @@ footer {
     flex-direction: column;
     /* align-items: start; */
     background-color: var(--element-background-color);
-    transition: background-color 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
     border-radius: 2rem;
     padding: 1rem;
     gap: 1rem;
@@ -1337,6 +1510,8 @@ footer {
 
 .education-tile:hover {
     background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    scale: 1.02;
 }
 
 .education-banner {
@@ -1386,12 +1561,13 @@ footer {
     padding: 1rem;
     border: 1px solid var(--element-border-color);
     border-radius: 1.25rem;
-    transition: background-color 150ms ease, box-shadow 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
 }
 
 .education-degree:hover {
     background-color: var(--nested-element-background-hover-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    scale: 1.02;
 }
 
 .education-type, .education-duration {
@@ -1468,8 +1644,8 @@ footer {
 
 .certifications-grid {
     display: grid;
-    padding: 1rem 0;
-    gap: 1rem;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
     --grid-min-column-width: 34rem;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
 }
@@ -1478,13 +1654,15 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: var(--element-background-color);
-    transition: background-color 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
     border-radius: 2rem;
     /* overflow: hidden; */
 }
 
 .certification-tile:hover {
     background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    scale: 1.02;
 }
 
 .certification-main {
@@ -1773,10 +1951,12 @@ footer {
 
 .search-form {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    /* gap: 1rem; */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 4rem;
+    height: 9rem;
     margin: 0 auto;
     position: relative;
 }
@@ -1791,12 +1971,14 @@ footer {
     border-radius: 4rem;
     padding: 1.5rem;
     height: 4rem;
-    width: 100%;
+    width: calc(100% - 5rem);
     box-sizing: border-box;
     color: var(--primary-text-color);
     font-size: 1.25rem;
     font-weight: 300;
     transition: background-color 200ms ease, border 200ms ease;
+    z-index: 1001;
+
 }
 
 .search-bar::placeholder {
@@ -1814,9 +1996,43 @@ footer {
     outline: 1px solid var(--theme-color);
 }
 
+/* .tool-bar {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 4rem;
+    padding: 1.5rem;
+    height: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--primary-text-color);
+    font-size: 1.25rem;
+    font-weight: 300;
+    transition: background-color 200ms ease, border 200ms ease;
+} */
+
+.tool-bar::placeholder {
+    color: var(--form-input-placeholder-color);
+    font-weight: 200;
+}
+
+.tool-bar:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+.tool-bar:active, .tool-bar:focus {
+    border: 1px solid #00000000;
+    background-color: var(--element-background-hover-color);
+    outline: 1px solid var(--theme-color);
+}
+
 .search-button {
     position: absolute;
-    right: 0.5rem;
+    top: 3rem;
+    right: 5.5rem;
     background-color: var(--theme-color);
     border: none;
     border-radius: 2rem;
@@ -1829,4 +2045,146 @@ footer {
     font-size: 1.25rem;
     font-weight: 700;
     fill: black;
+    z-index: 1001;
+}
+
+.filter-button-container {
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 2rem;
+    width: 4rem;
+    height: 4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--nav-icon-color);
+}
+
+.filter-button {
+    content: "";
+    width: 3.9rem;
+    height: 3.9rem;
+    box-sizing: border-box;
+    background-color: var(--element-background-color);
+    border-radius: 2rem;
+    position: absolute;
+    z-index: 1000;
+    border: none;
+    transition: background-color 200ms ease;
+}
+
+.useless-black-rectangle {
+    content: "";
+    position: absolute;
+    top: calc(-3rem - 1px);
+    right: calc(4rem - 2px);
+    width: calc(3rem + 1px);
+    height: 3rem;
+    background-color: var(--background-color);
+    border-right: 1px solid var(--useless-black-rectangle-border-color);
+    border-bottom: 1px solid var(--useless-black-rectangle-border-color);
+    border-bottom-right-radius: 3rem;
+    z-index: 1000;
+}
+
+.filter-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--nav-icon-color);
+    z-index: 1001;
+}
+
+.filter-button:hover {
+    background-color: var(--element-background-hover-color);
+    cursor: pointer;
+}
+
+.filter-button:active  {
+    opacity: 0.8;
+}
+
+.search-tool-tags {
+    display: none;
+    position: absolute;
+    top: 7.5rem;
+    right: 0rem;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 2rem;
+    z-index: 999;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.search-tool-tags::after {
+    content: "";
+    position: absolute;
+    /* gradient */
+    top: 3.25rem;
+    right: 0rem;
+    width: 16.9rem;
+    height: 1.5rem;
+    background: linear-gradient(to top, transparent, var(--element-background-color));
+}
+
+.tool-tags-checkboxes-container::after {
+    content: "";
+    position: absolute;
+    /* gradient */
+    bottom: 4rem;
+    right: 0rem;
+    width: 16.9rem;
+    height: 1.5rem;
+    background: linear-gradient(to bottom, transparent, var(--element-background-color));
+}
+
+.search-tool-tags-title {
+    padding: 0 0 0.5rem 1.5rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.useless-gray-rectangle {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    right: -1px;
+    width: 7rem;
+    height: 5rem;
+    background-color: var(--element-background-color);
+    border-right: 1px solid var(--element-border-color);
+}
+
+.tool-tags-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tool-tags-checkboxes-container {
+    max-height: calc(100dvh - 20rem);
+    overflow: auto;
+    padding: 1rem 1.5rem;
+
+}
+
+.apply-filters-button {
+    background-color: var(--theme-color);
+    border: none;
+    border-radius: 2rem;
+    width: calc(100% - 2rem);
+    height: 2.5rem;
+    cursor: pointer;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    font-size: 1.2rem;
+    font-weight: 700;
+    fill: black;
+    margin: 0.5rem 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
