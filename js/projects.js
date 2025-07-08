@@ -147,8 +147,23 @@ function renderProjects() {
     });
 
     document.querySelectorAll(".form-input-entry-project").forEach((input) => {
-        const projectLabels = input.dataset.projects.split(", ");
-        
+        input.innerHTML = `
+            <div class="custom-dropdown" tabindex="0">
+            <div class="dropdown-selected dropdown-placeholder">
+                Project
+            </div>
+            <ul class="dropdown-options">
+                ${Object.values(projects).map(project => `
+                <li data-value="${project.id}">
+                    <img src="${project.logo}" class="project-logo" alt="${project.title} project logo">
+                    ${project.title}
+                </li>
+                `).join('')}
+                <li data-value="other">Other</li>
+            </ul>
+            <input type="hidden" name="project" id="project" value="N/A">
+            </div>
+        `;
     });
 }
 
