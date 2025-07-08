@@ -97,5 +97,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+        // Get the value of the category and project parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryValue = urlParams.get("category")?.toLowerCase();
+        const projectValue = urlParams.get("project")?.toLowerCase();
+
+        // If category is set, update the dropdown
+        if (categoryValue) {
+            const categoryOption = options.querySelector(`li[data-value="${categoryValue}"]`);
+            if (categoryOption) {
+                categoryOption.click();
+            }
+        }
+
+        // If project is set, update the project input
+        if (projectValue) {
+            const projectOption = project.querySelector(`li[data-value="${projectValue}"]`);
+            if (projectOption) {
+                projectOption.click();
+            } else {
+                resetDropdown(project, "Project"); // Reset project input if not found
+            }
+        }
     });
 });
