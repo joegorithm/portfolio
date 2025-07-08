@@ -1,0 +1,22 @@
+/* Selected Nav Button */
+.nav-button-certifications {
+    background-color: var(--selected-nav-button-color);
+    /* box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color); */
+}
+
+.nav-button-certifications:hover {
+    background-color: var(--selected-nav-button-hover-color);
+    cursor: pointer;
+}
+
+.nav-icon-certifications {
+    display: none;
+}
+
+.nav-icon-solid-certifications {
+    display: flex;
+}
+
+.nav-label-certifications {
+    color: var(--selected-nav-icon-color);
+}

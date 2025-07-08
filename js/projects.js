@@ -35,7 +35,7 @@ const projects = {
         started: "2024-10-11",
         completed: "",
         logo: "/logos/clock-logo.svg",
-        summary: "A simple analog clock web application.",
+        summary: "A simple analog clock web application that displays the current time.",
         description: "TBD",
         tools: "html, css, javascript"
     },
@@ -144,6 +144,11 @@ function renderProjects() {
             `;
         });
         container.innerHTML = html;
+    });
+
+    document.querySelectorAll(".form-input-entry-project").forEach((input) => {
+        const projectLabels = input.dataset.projects.split(", ");
+        
     });
 }
 
