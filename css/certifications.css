@@ -17,6 +17,6 @@
     display: flex;
 }
 
-.nav-label-certifications {
+.nav-label-certifications, .nav-label-certifications-shortened {
     color: var(--selected-nav-icon-color);
 }
