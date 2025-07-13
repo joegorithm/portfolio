@@ -1841,6 +1841,15 @@ footer {
     }
 }
 
+@media (max-width: 32rem) {
+    .project-details-facts {
+        padding: 1rem 6rem 1rem 1rem;
+    }
+    .project-details-award {
+        width: calc(100% + 3rem - 2px);
+    }
+}
+
 .project-details-options-button {
     position: absolute;
     display: flex;
@@ -1876,6 +1885,16 @@ footer {
     width: 15rem;
     background-color: var(--element-background-hover-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.project-details-options-button-live-site:hover {
+    width: 11.3rem;
+}
+.project-details-options-button-github:hover {
+    width: 14.4rem;
+}
+.project-details-options-button-feedback:hover {
+    width: 13.4rem;
 }
 
 .project-details-options-button:hover .project-details-options-label {
