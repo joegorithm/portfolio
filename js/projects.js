@@ -68,12 +68,12 @@ const projects = {
         url: "https://clock.jh.codes",
         github: "https://github.com/joegorithm/clock",
         started: "2024-10-11",
-        completed: "",
+        completed: "2025-07-16",
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/clock-logo.svg",
         summary: "A simple analog clock web application that displays the current time.",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        preview: [],
+        preview: ["/media/clock-project-preview-1.png", "/media/clock-project-preview-2.png", "/media/clock-project-preview-3.png", "/media/clock-project-preview-4.png"],
         tools: "html, css, javascript"
     },
     "matricat": {
