@@ -27,16 +27,17 @@ function isNavHoverEnabled() {
     .trim() === "true";
 }
 
+let hoverEnabled = isNavHoverEnabled();
+
 function updatePlaceholder(input, placeholder) {
-  if (!placeholder || !input) return;
-  placeholder.style.display = input.value ? 'none' : 'block';
+  if (placeholder && input && hoverEnabled) {
+      placeholder.style.display = input.value ? 'none' : 'block';
+  }
 }
 
 function setupSearchPlaceholder() {
   const input = document.getElementById('search-bar');
   const placeholder = document.querySelector('.search-placeholder');
-
-  if (!isNavHoverEnabled()) return;
 
   input.addEventListener('input', () => updatePlaceholder(input, placeholder));
 
