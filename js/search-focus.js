@@ -60,7 +60,7 @@ function isNavHoverEnabled() {
 
 function updatePlaceholder(input, placeholder, hoverEnabled) {
   if (placeholder && input && hoverEnabled) {
-    placeholder.style.display = input.value ? 'none' : 'block';
+    placeholder.style.display = input.value ? 'none' : 'flex';
   }
 }
 

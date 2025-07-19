@@ -3067,6 +3067,10 @@ header::before {
     pointer-events: none;
     font-size: 1.25rem;
     z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 .search-placeholder kbd {
@@ -3076,8 +3080,6 @@ header::before {
     padding: 0.1rem 0.3rem;
     font-family: sans-serif;
     font-size: 1rem;
-    font-weight: 200;
-    z-index: 1001;
 }
 
 @media (hover: none) {
