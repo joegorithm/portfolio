@@ -314,6 +314,14 @@ if (certificationTiles && finalCertifications.length > 0) {
     if (typeof renderCertifications === "function") renderCertifications();
 }
 
+const noResultsMessage = document.querySelector('.search-no-results-container');
+if (finalEducation.length === 0 && finalProjects.length === 0 && finalCertifications.length === 0) {
+    console.log("No results found");
+    noResultsMessage.style.display = 'flex';
+} else {
+    noResultsMessage.style.display = 'none';
+}
+
 // Re-run time-ago and technologies scripts for new elements
 if (typeof updateTimeAgo === "function") updateTimeAgo();
 if (typeof renderTechnologies === "function") renderTechnologies();

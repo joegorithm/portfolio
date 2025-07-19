@@ -38,6 +38,7 @@
     <script src="/js/search-focus.js" defer></script>
     <script src="/js/shortcut-key.js" defer></script>
     <script src="/js/glow.js" defer></script>
+    <script src="/js/404.js" defer></script>
 </head>
 <body>
     <div class="page-container">
@@ -51,6 +52,41 @@
                     <div class="search-project-tiles project-tiles project-grid" data-projects=""></div>
                     <h1 class="search-certifications-title">Certifications</h1>
                     <div class="search-certification-tiles certification-tiles certifications-grid" data-certifications=""></div>
+                    <div class="search-no-results-container">
+                        <div class="search-no-results-face">
+                            <div class="face">
+                                <div class="face-top">
+                                    <div class="face-eyes">
+                                        <div class="face-eye face-left-eye">
+                                            <div class="face-eye-pupil"></div>
+                                        </div>
+                                        <div class="face-eye face-right-eye">
+                                            <div class="face-eye-pupil"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="face-bottom">
+                                    <div class="face-mouth"></div>
+                                </div>
+                                <svg class="search-no-results-magnifying-glass-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512px" height="512px">
+                                    <!-- Magnifying Glass (https://icons8.com/icon/119005/search) icon by Icons8 (https://icons8.com). -->
+                                    <path fill="rgb(120, 120, 130)" d="M55.846,49.998l0.006-0.006L43.621,37.761C45.752,34.528,47,30.662,47,26.5 C47,15.178,37.822,6,26.5,6S6,15.178,6,26.5S15.178,47,26.5,47c4.163,0,8.031-1.249,11.265-3.381l12.232,12.229 c1.542,1.542,4.04,1.542,5.581,0l0.268-0.268C57.385,54.038,57.385,51.54,55.846,49.998z"/>
+                                    <linearGradient id="WtHX~pkuEeQUIdrwPnnSRc" x1="26.5" x2="26.5" y1="12" y2="41" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+                                        <stop offset="0" stop-color="#def9ff"/>
+                                        <stop offset=".282" stop-color="#cff6ff"/>
+                                        <stop offset=".823" stop-color="#a7efff"/>
+                                        <stop offset="1" stop-color="#99ecff"/>
+                                    </linearGradient>
+                                    <path fill="url(#WtHX~pkuEeQUIdrwPnnSRc)" d="M26.5 12A14.5 14.5 0 1 0 26.5 41A14.5 14.5 0 1 0 26.5 12Z"/>
+                                </svg>
+                                <svg class="search-no-results-x-icon" fill="rgb(170, 100, 110)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="search-no-results-message">No results found.</p>
+                    </div>
                 </section>
             </main>
             <footer></footer>
