@@ -21,30 +21,71 @@ document.getElementById('search-bar').addEventListener('keydown', function(event
 });
 
 // Search bar placeholder functionality
+
+// v1
+// function isNavHoverEnabled() {
+//   return getComputedStyle(document.documentElement)
+//     .getPropertyValue("--hover")
+//     .trim() === "true";
+// }
+
+// let hoverEnabled = isNavHoverEnabled();
+
+// function updatePlaceholder(input, placeholder) {
+//   if (placeholder && input && hoverEnabled) {
+//       placeholder.style.display = input.value ? 'none' : 'block';
+//   }
+// }
+
+// function setupSearchPlaceholder() {
+//   const input = document.getElementById('search-bar');
+//   const placeholder = document.querySelector('.search-placeholder');
+
+//   input.addEventListener('input', () => updatePlaceholder(input, placeholder));
+
+//   // Run on setup to catch restored input values
+//   updatePlaceholder(input, placeholder);
+// }
+
+// // Run on normal load AND back/forward cache restore
+// window.addEventListener('DOMContentLoaded', setupSearchPlaceholder);
+// window.addEventListener('pageshow', setupSearchPlaceholder);
+
+// v3
 function isNavHoverEnabled() {
   return getComputedStyle(document.documentElement)
     .getPropertyValue("--hover")
     .trim() === "true";
 }
 
-let hoverEnabled = isNavHoverEnabled();
-
-function updatePlaceholder(input, placeholder) {
+function updatePlaceholder(input, placeholder, hoverEnabled) {
   if (placeholder && input && hoverEnabled) {
-      placeholder.style.display = input.value ? 'none' : 'block';
+    placeholder.style.display = input.value ? 'none' : 'block';
   }
 }
 
 function setupSearchPlaceholder() {
   const input = document.getElementById('search-bar');
   const placeholder = document.querySelector('.search-placeholder');
+  const hoverEnabled = isNavHoverEnabled();
 
-  input.addEventListener('input', () => updatePlaceholder(input, placeholder));
+  if (!input || !placeholder) return;
 
-  // Run on setup to catch restored input values
-  updatePlaceholder(input, placeholder);
+  input.addEventListener('input', () =>
+    updatePlaceholder(input, placeholder, hoverEnabled)
+  );
+
+  updatePlaceholder(input, placeholder, hoverEnabled);
 }
 
-// Run on normal load AND back/forward cache restore
-window.addEventListener('DOMContentLoaded', setupSearchPlaceholder);
+// Only run once on DOMContentLoaded
+let hasInitialized = false;
+window.addEventListener('DOMContentLoaded', () => {
+  if (!hasInitialized) {
+    hasInitialized = true;
+    setupSearchPlaceholder();
+  }
+});
+
+// Always run on pageshow to fix back/forward behavior
 window.addEventListener('pageshow', setupSearchPlaceholder);
