@@ -285,22 +285,31 @@ console.log("Final Projects:", finalProjects);
 console.log("Final Certifications:", finalCertifications);
 
 // Render education
-const educationTiles = document.querySelector('.education-tiles');
+const educationTitle = document.querySelector('.search-education-title');
+const educationTiles = document.querySelector('.search-education-tiles');
 if (educationTiles && finalEducation.length > 0) {
+    educationTiles.style.display = 'grid';
+    educationTitle.style.display = 'block';
     educationTiles.setAttribute('data-education', finalEducation.join(', '));
     if (typeof renderEducation === "function") renderEducation();
 }
 
 // Render projects
-const projectTiles = document.querySelector('.project-tiles');
+const projectTitle = document.querySelector('.search-project-title');
+const projectTiles = document.querySelector('.search-project-tiles');
 if (projectTiles && finalProjects.length > 0) {
+    projectTiles.style.display = 'grid';
+    projectTitle.style.display = 'block';
     projectTiles.setAttribute('data-projects', finalProjects.join(', '));
     if (typeof renderProjects === "function") renderProjects();
 }
 
 // Render certifications
-const certificationTiles = document.querySelector('.certification-tiles');
+const certificationTitle = document.querySelector('.search-certifications-title');
+const certificationTiles = document.querySelector('.search-certification-tiles');
 if (certificationTiles && finalCertifications.length > 0) {
+    certificationTiles.style.display = 'grid';
+    certificationTitle.style.display = 'block';
     certificationTiles.setAttribute('data-certifications', finalCertifications.join(', '));
     if (typeof renderCertifications === "function") renderCertifications();
 }

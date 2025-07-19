@@ -2902,6 +2902,14 @@ header {
     z-index: 200;
 }
 
+.search-education-title, .search-project-title, .search-certifications-title {
+    display: none;
+}
+
+.search-education-tiles, .search-project-tiles, .search-certification-tiles {
+    display: none;
+}
+
 
 .page-title-current-simple {
     color: var(--primary-text-color);
