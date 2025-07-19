@@ -21,13 +21,29 @@ document.getElementById('search-bar').addEventListener('keydown', function(event
 });
 
 // Search bar placeholder functionality
-const input = document.getElementById('search-bar');
-const placeholder = document.querySelector('.search-placeholder');
-
-function updatePlaceholder() {
-    placeholder.style.display = input.value ? 'none' : 'block';
+function isNavHoverEnabled() {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue("--hover")
+    .trim() === "true";
 }
 
-input.addEventListener('input', updatePlaceholder);
+function updatePlaceholder(input, placeholder) {
+  if (!placeholder || !input) return;
+  placeholder.style.display = input.value ? 'none' : 'block';
+}
 
-document.addEventListener('DOMContentLoaded', updatePlaceholder);
+function setupSearchPlaceholder() {
+  const input = document.getElementById('search-bar');
+  const placeholder = document.querySelector('.search-placeholder');
+
+  if (!isNavHoverEnabled()) return;
+
+  input.addEventListener('input', () => updatePlaceholder(input, placeholder));
+
+  // Run on setup to catch restored input values
+  updatePlaceholder(input, placeholder);
+}
+
+// Run on normal load AND back/forward cache restore
+window.addEventListener('DOMContentLoaded', setupSearchPlaceholder);
+window.addEventListener('pageshow', setupSearchPlaceholder);
