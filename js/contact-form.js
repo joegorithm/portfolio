@@ -25,14 +25,22 @@ function validateForm() {
 
     let valid = true;
 
-    console.log(name.value);
-    console.log(email.value);
-    console.log(category.value);
-    console.log(project.value);
-    console.log(message.value);
+    // console.log(name.value);
+    // console.log(email.value);
+    // console.log(category.value);
+    // console.log(project.value);
+    // console.log(message.value);
+
+    function shakeElement(element) {
+        element.classList.remove("shake");
+        setTimeout(() => {
+            element.classList.add("shake");
+        }, 0);
+    }
 
     if (!name.value.trim()) {
         name.classList.add("error");
+        shakeElement(name);
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
@@ -45,6 +53,7 @@ function validateForm() {
     } else if (!email.value.trim() || !email.value.includes("@")) {
         name.classList.remove("error");
         email.classList.add("error");
+        shakeElement(email);
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
         message.classList.remove("error");
@@ -57,6 +66,7 @@ function validateForm() {
         name.classList.remove("error");
         email.classList.remove("error");
         categoryElement.classList.add("error");
+        shakeElement(categoryElement);
         projectElement.classList.remove("error");
         message.classList.remove("error");
         name.placeholder = "Name";
@@ -70,6 +80,7 @@ function validateForm() {
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.add("error");
+        shakeElement(projectElement);
         message.classList.remove("error");
         name.placeholder = "Name";
         email.placeholder = "Email";
@@ -84,6 +95,7 @@ function validateForm() {
         projectElement.classList.remove("error");
         categoryElement.classList.remove("error");
         message.classList.add("error");
+        shakeElement(message);
         name.placeholder = "Name";
         email.placeholder = "Email";
         message.placeholder = messageErrorMessage[Math.floor(Math.random() * messageErrorMessage.length)];

@@ -109,6 +109,17 @@ main {
     caret-color: rgb(255, 0, 0);
 }
 
+.form-input.shake {
+    animation: shake 0.8s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50% { transform: translateX(-10px); }
+    20%, 40%, 70% { transform: translateX(10px); }
+}
+
 .form-input.error:active, .form-input.error:focus {
     background-color: var(--element-background-hover-color);
     border: 1px solid #00000000;
@@ -174,6 +185,10 @@ input.form-input:-webkit-autofill {
     background-color: var(--element-background-hover-color);
     border: 1px solid rgba(255, 0, 0);
     caret-color: rgb(255, 0, 0);
+}
+
+.custom-dropdown.shake {
+    animation: shake 0.8s ease-in-out;
 }
 
 .custom-dropdown.error:active, .custom-dropdown.error:focus {
@@ -342,9 +357,9 @@ input.form-input:-webkit-autofill {
     position: relative;
 }
 
-.runaway-button-ghost {
-    /* position: absolute; */
-}
+/* .runaway-button-ghost {
+    position: absolute;
+} */
 
 .runaway-button {
     position: absolute;
@@ -361,9 +376,9 @@ input.form-input:-webkit-autofill {
 
 
 /* More ways to connect section */
-.more-ways-to-connect-section {
-    /* margin: 1rem 0; */
-}
+/* .more-ways-to-connect-section {
+    margin: 1rem 0;
+} */
 
 .buy-me-a-coffee-tile {
     background-color: var(--theme-color);
