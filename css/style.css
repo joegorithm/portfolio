@@ -1090,6 +1090,10 @@ footer {
     fill: var(--primary-text-color);
 }
 
+.footer-large-logo-standard {
+    display: block;
+}
+
 .footer-large-logo-christmas {
     display: none;
 }
@@ -1097,6 +1101,12 @@ footer {
 .footer-small-logo {
     fill: var(--primary-text-color);
     display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-small-logo-standard {
+    display: block;
 }
 
 .footer-small-logo-christmas {
