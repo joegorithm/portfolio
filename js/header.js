@@ -69,7 +69,11 @@ Array.from(document.getElementsByTagName("header")).forEach((header) => {
                 </button>
             </h1>
             <form class="search-form" action="/search" method="GET">
-                <input class="search-bar" type="text" name="query" placeholder="Search">
+                <input class="search-bar" id="search-bar" type="text" name="query" placeholder="Search...">
+                <div class="search-placeholder">
+                    <span>Search</span>
+                    <kbd id="shortcut-key"></kbd>
+                </div>
                 <button class="search-button" type="submit">
                     <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -102,7 +106,11 @@ Array.from(document.getElementsByTagName("header")).forEach((header) => {
                 </button>
             </h1>
             <form class="search-form" action="/search" method="GET">
-                <input class="search-bar" type="text" name="query" placeholder="Search">
+                <input class="search-bar" id="search-bar" type="text" name="query" placeholder="Search...">
+                <div class="search-placeholder">
+                    <span>Search</span>
+                    <kbd id="shortcut-key"></kbd>
+                </div>
                 <button class="search-button" type="submit">
                     <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->

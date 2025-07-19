@@ -35,6 +35,8 @@
     <script src="/js/time-ago.js" defer></script>
     <script src="/js/technologies.js" defer></script>
     <script src="/js/search.js" defer></script>
+    <script src="/js/search-focus.js" defer></script>
+    <script src="/js/shortcut-key.js" defer></script>
     <script src="/js/glow.js" defer></script>
 </head>
 <body>
@@ -55,7 +57,11 @@
         </div>
         <header>
             <form class="search-form search-form-large" action="/search" method="GET">
-                <input class="search-bar search-bar-complete" type="text" name="query" placeholder="Search">
+                <input class="search-bar search-bar-complete" type="text" name="query" id="search-bar" placeholder="Search...">
+                <div class="search-placeholder">
+                    <span>Search</span>
+                    <kbd id="shortcut-key"></kbd>
+                </div>
                 <button class="search-button search-button-complete" type="submit">
                     <svg width="1.5rem" height="1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
