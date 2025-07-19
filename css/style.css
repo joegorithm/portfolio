@@ -929,6 +929,10 @@ nav {
     margin-left: 0.5rem;
 }
 
+.nav-icon-logo-christmas {
+    display: none;
+}
+
 .nav-button-theme {
     margin-top: auto;
 }
@@ -1086,8 +1090,16 @@ footer {
     fill: var(--primary-text-color);
 }
 
+.footer-large-logo-christmas {
+    display: none;
+}
+
 .footer-small-logo {
     fill: var(--primary-text-color);
+    display: none;
+}
+
+.footer-small-logo-christmas {
     display: none;
 }
 
