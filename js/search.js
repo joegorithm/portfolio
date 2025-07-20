@@ -1,31 +1,12 @@
 const filterButton = document.querySelector('.filter-button'); 
 const searchToolTags = document.querySelector('.search-tool-tags');
 
-
-let searchToolTagsMenuStatus = localStorage.getItem('searchToolTagsMenuStatus') === 'true';
-// if checkbox input is checked, set searchToolTagsMenuStatus to true
-document.querySelectorAll('.search-tool-tags input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        searchToolTagsMenuStatus = true;
-        localStorage.setItem('searchToolTagsMenuStatus', 'true');
-    });
-});
-
-
-if (searchToolTagsMenuStatus) {
-    searchToolTags.style.display = 'block';
-} else {
-    searchToolTags.style.display = 'none';
-}
-
 // When .filter-button is clicked, toggle the visibility of the .search-tool-tags
 filterButton.addEventListener('click', function() {
-    if (searchToolTags.style.display === 'none') {
+    if (searchToolTags.style.display === 'none' || searchToolTags.style.display === '') {
         searchToolTags.style.display = 'block';
-        localStorage.setItem('searchToolTagsMenuStatus', 'true');
     } else {
         searchToolTags.style.display = 'none';
-        localStorage.setItem('searchToolTagsMenuStatus', 'false');
     }
 });
 
