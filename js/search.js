@@ -1,11 +1,12 @@
 const filterButton = document.querySelector('.filter-button'); 
 const searchToolTags = document.querySelector('.search-tool-tags');
 
-// When .filter-button is clicked, toggle the visibility of the .search-tool-tags
 filterButton.addEventListener('click', function() {
-    if (searchToolTags.style.display === 'none' || searchToolTags.style.display === '') {
-        searchToolTags.style.display = 'block';
-    } else {
+    searchToolTags.style.display = searchToolTags.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', function(event) {
+    if (!filterButton.contains(event.target) && !searchToolTags.contains(event.target) && !document.getElementById('search-bar').contains(event.target)) {
         searchToolTags.style.display = 'none';
     }
 });
