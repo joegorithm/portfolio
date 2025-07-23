@@ -21,16 +21,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/pickle-logo.png",
         summary: "A word game based on the concept of Wordle but only including food-themed words.",
-        description: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            <ol>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Consectetur adipiscing elit</li>
-                <li>Sed do eiusmod tempor incididunt</li>
-                <li>Ut labore et dolore magna aliqua</li>
-                <li>Ut enim ad minim veniam</li>
-            </ol>
-            `,
+        description: "Description coming soon",
         preview: ["/media/pickle-project-preview-1.png", "/media/pickle-project-preview-2.png", "/media/pickle-project-preview-3.png"],
         tools: "javascript, processingjs",
         awards: [{
@@ -57,7 +48,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/portfolio-logo.svg",
         summary: "My personal portfolio website showcasing my projects and skills.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Description coming soon",
         preview: [],
         tools: "html, css, javascript"
     },
@@ -71,8 +62,8 @@ const projects = {
         completed: "2025-07-16",
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/clock-logo.svg",
-        summary: "A simple analog clock web application that displays the current time.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        summary: "A simple analog clock with various designs and settings to accommodate user preferences.",
+        description: "This is an analog clock web app with various designs and settings to accommodate user preferences. I created this project to practice my CSS and design skills and to satiate my interest in time and how we visualize it. The are various themes available include Light, Dark, Night, and Vintage. The clock has options to toggle the visibility of the second hand and choose between a ticking or sweeping second hand motion.",
         preview: ["/media/clock-project-preview-1.png", "/media/clock-project-preview-2.png", "/media/clock-project-preview-3.png", "/media/clock-project-preview-4.png"],
         tools: "html, css, javascript"
     },
@@ -87,7 +78,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/matricat-logo.png",
         summary: "A dynamic user-friendly web application for performing matrix calculations.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Description coming soon",
         preview: [],
         tools: "html, css, javascript, react"
     },
@@ -102,7 +93,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/age-in-days-logo.svg",
         summary: "A simple web application that calculates your age in days.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Have you ever wondered how many days old you are? You haven't? Well, I have. So that's why I made this. This is a simple web application that accurately calculates your age in days (including leap days) based on your birthdate.",
         preview: [],
         tools: "html, css, javascript"
     },
@@ -117,7 +108,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/timer-logo.svg",
         summary: "A simple countdown timer web application.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Description coming soon",
         preview: ["/media/timer-project-preview-1.png"],
         tools: "html, css, javascript"
     },
@@ -132,7 +123,7 @@ const projects = {
         contributors: [creatorData["jonathan-hill"]],
         logo: "/logos/castleguessr-logo.png",
         summary: "A game where you guess the locations of medieval castles in the British Isles.",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Description coming soon",
         preview: [],
         tools: "javascript, processingjs",
         awards: [{
