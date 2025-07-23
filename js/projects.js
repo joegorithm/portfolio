@@ -22,7 +22,11 @@ const projects = {
         logo: "/logos/pickle-logo.png",
         summary: "A word game based on the concept of Wordle but only including food-themed words.",
         description: "Description coming soon",
-        preview: ["/media/pickle-project-preview-1.png", "/media/pickle-project-preview-2.png", "/media/pickle-project-preview-3.png"],
+        preview: [
+            {image: "/media/pickle-project-preview-1.png", label: "Pickle game"},
+            {image: "/media/pickle-project-preview-2.png", label: "Pickle statistics"},
+            {image: "/media/pickle-project-preview-3.png", label: "Pickle settings"}
+        ],
         tools: "javascript, processingjs",
         awards: [{
             place: "1st Place",
@@ -49,7 +53,14 @@ const projects = {
         logo: "/logos/portfolio-logo.svg",
         summary: "My personal portfolio website showcasing my projects and skills.",
         description: "Description coming soon",
-        preview: [],
+        preview: [
+            {image: "/media/portfolio-project-preview-1.png", label: "Overview page"},
+            {image: "/media/portfolio-project-preview-2.png", label: "About page"},
+            {image: "/media/portfolio-project-preview-3.png", label: "Projects page"},
+            {image: "/media/portfolio-project-preview-4.png", label: "Certifications page"},
+            {image: "/media/portfolio-project-preview-5.png", label: "Contact page"},
+            {image: "/media/portfolio-project-preview-6.png", label: "Search page"}
+        ],
         tools: "html, css, javascript"
     },
     "clock": {
@@ -64,7 +75,12 @@ const projects = {
         logo: "/logos/clock-logo.svg",
         summary: "A simple analog clock with various designs and settings to accommodate user preferences.",
         description: "This is an analog clock web app with various designs and settings to accommodate user preferences. I created this project to practice my CSS and design skills and to satiate my interest in time and how we visualize it. The are various themes available include Light, Dark, Night, and Vintage. The clock has options to toggle the visibility of the second hand and choose between a ticking or sweeping second hand motion.",
-        preview: ["/media/clock-project-preview-1.png", "/media/clock-project-preview-2.png", "/media/clock-project-preview-3.png", "/media/clock-project-preview-4.png"],
+        preview: [
+            {image: "/media/clock-project-preview-1.png", label: "Light theme"},
+            {image: "/media/clock-project-preview-2.png", label: "Dark theme"},
+            {image: "/media/clock-project-preview-3.png", label: "Night theme"},
+            {image: "/media/clock-project-preview-4.png", label: "Vintage theme"}
+        ],
         tools: "html, css, javascript"
     },
     "matricat": {
@@ -109,7 +125,7 @@ const projects = {
         logo: "/logos/timer-logo.svg",
         summary: "A simple countdown timer web application.",
         description: "Description coming soon",
-        preview: ["/media/timer-project-preview-1.png"],
+        preview: [{image: "/media/timer-project-preview-1.png", label: "Timer interface"}],
         tools: "html, css, javascript"
     },
     "castleguessr": {
@@ -312,8 +328,11 @@ function renderProjects() {
                 </div>
                 <div class="project-details-preview">
                     <div class="project-details-preview-images scroll-gradient-element">
-                        ${project.preview.map(image => `
-                            <img src="${image}" class="project-details-preview-image" alt="${project.title} preview image">
+                        ${project.preview.map(element => `
+                            <div class="project-details-preview-image-container">
+                                <img src="${element.image}" class="project-details-preview-image" alt="${project.title} preview image">
+                                <span class="project-details-preview-image-label">${element.label}</span>
+                            </div>
                         `).join('')}
                     </div>
                     <div class="scroll-gradient-start"></div>

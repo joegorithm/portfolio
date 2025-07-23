@@ -2314,15 +2314,41 @@ footer {
     transition: opacity 200ms ease;
 }
 
+.project-details-preview-image-container {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+    max-width: 30rem;
+}
+
 .project-details-preview-image {
     max-width: 30rem;
-    width: 100%;
-    box-sizing: border-box;
     height: auto;
     border-radius: 1.25rem;
-    border: 1px solid #0000;
-    background: linear-gradient(to bottom left, var(--subtle-text-color), rgba(220, 225, 255, 0.0)) border-box;
-    background-clip: border-area; /* The new added value */
+    border: 1px solid var(--element-border-color);
+    /* border: 1px solid #0000; */
+    /* background: linear-gradient(to bottom left, rgba(100, 100, 100, 0.6), rgba(220, 225, 255, 0.0)) border-box; */
+    /* background-clip: border-area; */
+}
+
+.project-details-preview-image-label {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    border: 1px solid rgba(115, 115, 115, 0.1);
+    backdrop-filter: invert(15%) blur(0.5rem);
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    padding: 0.1rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 150ms ease, bottom 150ms ease;
+}
+
+.project-details-preview-image-container:hover .project-details-preview-image-label {
+    opacity: 1;
+    bottom: 1rem;
 }
 
 .project-details-tech {
