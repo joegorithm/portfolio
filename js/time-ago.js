@@ -153,9 +153,13 @@ function updateTimeAgo() {
                 icon.classList.add("time-ago-icon-completed");
                 timeAgoDate.textContent = `Awarded ${timeAgo}`;
             } else if (startedDate) {
-                icon.innerHTML = clockIcon;
-                icon.classList.add("time-ago-icon-started");
-                timeAgoDate.textContent = `Started ${timeAgo}`;
+                if (element.classList.contains("time-ago-status-digit")) {
+                    timeAgoDate.textContent = timeAgo;
+                } else {
+                    icon.innerHTML = clockIcon;
+                    icon.classList.add("time-ago-icon-started");
+                    timeAgoDate.textContent = `Started ${timeAgo}`;
+                }
             } else {
                 icon.innerHTML = errorIcon;
                 icon.classList.add("time-ago-icon-started");

@@ -781,6 +781,8 @@ a {
     /* transition: opacity 200ms ease; */
     position: absolute;
     bottom: 120%;
+    /* left: 50%;
+    transform: translateX(-50%); */
     pointer-events: none; /* Prevent interaction with the tooltip itself */
     
     white-space: nowrap;
@@ -1739,6 +1741,10 @@ footer {
     /* font-weight: 500; */
     color: var(--secondary-text-color);
     text-wrap: nowrap;
+}
+
+.time-ago-status-digit .time-ago-date {
+    font-size: inherit;
 }
 
 /* .time-ago-date-started {
