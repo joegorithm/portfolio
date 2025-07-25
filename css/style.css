@@ -565,7 +565,7 @@
     --logo-j-color: var(--black-color);
     --logo-h-color: var(--black-color);
 
-    --background-color: rgb(255, 255, 255); /* #dce0f2cc */
+    --background-color: rgb(240, 240, 240); /* #dce0f2cc -> white -> rgb(238, 238, 238)*/
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
     --subtle-text-color: var(--light-gray-color);
@@ -579,7 +579,7 @@
     --element-background-hover-color: white; /* Formerly rgb(240, 244, 252); */
     --nested-element-background-hover-color: white; /* Formerly rgb(231, 235, 244); */
     --mobile-nav-background-color: rgb(255, 255, 255);
-    --element-border-color: rgba(181, 191, 200, 0.5);
+    --element-border-color: rgb(201, 213, 223); /* Formerly rgba(181, 191, 200, 0.5) */
     --nav-shadow-color: rgba(0, 0, 0, 0.1);
     --nav-label-shadow-color: rgba(255, 255, 255, 0.5);
 
@@ -626,7 +626,7 @@ body {
     font-family: "Inter", sans-serif;
     font-weight: 300;
     align-items: center;
-    caret-color: var(--theme-color); /* test */
+    caret-color: var(--logo-j-color); /* test */
 
     font-size: 1.25rem;
     line-height: 1.5;
@@ -1254,7 +1254,7 @@ footer {
 .social-media-button-codecademy:hover .social-media-icon-codecademy-container {
     /* fill: white; */
     cursor: pointer;
-    scale: 1.2;
+    transform: scale(1.2);
 }
 
 .social-media-icon-codecademy-container {
@@ -3111,7 +3111,7 @@ header::before {
     color: var(--primary-text-color);
     font-size: 1.25rem;
     font-weight: 300;
-    transition: background-color 200ms ease, border 200ms ease;
+    transition: background-color 200ms ease, border 200ms ease, box-shadow 200ms ease;
     z-index: 1001;
     margin: 0;
 }
@@ -3162,12 +3162,14 @@ header::before {
 
 .search-bar:hover {
     background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .search-bar:active, .search-bar:focus {
     border: 1px solid #00000000;
     background-color: var(--element-background-hover-color);
-    outline: 1px solid var(--theme-color);
+    outline: 1px solid var(--logo-j-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .tool-bar::placeholder {

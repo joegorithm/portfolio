@@ -73,7 +73,7 @@ main {
     color: var(--primary-text-color);
     border-radius: 1rem;
     padding: 1rem;
-    caret-color: var(--theme-color);
+    caret-color: var(--logo-j-color);
     transition: background-color 150ms ease;
 }
 
@@ -101,7 +101,7 @@ main {
     background-color: var(--element-background-hover-color);
     /* box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5); */
     border: 1px solid #00000000;
-    outline: 1px solid var(--theme-color);
+    outline: 1px solid var(--logo-j-color);
 }
 
 .form-input.error {
@@ -159,7 +159,7 @@ input.form-input:-webkit-autofill {
     border: 1px solid var(--element-border-color);
     color: var(--primary-text-color);
     border-radius: 1rem;
-    caret-color: var(--theme-color);
+    caret-color: var(--logo-j-color);
     transition: background-color 150ms ease;
 }
 
@@ -178,7 +178,7 @@ input.form-input:-webkit-autofill {
 .custom-dropdown:active, .custom-dropdown:focus {
     background-color: var(--element-background-hover-color);
     border: 1px solid #00000000;
-    outline: 1px solid var(--theme-color);
+    outline: 1px solid var(--logo-j-color);
 }
 
 .custom-dropdown.error {
