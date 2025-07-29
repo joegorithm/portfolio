@@ -462,6 +462,7 @@
     color: var(--future-tech-color);
     fill: var(--future-tech-color);
     cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .future-tech-label {
