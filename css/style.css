@@ -2676,7 +2676,7 @@ footer {
     overflow: hidden;
 }
 
-.certification-logo-microsoft {
+.certification-logo-microsoft, .certification-logo-small-microsoft {
     background: none;
 }
 
@@ -2693,6 +2693,10 @@ footer {
 .certification-logo-deeplearning-ai, .certification-logo-small-deeplearning-ai {
     background-color: var(--deeplearning-ai-theme-color);
     fill: white;
+}
+
+.certification-logo-canva, .certification-logo-small-canva {
+    background: none;
 }
 
 .certification-information {
