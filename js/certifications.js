@@ -152,6 +152,13 @@ const certificationIssuers = {
 
 // Certifications data
 const certifications = {
+    "learn-javascript-codecademy": {
+        title: "Learn JavaScript",
+        date: "2025-08-12",
+        url: "https://www.codecademy.com/profiles/Jonathan-Hill/certificates/705dcb15de0da4dd9d9fc4f3274b430e",
+        issuer: certificationIssuers["codecademy"],
+        tools: "javascript"
+    },
     "graphic-design-essentials-canva": {
         title: "Graphic Design Essentials",
         date: "2025-07-29",
