@@ -1591,7 +1591,7 @@ footer {
     width: 6rem;
     height: 6rem;
     border: 1px solid var(--element-border-color);
-    border-radius: 1.25rem;
+    border-radius: inherit;
 }
 
 .project-header {
@@ -1880,7 +1880,7 @@ footer {
     box-sizing: border-box;
     width: 15rem;
     height: 15rem;
-    border-radius: 3.125rem;
+    border-radius: inherit;
 }
 
 .project-details-title {
@@ -1932,7 +1932,6 @@ footer {
     .project-details-logo {
         width: calc(25dvw + 2rem);
         height: calc(25dvw + 2rem);
-        border-radius: calc(4.5dvw + 1rem);
     }
     .project-details-title {
         font-size: calc(8dvw + 1rem);
@@ -1963,7 +1962,6 @@ footer {
     .project-details-logo-castleguessr {
         width: calc(20dvw + 2rem);
         height: calc(20dvw + 2rem);
-        border-radius: calc(3.5dvw + 1rem);
     }
     .project-details-title-castleguessr {
         font-size: calc(4dvw + 1rem);
@@ -2648,7 +2646,7 @@ footer {
     background-color: white;
     width: 6rem;
     height: 6rem;
-    border-radius: 1.25rem;
+    border-radius: inherit;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -3030,8 +3028,20 @@ header::after {
     width: calc(100% + 8rem);
     height: 6rem;
     background-color: var(--background-color);
-    
 }
+
+/* Testing with transparent blur gradient */
+/* header::after {
+    top: -2rem;
+    left: -4rem;
+    width: calc(100% + 8rem);
+    height: 10rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0));
+} */
 
 header::before {
     content: "";
@@ -3040,7 +3050,7 @@ header::before {
     left: -4rem;
     width: calc(100% + 8rem);
     height: 4rem;
-    background: linear-gradient(to bottom, var(--background-color), transparent);
+    background: linear-gradient(to bottom, var(--background-color), transparent); /* Remove if wanting transparent blur gradient */
 }
 
 .search-form {
