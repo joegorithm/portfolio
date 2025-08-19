@@ -24,15 +24,15 @@ document.querySelectorAll('.scroll-gradient-element').forEach(element => {
         if (isAtStart) {
             startGradient.style.opacity = '0';
             endGradient.style.opacity = '1';
-            console.log("Start")
+            // console.log("Start");
         } else if (isAtEnd) {
             startGradient.style.opacity = '1';
             endGradient.style.opacity = '0';
-            console.log("End")
+            // console.log("End");
         } else {
             startGradient.style.opacity = '1';
             endGradient.style.opacity = '1';
-            console.log("Middle")
+            // console.log("Middle");
         }
     }
 

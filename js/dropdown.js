@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function resetDropdown(id, label) {
             id.querySelector(".dropdown-selected").textContent = label; // Reset selected text
-            id.querySelector("input[type=hidden]").value = "N/A"; // Reset hidden input value
+            const hidden = id.querySelector("input[type=hidden]");
+            hidden.value = "N/A"; // Reset hidden input value
+            // Notify listeners that the value changed programmatically
+            hidden.dispatchEvent(new Event("change", { bubbles: true }));
             id.querySelector(".dropdown-selected").classList.add("dropdown-placeholder"); // Reset placeholder styling
         }
 
@@ -45,16 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     e.preventDefault(); // Prevent default behavior
                     selected.innerHTML = options.querySelectorAll("li")[currentIndex].innerHTML; // Set selected text
                     hiddenInput.value = options.querySelectorAll("li")[currentIndex].dataset.value; // Store value for form submission
+                    // Fire change for programmatic update so external listeners can react
+                    hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
                     selected.classList.remove("dropdown-placeholder"); // Remove placeholder styling
                     dropdown.classList.remove("open"); // Close dropdown
                     dropdown.blur();
 
                     // Show project input if category is "Project Feedback"
-                    if (category.textContent === "Project Feedback") {
-                        project.classList.remove("form-input-entry-project-hidden");
-                    } else {
-                        project.classList.add("form-input-entry-project-hidden"); // Hide project input
-                        resetDropdown(project, "Project"); // Reset project input
+                    if (form) {
+                        if (category.textContent === "Project Feedback") {
+                            project.classList.remove("form-input-entry-project-hidden");
+                        } else {
+                            project.classList.add("form-input-entry-project-hidden"); // Hide project input
+                            resetDropdown(project, "Project"); // Reset project input
+                        }
                     }
                 } else if (e.key === "Escape") {
                     e.preventDefault(); // Prevent default behavior
@@ -84,16 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 // selected.textContent = option.textContent; // Set selected text
                 selected.innerHTML = option.innerHTML; // Set selected text
                 hiddenInput.value = option.dataset.value; // Store value for form submission
+                // Fire change for programmatic update so external listeners can react
+                hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
                 selected.classList.remove("dropdown-placeholder");
                 dropdown.classList.remove("open"); // Close dropdown
                 dropdown.blur(); // Remove focus
 
                 // Show project input if category is "Project Feedback"
-                if (category.textContent === "Project Feedback") {
-                    project.classList.remove("form-input-entry-project-hidden");
-                } else {
-                    project.classList.add("form-input-entry-project-hidden"); // Hide project input
-                    resetDropdown(project, "Project"); // Reset project input
+                if (form) {
+                    if (category.textContent === "Project Feedback") {
+                        project.classList.remove("form-input-entry-project-hidden");
+                    } else {
+                        project.classList.add("form-input-entry-project-hidden"); // Hide project input
+                        resetDropdown(project, "Project"); // Reset project input
+                    }
                 }
             });
         });

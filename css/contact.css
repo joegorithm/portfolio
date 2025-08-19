@@ -26,7 +26,7 @@ main {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
-    margin: 0.7rem 0 1rem 0;
+    padding: 0.7rem 0 1rem 0;
 }
 
 
@@ -140,124 +140,12 @@ input.form-input:-webkit-autofill {
     overflow: auto;
 }
 
-
-
-.custom-dropdown {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    cursor: pointer;
-    position: relative;
-    background: url("/icon/chevron-down-icon.svg") no-repeat right 1rem center;
-    background-size: 1rem;
-
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.5rem;
-    background-color: var(--element-background-color);
-    backdrop-filter: blur(4rem);
-    border: 1px solid var(--element-border-color);
-    color: var(--primary-text-color);
-    border-radius: 1rem;
-    caret-color: var(--logo-j-color);
-    transition: background-color 150ms ease;
-}
-
-.form-input-entry-category .custom-dropdown {
-    z-index: 6;
-}
-
-.form-input-entry-project .custom-dropdown {
-    z-index: 5;
-}
-
-.custom-dropdown:hover {
-    background-color: var(--element-background-hover-color);
-}
-
-.custom-dropdown:active, .custom-dropdown:focus {
-    background-color: var(--element-background-hover-color);
-    border: 1px solid #00000000;
-    outline: 1px solid var(--logo-j-color);
-}
-
-.custom-dropdown.error {
-    background-color: var(--element-background-hover-color);
-    border: 1px solid rgba(255, 0, 0);
-    caret-color: rgb(255, 0, 0);
-}
-
-.custom-dropdown.shake {
-    animation: shake 0.8s ease-in-out;
-}
-
-.custom-dropdown.error:active, .custom-dropdown.error:focus {
-    background-color: var(--element-background-hover-color);
-    border: 1px solid #00000000;
-    outline: 1px solid rgba(255, 0, 0);
-}
-
-.dropdown-selected {
-    /* background: white; */
-    /* padding: 10px; */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
-    position: relative;
-    padding: 1rem;
-    display: flex;
-    gap: 0.75rem;
-}
-
-.dropdown-placeholder {
-    color: var(--subtle-text-color);
-    font-weight: 200;
-}
-
-.dropdown-options {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: -1px;
-    top: 4rem;
-    width: 100%;
-    max-height: 21rem;
-    overflow-y: auto;
-    /* height: 0rem; */
-    /* transition: height 200ms ease; */
-    
-    background: var(--element-background-color);
-    border: 1px solid var(--element-border-color);
-    border-radius: 1rem;
-    box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.5);
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-.dropdown-options li {
-    padding: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    display: flex;
-    gap: 0.75rem;
-}
-
-.dropdown-options li:hover, .highlight {
-    background: var(--element-border-color);
-}
-
+/* For project dropdown */
 .project-logo {
     border: 0.5px solid var(--element-border-color);
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 0.4rem;
-}
-
-/* Show dropdown when open */
-.custom-dropdown.open .dropdown-options {
-    display: block;
-    /* height: 21rem; */
 }
 
 .form-input-entry-project-hidden {

@@ -46,7 +46,13 @@ const enableDarkTheme = () => {
     document.body.classList.add("dark-theme");
     document.body.classList.remove("light-theme");
     localStorage.setItem("theme", "dark");
-    document.querySelector(".nav-label-theme").textContent = "Light Mode";
+    updateHighlightJsTheme("dark");
+    
+    // Update nav label only if it exists
+    const themeLabel = document.querySelector(".nav-label-theme");
+    if (themeLabel) {
+        themeLabel.textContent = "Light Mode";
+    }
 }
 
 // Enable light theme function
@@ -54,7 +60,35 @@ const enableLightTheme = () => {
     document.body.classList.add("light-theme");
     document.body.classList.remove("dark-theme");
     localStorage.setItem("theme", "light");
-    document.querySelector(".nav-label-theme").textContent = "Dark Mode";
+    updateHighlightJsTheme("light");
+    
+    // Update nav label only if it exists
+    const themeLabel = document.querySelector(".nav-label-theme");
+    if (themeLabel) {
+        themeLabel.textContent = "Dark Mode";
+    }
+}
+
+// Update Highlight.js theme based on current theme
+const updateHighlightJsTheme = (theme) => {
+    // Remove existing highlight.js theme
+    const existingTheme = document.querySelector('link[href*="highlight.js"][href*="github"]');
+    if (existingTheme) {
+        existingTheme.remove();
+    }
+    
+    // Add new theme
+    const themeLink = document.createElement('link');
+    themeLink.rel = 'stylesheet';
+    themeLink.href = theme === 'dark' 
+        ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css'
+        : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css';
+    document.head.appendChild(themeLink);
+    
+    // Re-highlight all code blocks if hljs is available
+    if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+    }
 }
 
 // Update theme button label on sidebar
@@ -82,6 +116,9 @@ if (theme === null) {
     if (systemDarkTheme.matches) {
         enableDarkTheme();
     } else if (systemLightTheme.matches) {
+        enableLightTheme();
+    } else {
+        // Default to light theme if no preference
         enableLightTheme();
     }
 

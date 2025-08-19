@@ -8,13 +8,17 @@ function updateTimeAgo() {
         const earnedDate = timeAgoDate.dataset.earned;
         const awardedDate = timeAgoDate.dataset.awarded;
         const graduateDate = timeAgoDate.dataset.graduate;
+        const publishedDate = timeAgoDate.dataset.published;
 
         // For project details pages
         const projectDetailsStarted = element.querySelector(".project-details-started");
         const projectDetailsCompleted = element.querySelector(".project-details-completed");
 
+        // For blog post pages
+        const blogPostPublished = element.querySelector(".blog-post-published");
+
         // Use the completed date if it exists, otherwise use the started date if it exists, and use earned date if none of the others exist
-        const dateToUse = completedDate || graduateDate || earnedDate || awardedDate || startedDate;
+        const dateToUse = completedDate || graduateDate || earnedDate || awardedDate || publishedDate || startedDate;
         const startedDateDate = new Date(startedDate + "T00:00:00");
         const date = new Date(dateToUse + "T00:00:00");
         const now = new Date();
@@ -93,6 +97,13 @@ function updateTimeAgo() {
         </svg>
         `;
 
+        const newsPaperIcon = `
+        <svg width="1rem" height="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path d="M64 480L64 184C64 170.7 74.7 160 88 160C101.3 160 112 170.7 112 184L112 472C112 485.3 122.7 496 136 496C149.3 496 160 485.3 160 472L160 160C160 124.7 188.7 96 224 96L512 96C547.3 96 576 124.7 576 160L576 480C576 515.3 547.3 544 512 544L128 544C92.7 544 64 515.3 64 480zM224 192L224 256C224 273.7 238.3 288 256 288L320 288C337.7 288 352 273.7 352 256L352 192C352 174.3 337.7 160 320 160L256 160C238.3 160 224 174.3 224 192zM248 432C234.7 432 224 442.7 224 456C224 469.3 234.7 480 248 480L488 480C501.3 480 512 469.3 512 456C512 442.7 501.3 432 488 432L248 432zM224 360C224 373.3 234.7 384 248 384L488 384C501.3 384 512 373.3 512 360C512 346.7 501.3 336 488 336L248 336C234.7 336 224 346.7 224 360zM424 240C410.7 240 400 250.7 400 264C400 277.3 410.7 288 424 288L488 288C501.3 288 512 277.3 512 264C512 250.7 501.3 240 488 240L424 240z"/>
+        </svg>
+        `;
+
         const errorIcon = `
         <svg width="0.9rem" height="0.9rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
         `;
@@ -131,6 +142,16 @@ function updateTimeAgo() {
                     timeAgoDate.textContent = "Not completed yet";
                 }
             }
+        } else if (element.classList.contains("blog-post-detail-published")) {
+            if (publishedDate) {
+                icon.innerHTML = newsPaperIcon;
+                icon.classList.add("time-ago-icon-published");
+                timeAgoDate.textContent = `Published ${tooltipMonth} ${tooltipDate}, ${tooltipYear}`;
+            } else {
+                icon.innerHTML = errorIcon;
+                icon.classList.add("time-ago-icon-started");
+                timeAgoDate.textContent = "Not published yet";
+            }
         } else {
             if (completedDate) {
                 icon.innerHTML = checkmarkIcon;
@@ -152,6 +173,10 @@ function updateTimeAgo() {
                 icon.innerHTML = certificateIcon;
                 icon.classList.add("time-ago-icon-completed");
                 timeAgoDate.textContent = `Awarded ${timeAgo}`;
+            } else if (publishedDate) {
+                icon.innerHTML = newsPaperIcon;
+                icon.classList.add("time-ago-icon-published");
+                timeAgoDate.textContent = `Published ${timeAgo}`;
             } else if (startedDate) {
                 if (element.classList.contains("time-ago-status-digit")) {
                     timeAgoDate.textContent = timeAgo;

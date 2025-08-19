@@ -514,6 +514,7 @@
     --logo-h-color: var(--white-color);
 
     --background-color: var(--black-color);
+    --header-background-color: rgba(0, 0, 0, 0.9);
     --primary-text-color: var(--white-color);
     --secondary-text-color: var(--light-gray-color);
     --subtle-text-color: var(--dark-gray-color);
@@ -534,6 +535,9 @@
     --tooltip-shadow-color: rgba(0, 0, 0, 0.7);
 
     --form-input-placeholder-color: rgba(183, 189, 211, 0.4);
+
+    --dropdown-option-hover-color: rgba(239, 247, 255, 0.075);
+    --dropdown-shadow-color: rgba(0, 0, 0, 0.5);
 
     --text-selection-color: rgba(255, 200, 25, 0.6);
     
@@ -556,6 +560,13 @@
 
     --useless-black-rectangle-border-color: rgba(255, 255, 255, 0.2);
     --tool-tag-selected-foreground-color: rgba(0, 0, 0, 0.7);
+
+    --inline-code-color: rgb(210, 219, 226);
+    --inline-code-border-color: rgba(255, 255, 255, 0.05);
+
+    --desmos-border-color: rgba(231, 235, 254, 0.2);
+
+    --modal-close-button-background-hover-color: var(--element-background-hover-color);
 }
 
 .light-theme {
@@ -567,6 +578,7 @@
     --logo-h-color: var(--black-color);
 
     --background-color: rgb(240, 240, 240); /* #dce0f2cc -> white -> rgb(238, 238, 238)*/
+    --header-background-color: rgba(240, 240, 240, 0.9);
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
     --subtle-text-color: var(--light-gray-color);
@@ -587,6 +599,9 @@
     --tooltip-shadow-color: rgba(0, 0, 0, 0.3);
 
     --form-input-placeholder-color: rgba(0, 0, 0, 0.3);
+
+    --dropdown-option-hover-color: rgba(0, 6, 34, 0.075);
+    --dropdown-shadow-color: rgba(0, 0, 0, 0.2);
 
     --text-selection-color: rgba(255, 200, 25, 0.8);
 
@@ -609,6 +624,13 @@
     
     --useless-black-rectangle-border-color: rgba(0, 0, 0, 0.13);
     --tool-tag-selected-foreground-color: rgba(255, 255, 255, 0.9);
+
+    --inline-code-color: rgb(38, 40, 41);
+    --inline-code-border-color: rgba(0, 0, 0, 0.1);
+
+    --desmos-border-color: var(--element-border-color);
+
+    --modal-close-button-background-hover-color: rgba(0, 6, 34, 0.05);
 }
 
 
@@ -1737,6 +1759,10 @@ footer {
     fill: var(--secondary-text-color);
 }
 
+.time-ago-icon-published {
+    fill: var(--secondary-text-color);
+}
+
 .time-ago-date {
     font-size: 0.8rem;
     /* font-weight: 500; */
@@ -1816,7 +1842,7 @@ footer {
 
 /* Project Details Pages */
 .project-details-page {
-    margin: 2rem 0;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -2018,14 +2044,14 @@ footer {
     height: fit-content;
 }
 
-.project-details-fact {
+.project-details-fact, .blog-post-detail {
     color: var(--primary-text-color);
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-.project-details-fact-value {
+.project-details-fact-value, .blog-post-detail-value {
     color: var(--secondary-text-color);
     font-size: 1rem;
 }
@@ -2040,7 +2066,7 @@ footer {
     /* font-weight: 500; */
 }
 
-.project-details-created-by {
+.project-details-created-by, .blog-post-details-author {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -2051,16 +2077,21 @@ footer {
     padding: 0.5rem 1rem 0.5rem 0.5rem;
     border: 1px solid var(--element-border-color);
     border-radius: 1rem;
-    transition: background-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, color 150ms ease, scale 150ms ease;
 }
 
-.project-details-created-by:hover {
+.project-details-created-by-name, .blog-post-details-author-name {
+    white-space: nowrap;
+}
+
+.project-details-created-by:hover, .blog-post-details-author:hover {
+    scale: 1.05;
     background-color: var(--element-background-hover-color);
     color: var(--primary-text-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
-.project-details-created-by-avatar {
+.project-details-created-by-avatar, .blog-post-details-author-avatar {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 20%;
@@ -2076,10 +2107,11 @@ footer {
     padding: 0.5rem 1rem;
     width: calc(100% - 0.5rem - 2px);
     background-color: var(--element-background-color);
-    transition: background-color 150ms ease, box-shadow 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
 }
 
 .project-details-award:hover {
+    scale: 1.02;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     background-color: var(--element-background-hover-color);
 }
@@ -2136,7 +2168,7 @@ footer {
 }
 
 
-.project-details-options {
+.project-details-options, .blog-post-options {
     position: absolute;
     /* padding: 5.5rem 1rem 1rem; */
     box-sizing: border-box;
@@ -2181,7 +2213,7 @@ footer {
     }
 }
 
-.project-details-options-button {
+.project-details-options-button, .blog-post-options-button {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -2192,7 +2224,7 @@ footer {
     fill: var(--nav-icon-color);
     color: var(--nav-icon-color);
     border: 1px solid var(--element-border-color);
-    padding: 1rem;
+    padding: calc(1rem - 1px);
     width: 4rem;
     height: 4rem;
     box-sizing: border-box;
@@ -2202,7 +2234,11 @@ footer {
     overflow: hidden;
 }
 
-.project-details-options-label {
+.blog-post-options-button-share {
+    padding: calc(0.75rem);
+}
+
+.project-details-options-label, .blog-post-options-label {
     position: absolute;
     left: 1.5rem;
     opacity: 0;
@@ -2212,28 +2248,41 @@ footer {
     transition: opacity 50ms ease;
 }
 
-.project-details-options-button:hover {
+.project-details-options-button:hover, .blog-post-options-button:hover {
     width: 15rem;
     background-color: var(--element-background-hover-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-.project-details-options-button-live-site:hover {
+.project-details-options-button-live-site:hover, .project-details-options-button-live-site:focus {
     width: 11.3rem;
 }
-.project-details-options-button-github:hover {
+.project-details-options-button-github:hover, .project-details-options-button-github:focus {
     width: 14.4rem;
 }
-.project-details-options-button-feedback:hover {
+.project-details-options-button-feedback:hover, .project-details-options-button-feedback:focus {
     width: 13.4rem;
 }
 
-.project-details-options-button:hover .project-details-options-label {
+.blog-post-options-button-share:hover, .blog-post-options-button-share:focus {
+    width: 9.5rem;
+}
+
+.blog-post-options-button-cite:hover, .blog-post-options-button-cite:focus {
+    width: 8.2rem;
+}
+
+.blog-post-options-button-feedback:hover, .blog-post-options-button-feedback:focus {
+    width: 14.5rem;
+}
+
+.project-details-options-button:hover .project-details-options-label, .blog-post-options-button:hover .blog-post-options-label, .project-details-options-button:focus .project-details-options-label, .blog-post-options-button:focus .blog-post-options-label {
     opacity: 1;
     transition: opacity 200ms ease 100ms;
 }
 
-.project-details-options-button-live-site {
+.project-details-options-button-live-site, .blog-post-options-button-share {
     top: calc(1rem + 1px);
     right: 1rem;
     background-color: var(--theme-color);
@@ -2242,26 +2291,31 @@ footer {
     color: black;
 }
 
-.project-details-options-button-live-site:hover {
+.project-details-options-button-live-site:hover, .blog-post-options-button-share:hover {
     background-color: var(--theme-color);
 }
 
-.project-details-options-button-github {
+.project-details-options-button-github, .blog-post-options-button-cite {
     top: calc(5.5rem + 1px);
     right: 1rem;
 }
 
-.project-details-options-button-feedback {
+.project-details-options-button-feedback, .blog-post-options-button-feedback {
     top: calc(10rem + 1px);
     right: 1rem;
 }
 
-.project-details-options-icon {
+.project-details-options-icon, .blog-post-options-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 2rem;
     height: 2rem;
+}
+
+.blog-post-options-icon-share {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .project-details-preview {
@@ -2330,7 +2384,11 @@ footer {
     /* background-clip: border-area; */
 }
 
-.project-details-preview-image-label {
+#blog-content p:has(img) {
+    position: relative;
+}
+
+.project-details-preview-image-label, .blog-post-image-label {
     opacity: 0;
     position: absolute;
     bottom: 0;
@@ -2338,6 +2396,7 @@ footer {
     border: 1px solid rgba(115, 115, 115, 0.1);
     backdrop-filter: invert(15%) blur(0.5rem);
     color: rgb(255, 255, 255);
+    text-shadow: 0 0 0.2rem rgb(0, 0, 0, 0.2);
     border-radius: 2rem;
     padding: 0.1rem 1rem;
     font-size: 0.9rem;
@@ -2345,7 +2404,7 @@ footer {
     transition: opacity 150ms ease, bottom 150ms ease;
 }
 
-.project-details-preview-image-container:hover .project-details-preview-image-label {
+.project-details-preview-image-container:hover .project-details-preview-image-label, #blog-content p:has(img):hover .blog-post-image-label {
     opacity: 1;
     bottom: 1rem;
 }
@@ -2394,7 +2453,7 @@ footer {
 .education-banner {
     width: 100%;
     height: 10rem;
-    border-radius: 1.25rem;
+    border-radius: 1.25rem 1.25rem 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2940,9 +2999,29 @@ footer {
 }
 
 
+main {
+    min-height: calc(100dvh - 23.5rem + 2px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 60rem) {
+    main {
+        min-height: calc(100dvh - 22.5rem + 2px);
+    }
+}
+@media (max-width: 42rem) {
+    main {
+        min-height: calc(100dvh - 24.5rem - 3px);
+    }
+}
+@media (max-width: 30rem) {
+    main {
+        min-height: calc(100dvh - 30rem - 3px);
+    }
+}
 
 /* Search Bar */
-.section-results {
+/* .section-results {
     min-height: calc(100dvh - 23.5rem + 2px);
 }
 
@@ -2960,7 +3039,7 @@ footer {
     .section-results {
         min-height: calc(100dvh - 30rem - 3px);
     }
-}
+} */
 
 header {
     position: fixed;
@@ -3031,26 +3110,27 @@ header::after {
 }
 
 /* Testing with transparent blur gradient */
-/* header::after {
+header::after {
     top: -2rem;
     left: -4rem;
     width: calc(100% + 8rem);
     height: 10rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 0, 204, 0);
+    backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(10px);
-    mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0));
-} */
+    /* mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.5)); */
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
 
 header::before {
     content: "";
     position: absolute;
-    top: 4rem;
+    top: -2rem;
     left: -4rem;
     width: calc(100% + 8rem);
-    height: 4rem;
-    background: linear-gradient(to bottom, var(--background-color), transparent); /* Remove if wanting transparent blur gradient */
+    height: 8rem;
+    background: linear-gradient(to bottom, var(--header-background-color) 40%, transparent); /* Remove if wanting transparent blur gradient */
 }
 
 .search-form {
@@ -3571,4 +3651,123 @@ header::before {
     width: 25%;
     height: 10%;
     border-radius: 100vw;
+}
+
+
+
+
+
+/* Dropdown */
+.custom-dropdown {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    position: relative;
+    background: url("/icon/chevron-down-icon.svg") no-repeat right 1rem center;
+    background-size: 1rem;
+
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    background-color: var(--element-background-color);
+    /* backdrop-filter: blur(4rem); */
+    border: 1px solid var(--element-border-color);
+    color: var(--primary-text-color);
+    border-radius: 1rem;
+    caret-color: var(--logo-j-color);
+    transition: background-color 150ms ease;
+}
+
+.form-input-entry-category .custom-dropdown, .custom-dropdown-citation-style {
+    z-index: 6;
+}
+
+.form-input-entry-project .custom-dropdown, .custom-dropdown-chicago-citation-version {
+    z-index: 5;
+}
+
+.custom-dropdown:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+.custom-dropdown:active, .custom-dropdown:focus {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid #00000000;
+    outline: 1px solid var(--logo-j-color);
+}
+
+.custom-dropdown.open {
+    background-image: url("/icon/chevron-up-icon.svg");
+    
+}
+
+.custom-dropdown.error {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid rgba(255, 0, 0);
+    caret-color: rgb(255, 0, 0);
+}
+
+.custom-dropdown.shake {
+    animation: shake 0.8s ease-in-out;
+}
+
+.custom-dropdown.error:active, .custom-dropdown.error:focus {
+    background-color: var(--element-background-hover-color);
+    border: 1px solid #00000000;
+    outline: 1px solid rgba(255, 0, 0);
+}
+
+.dropdown-selected {
+    /* background: white; */
+    /* padding: 10px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.dropdown-placeholder {
+    color: var(--subtle-text-color);
+    font-weight: 200;
+}
+
+.dropdown-options {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -1px;
+    top: 4rem;
+    width: 100%;
+    max-height: 21rem;
+    overflow-y: auto;
+    
+    background: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--dropdown-shadow-color);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.dropdown-options li {
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.dropdown-options li:hover, .highlight {
+    background: var(--dropdown-option-hover-color);
+}
+
+/* Show dropdown when open */
+.custom-dropdown.open .dropdown-options {
+    display: block;
+    /* height: 21rem; */
 }

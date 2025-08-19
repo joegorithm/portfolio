@@ -1,0 +1,500 @@
+/* Selected Nav Button */
+.nav-button-blog {
+    background-color: var(--selected-nav-button-color);
+    /* box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color); */
+}
+
+.nav-button-blog:hover {
+    background-color: var(--selected-nav-button-hover-color);
+    cursor: pointer;
+}
+
+.nav-icon-blog {
+    display: none;
+}
+
+.nav-icon-solid-blog {
+    display: flex;
+}
+
+.nav-label-blog {
+    color: var(--selected-nav-icon-color);
+}
+
+.blog-post-cover-image {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.blog-post-section {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+/* #blog-content {
+    margin: 1rem 0;
+} */
+
+#blog-content img {
+    border-radius: 1rem;
+}
+
+.blog-post-details {
+    position: sticky;
+    top: 9rem;
+    background-color: var(--element-background-color);
+    border-radius: 2rem 0 2rem 2rem;
+    border: 1px solid var(--element-border-color);
+    min-width: calc(10rem + 8vw);
+    width: auto;
+    max-width: min-content;
+    height: fit-content;
+
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.blog-post-detail-published .time-ago-icon, .blog-post-detail-published .time-ago-icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+@media (max-width: 65rem) {
+    .blog-post-section {
+        flex-direction: column;
+        gap: 0;
+    }
+    .blog-post-details {
+        max-width: none;
+    }
+}
+
+@media (max-width: 60rem) {
+    .blog-post-details {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 30rem) {
+    .blog-post-details {
+        padding: 1rem;
+    }
+}
+
+.blog-post-details-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 89rem) {
+    .blog-post-details {
+        border-radius: 2rem;
+        min-width: auto;
+        /* max-width: 17rem; */
+    }
+    .blog-post-details-top {
+        padding-right: 5rem;
+    }
+    .blog-post-options {
+        height: calc(100% + 2px);
+        right: 0;
+        background: none;
+        border: none;
+    }
+}
+
+@media (max-width: 32rem) {
+    .blog-post-details-top {
+        padding-right: 5rem;
+    }
+}
+
+/* pre {
+    margin: 1rem 0;
+} */
+
+code {
+    font-family: "Sometype Mono", monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--inline-code-border-color);
+    color: var(--inline-code-color);
+}
+
+pre code.hljs {
+    border: 1px solid var(--element-border-color);
+    border-radius: 0 0 1rem 1rem;
+    background-color: var(--element-background-color);
+    font-size: 1rem;
+}
+
+.code-label {
+    background-color: var(--element-background-hover-color);
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid var(--element-border-color);
+    border-bottom: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: var(--subtle-text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-language {
+    flex-grow: 1;
+}
+
+.code-copy-button, .copy-citation-button {
+    background-color: transparent;
+    border: 1px solid var(--element-border-color);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    fill: var(--secondary-text-color);
+}
+
+.code-copy-button:hover, .copy-citation-button:hover {
+    background-color: var(--hover-background-color);
+    color: var(--primary-text-color);
+    fill: var(--primary-text-color);
+}
+
+.code-copy-button:disabled, .copy-citation-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.code-copy-button:disabled:hover, .copy-citation-button:disabled:hover {
+    background-color: transparent;
+    color: var(--subtle-text-color);
+    fill: var(--subtle-text-color);
+}
+
+blockquote {
+    border-left: 0.25rem solid var(--element-border-color);
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    color: var(--secondary-text-color);
+}
+
+/* Style hyperlinks */
+
+#blog-content a {
+    color: var(--theme-color);
+    text-decoration: none;
+    text-underline-offset: 5%;
+    font-weight: 500;
+}
+
+#blog-content a:hover {
+    text-decoration: underline;
+
+}
+
+#blog-content h1 {
+    margin: 0.67em 0;
+}
+
+#blog-content h2 {
+    margin: 0.83em 0;
+}
+
+#blog-content h3 {
+    margin: 1em 0;
+}
+
+#blog-content h4 {
+    margin: 1.33em 0;
+}
+
+#blog-content h5 {
+    margin: 1.67em 0;
+}
+
+#blog-content h6 {
+    margin: 2.33em 0;
+}
+
+#blog-content p {
+    margin: 1em 0;
+}
+
+#blog-content img {
+    max-width: 100%;
+}
+
+
+
+
+/* Desmos graphing calculator */
+#calculator {
+    width: auto;
+    height: 30rem;
+    outline: 1px solid var(--desmos-border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Remove default border from Desmos calculator */
+.dcg-calculator-api-container-v1_11 .dcg-container.dcg-default-border {
+    border: none;
+}
+
+/* Change border-radius of outlined buttons */
+.dcg-calculator-api-container-v1_11 .dcg-btn-flat-gray {
+    border-radius: 0.75rem;
+}
+
+/* Change border-radius of over-graph buttons */
+.dcg-calculator-api-container-v1_11 .dcg-overgraph-icon {
+    border-radius: 0.75rem;
+}
+
+/* Change border-radius of top bar icon buttons */
+.dcg-calculator-api-container-v1_11 .dcg-container .dcg-expression-top-bar .dcg-icon-btn {
+    border-radius: 0.75rem;
+}
+
+/* Fix keypad show/hide buttons */
+.dcg-show-keypad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dcg-minimize-keypad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.blog-tiles {
+    display: grid;
+    --grid-min-column-width: 18rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+.blog-tile {
+    border: 1px solid var(--element-border-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: var(--element-background-color);
+    transition: background-color 150ms ease, scale 150ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.blog-tile:hover {
+    background-color: var(--element-background-hover-color);
+    scale: 1.02;
+}
+
+.blog-tile-image {
+    width: 100%;
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.blog-tile-title {
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blog-tile-title:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
+}
+
+.blog-tile-summary {
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.4rem;
+    color: var(--secondary-text-color);
+}
+
+
+
+/* Citation modal */
+.modal {
+    box-sizing: border-box;
+    width: 30rem;
+    max-width: calc(100vw - 2rem);
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 2rem;
+    box-shadow: 0 2px 1rem rgba(0, 0, 0, 0.2);
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    gap: 100rem;
+
+    opacity: 0;
+    transform: translateY(3rem) scale(0.75);
+    transition: opacity 200ms ease, transform 200ms ease, height 200ms ease;
+}
+
+.modal.showing {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: transform 700ms linear(0, 0.011 0.6%, 0.049 1.3%, 0.192 2.7%, 0.921 7.3%, 1.17 9.2%, 1.256 10.1%, 1.32 11%, 1.361 11.9%, 1.38 12.8%, 1.38 13.5%, 1.37 14.2%, 1.317 15.7%, 1.023 20.6%, 0.93 22.5%, 0.878 24.2%, 0.855 25.9%, 0.857 27.1%, 0.871 28.4%, 1.017 35.1%, 1.044 37.1%, 1.055 39%, 1.049 41.6%, 0.993 48.3%, 0.979 52.1%, 1.008 65.1%, 0.997 78%, 1);
+}
+
+/* Dialog background */
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 200ms ease, backdrop-filter 200ms ease;
+}
+
+.modal.showing::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(0.2rem);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box
+}
+
+.modal-title {
+    /* font-size: 1.5rem; */
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.modal-close-button {
+    background: var(--element-background-color);
+    cursor: pointer;
+    /* border: 1px solid var(--element-border-color); */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.modal-close-button:hover {
+    background-color: var(--modal-close-button-background-hover-color);
+}
+
+.modal-close-button-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--secondary-text-color);
+}
+
+.modal-close-button:hover .modal-close-button-icon {
+    fill: var(--nav-icon-color);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0 1rem 0;
+}
+
+.custom-dropdown-chicago-citation-version-hidden {
+    display: none;
+}
+
+.citation-display, .additional-display-element {
+    height: 8rem;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    font-family: "Tinos", serif;
+    font-size: 1rem;
+    /* font-weight: 200; */
+    line-height: 1.75;
+    color: var(--primary-text-color);
+    resize: none;
+    padding-left: 3rem;
+    text-indent: -2rem;
+    transition: background-color 150ms ease;
+    cursor: text;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.citation-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--element-background-hover-color);
+    border: 1px solid var(--element-border-color);
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.nb-label-element {
+    padding-left: 1rem;
+    text-indent: 2rem;
+}
+
+.no-copy-citation-number {
+    color: var(--subtle-text-color);
+    padding-right: 0.65rem;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.citation-display:hover {
+    background-color: var(--element-background-hover-color);
+}
+
+/* .copy-citation-button:disabled, .additional-copy-button:disabled {
+    background-color: var(--button-disabled-color);
+    color: var(--element-background-color);
+    fill: var(--element-background-color);
+    cursor: not-allowed;
+} */

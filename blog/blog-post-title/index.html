@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test › Blog › jh.codes</title>
+
+    <meta property="og:title" content="Test › Blog › jh.codes">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://jh.codes/media/jh-logo-radial-yellow-sharing.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://jh.codes">
+    <meta property="og:type" content="article">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KK4YF8DGS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8KK4YF8DGS');
+    </script>
+
+    <!-- Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+    <!-- DOMPurify -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <!-- Highlight.js theme will be loaded dynamically by theme.js -->
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+
+    <!-- Desmos -->
+    <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    
+    <!-- Link CSS and JavaScript -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/blog.css" rel="stylesheet">
+    <script src="/js/include.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+    <script src="/js/sidebar.js" defer></script>
+    <script src="/js/blog-post.js" defer></script>
+    <script src="/js/citations.js" defer></script>
+    <script src="/js/projects.js" defer></script>
+    <script src="/js/copyright.js" defer></script>
+    <script src="/js/time-ago.js" defer></script>
+    <script src="/js/dropdown.js" defer></script>
+    <script src="/js/technologies.js" defer></script>
+    <script src="/js/copy-url.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/search-focus.js" defer></script>
+    <script src="/js/shortcut-key.js" defer></script>
+    <script src="/js/logo.js" defer></script>
+    <script src="/js/glow.js" defer></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="all-content all-content-projects">
+            <main>
+                <section class="blog-post-cover-image-section"></section>
+                <section class="blog-post-section">
+                    <div id="blog-content"></div>
+                    <div class="blog-post-details"></div>
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+        <header></header>
+    </div>
+    <nav data-hover-effect></nav>
+    <dialog class="modal" id="citation-modal"></dialog>
+</body>
+</html>

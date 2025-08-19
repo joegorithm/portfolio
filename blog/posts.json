@@ -1,0 +1,18 @@
+{
+    "template": {
+        "id": "template",
+        "title": "Template Title",
+        "authors": ["jonathan-hill"],
+        "date": "1903-12-17",
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "tools": "markdown, github"
+    },
+    "blog-post-title": {
+        "id": "blog-post-title",
+        "title": "Blog Post Title",
+        "authors": ["jonathan-hill", "white-chicken", "paddington-bear", "henry-brown"],
+        "date": "2025-08-13",
+        "summary": "This is a summary of the blog post. There will be a couple sentences here.",
+        "tools": "python, javascript, html, pytorch, jupyter"
+    }
+}
