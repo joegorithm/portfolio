@@ -284,6 +284,17 @@ if (citationStyle) {
             citationDisplayElement1.dataset.plain = result.text;
             updateCopyButtonsState();
         }
+
+        const citationLabel1 = document.querySelector(".citation-output-1 .citation-label-text");
+        if (event.target.value === "apa") {
+            citationLabel1.textContent = "References Entry";
+        } else if (event.target.value === "mla") {
+            citationLabel1.textContent = "Works Cited Entry";
+        } else if (event.target.value === "ieee") {
+            citationLabel1.textContent = "References Entry";
+        } else {
+            citationLabel1.textContent = "Citation";
+        }
     });
 
     chicagoCitationVersionDropdown.addEventListener("change", (event) => {
@@ -333,6 +344,13 @@ if (citationStyle) {
             citationDisplayElement1.innerHTML = result.display;
             citationDisplayElement1.dataset.plain = result.text;
             updateCopyButtonsState();
+        }
+
+        const citationLabel1 = document.querySelector(".citation-output-1 .citation-label-text");
+        if (event.target.value === "chicago-notes-and-bibliography") {
+            citationLabel1.textContent = "Full Note";
+        } else if (event.target.value === "chicago-author-date") {
+            citationLabel1.textContent = "References Entry";
         }
     });
 }
