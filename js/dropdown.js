@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.forms['contact-form'];
-    document.querySelectorAll(".custom-dropdown").forEach(dropdown => {
+    const category = document.querySelector(".form-input-entry-category .dropdown-selected");
+    const project = document.querySelector(".form-input-entry-project");
+    const blog = document.querySelector(".form-input-entry-blog");
+
+    // Expose an initializer to handle dropdowns added dynamically after DOMContentLoaded
+    window.initCustomDropdown = (dropdown) => {
         const selected = dropdown.querySelector(".dropdown-selected");
         const options = dropdown.querySelector(".dropdown-options");
         const hiddenInput = dropdown.querySelector("input[type=hidden]");
-
-        const category = document.querySelector(".form-input-entry-category .dropdown-selected");
-        const project = document.querySelector(".form-input-entry-project");
 
         function resetDropdown(id, label) {
             id.querySelector(".dropdown-selected").textContent = label; // Reset selected text
@@ -45,24 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     options.querySelectorAll("li")[currentIndex].classList.add("highlight"); // Highlight current option
                 } else if (e.key === "Enter") {
-                    e.preventDefault(); // Prevent default behavior
-                    selected.innerHTML = options.querySelectorAll("li")[currentIndex].innerHTML; // Set selected text
-                    hiddenInput.value = options.querySelectorAll("li")[currentIndex].dataset.value; // Store value for form submission
-                    // Fire change for programmatic update so external listeners can react
-                    hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
-                    selected.classList.remove("dropdown-placeholder"); // Remove placeholder styling
-                    dropdown.classList.remove("open"); // Close dropdown
-                    dropdown.blur();
-
-                    // Show project input if category is "Project Feedback"
-                    if (form) {
-                        if (category.textContent === "Project Feedback") {
-                            project.classList.remove("form-input-entry-project-hidden");
-                        } else {
-                            project.classList.add("form-input-entry-project-hidden"); // Hide project input
-                            resetDropdown(project, "Project"); // Reset project input
-                        }
-                    }
+                    e.preventDefault();
+                    const option = options.querySelectorAll("li")[currentIndex];
+                    applySelection(option);
                 } else if (e.key === "Escape") {
                     e.preventDefault(); // Prevent default behavior
                     dropdown.classList.remove("open"); // Close dropdown
@@ -85,34 +72,51 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Handle option selection
-        options.querySelectorAll("li").forEach(option => {
-            option.addEventListener("click", () => {
-                // selected.textContent = option.textContent; // Set selected text
-                selected.innerHTML = option.innerHTML; // Set selected text
-                hiddenInput.value = option.dataset.value; // Store value for form submission
-                // Fire change for programmatic update so external listeners can react
-                hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
-                selected.classList.remove("dropdown-placeholder");
-                dropdown.classList.remove("open"); // Close dropdown
-                dropdown.blur(); // Remove focus
+        // Shared option selection logic (keyboard + mouse)
+        function applySelection(optionEl) {
+            if (!optionEl) return;
+            selected.innerHTML = optionEl.innerHTML; // Preserve possible markup (image + text)
+            hiddenInput.value = optionEl.dataset.value || ""; // Update hidden value
+            hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+            selected.classList.remove("dropdown-placeholder");
+            dropdown.classList.remove("open");
+            dropdown.blur();
 
-                // Show project input if category is "Project Feedback"
-                if (form) {
-                    if (category.textContent === "Project Feedback") {
-                        project.classList.remove("form-input-entry-project-hidden");
-                    } else {
-                        project.classList.add("form-input-entry-project-hidden"); // Hide project input
-                        resetDropdown(project, "Project"); // Reset project input
-                    }
+            // Conditional visibility for project/blog fields based on category selection
+            if (form) {
+                if (category.textContent === "Project Feedback") {
+                    project.classList.remove("form-input-entry-project-hidden");
+                    blog.classList.add("form-input-entry-blog-hidden");
+                    resetDropdown(blog, "Blog Post");
+                } else if (category.textContent === "Blog Post Issue") {
+                    blog.classList.remove("form-input-entry-blog-hidden");
+                    project.classList.add("form-input-entry-project-hidden");
+                    resetDropdown(project, "Project");
+                } else {
+                    project.classList.add("form-input-entry-project-hidden");
+                    resetDropdown(project, "Project");
+                    blog.classList.add("form-input-entry-blog-hidden");
+                    resetDropdown(blog, "Blog Post");
                 }
-            });
+            }
+        }
+
+        // Delegated click handler so dynamically injected <li> elements work
+        options.addEventListener("click", (e) => {
+            const li = e.target.closest("li");
+            if (!li || !options.contains(li)) return;
+            applySelection(li);
         });
 
-        // Get the value of the category and project parameters from the URL
+        // Allow keyboard Enter to reuse logic via currentIndex
+        // (Modify existing Enter handler above to call applySelection if desired)
+        // NOTE: We keep existing keydown logic; Enter path already sets values directly.
+
+        // Get the value of the category, project, and blog parameters from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const categoryValue = urlParams.get("category")?.toLowerCase();
         const projectValue = urlParams.get("project")?.toLowerCase();
+        const blogValue = urlParams.get("blog")?.toLowerCase();
 
         // If category is set, update the dropdown
         if (categoryValue) {
@@ -129,6 +133,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 projectOption.click();
             } else {
                 resetDropdown(project, "Project"); // Reset project input if not found
+            }
+        }
+
+        // If blog is set, update the blog input
+        if (blogValue) {
+            const blogOption = blog.querySelector(`li[data-value="${blogValue}"]`);
+            if (blogOption) {
+                blogOption.click();
+                console.log("Blog Post selected");
+            } else {
+                resetDropdown(blog, "Blog Post"); // Reset blog input if not found
+                console.log("Blog Post not found, reset to default");
+            }
+        }
+    };
+
+    // Initialize any dropdowns present at load
+    document.querySelectorAll(".custom-dropdown").forEach(dd => window.initCustomDropdown(dd));
+
+    // After async blog options load, attempt URL-based preselection again (blog param)
+    document.addEventListener('blogDropdownOptionsReady', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogValue = urlParams.get('blog')?.toLowerCase();
+        if (blogValue) {
+            const blogDropdown = document.querySelector('.form-input-entry-blog .custom-dropdown');
+            if (blogDropdown) {
+                const options = blogDropdown.querySelector('.dropdown-options');
+                const li = options?.querySelector(`li[data-value="${blogValue}"]`);
+                if (li) {
+                    // Ensure the category is set to Blog Post Issue so the blog dropdown is visible
+                    const categoryDropdown = document.querySelector('.form-input-entry-category .custom-dropdown');
+                    if (categoryDropdown && !blogDropdown.classList.contains('open')) {
+                        // If category not already Blog Post Issue, set it
+                        const categoryOption = categoryDropdown.querySelector('.dropdown-options li[data-value="blog-feedback"], .dropdown-options li[data-value="blog-post-issue"]');
+                        if (categoryOption) categoryOption.click();
+                    }
+                    li.click();
+                }
             }
         }
     });

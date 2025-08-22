@@ -18,15 +18,38 @@ const createBlogTiles = (posts) => {
         </div>
     `).join('');
 };
+
+const createBlogDropdownList = (posts) => {
+    return `
+        ${Object.values(posts).map(post => `
+        <li data-value="${post.id}">
+            <img src="/blog/${post.id}/assets/cover.png" class="blog-post-image" alt="${post.title} cover image">
+            ${post.title}
+        </li>
+        `).join('')}
+        <li data-value="other">Other</li>
+    `;
+}
+
+
 // Fetch posts.json and create blog tiles
 fetch('/blog/posts.json')
     .then(response => response.json())
     .then(data => {
         const blogTilesHtml = createBlogTiles(data);
-        document.querySelector('.blog-tiles').innerHTML = blogTilesHtml;
+        const tilesContainer = document.querySelector('.blog-tiles');
+        if (tilesContainer) tilesContainer.innerHTML = blogTilesHtml;
         // Initialize time-ago UI for newly injected tiles
         if (typeof updateTimeAgo === 'function') {
             updateTimeAgo();
+        }
+        
+        const blogDropdownHtml = createBlogDropdownList(data);
+        const dropdownContainer = document.querySelector('.form-input-entry-blog .dropdown-options');
+        if (dropdownContainer) {
+            dropdownContainer.innerHTML = blogDropdownHtml;
+            // Notify that blog options are now populated
+            document.dispatchEvent(new CustomEvent('blogDropdownOptionsReady'));
         }
     })
     .catch(error => {

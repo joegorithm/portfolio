@@ -3687,6 +3687,10 @@ header::before {
     z-index: 5;
 }
 
+.form-input-entry-blog .custom-dropdown {
+    z-index: 4;
+}
+
 .custom-dropdown:hover {
     background-color: var(--element-background-hover-color);
 }
@@ -3723,9 +3727,12 @@ header::before {
     /* padding: 10px; */
     /* border: 1px solid #ccc; */
     /* border-radius: 5px; */
+    box-sizing: border-box;
+    height: 3.5rem;
     position: relative;
     padding: 1rem;
     display: flex;
+    align-items: center;
     gap: 0.75rem;
 }
 
@@ -3743,7 +3750,7 @@ header::before {
     left: -1px;
     top: 4rem;
     width: 100%;
-    max-height: 21rem;
+    max-height: 24.5rem;
     overflow-y: auto;
     
     background: var(--element-background-color);
@@ -3756,9 +3763,12 @@ header::before {
 
 .dropdown-options li {
     padding: 1rem;
+    box-sizing: border-box;
+    height: 3.5rem;
     cursor: pointer;
     transition: background 0.2s;
     display: flex;
+    align-items: center;
     gap: 0.75rem;
 }
 

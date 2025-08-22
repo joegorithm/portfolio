@@ -38,21 +38,26 @@ function validateForm() {
     const project = document.querySelector("#project");
     const projectElement = document.querySelector(".form-input-entry-project .custom-dropdown");
     const projectPlaceholder = document.querySelector(".form-input-entry-project .dropdown-placeholder");
+    const blog = document.querySelector("#blog");
+    const blogElement = document.querySelector(".form-input-entry-blog .custom-dropdown");
+    const blogPlaceholder = document.querySelector(".form-input-entry-blog .dropdown-placeholder");
     const message = document.querySelector("#message");
 
     const nameErrorMessage = ["Please enter your name", "Name cannot be empty", "Your name is required", "Just enter your name", "What's your name?", "Go ahead, enter your name", "You don't have a name?", "What are you waiting for? 👀", "Please enter your name", "Let's get this over with... Just enter your name", "Please enter your name", "Don't be shy, just enter your name", "You've forgotten your name? 😳", "We cannot proceed without your name", "Who do I have the pleasure of meeting?", "Still trying to remember your name?"];
     const emailErrorMessage = ["Please enter your email address", "Email cannot be empty", "Email is required", "Just enter your email address", "What's your email address?", "Go ahead, enter your email address", "You don't have an email address?"];
     const categoryErrorMessage = ["Please select a category", "The category cannot be empty", "Category is required", "Just select a category", "Which category fits your message?", "Go ahead, select a category", "It's not that hard, just select a category", "If none of these work, just select 'Other'", "It doesn't have to be this difficult"];
     const projectErrorMessage = ["Please select a project", "This field cannot be empty", "Project is required", "Just select a project", "Which project are you talking about?", "Go ahead, select a project", "It's not that hard, just select a project", "If you can't find it, just select 'Other'", "Knowing which project would be helpful", "I'll try to be patient, but please select a project", "Thanks for the feedback! Which project is this about?"];
+    const blogErrorMessage = ["Please select a blog post", "This field cannot be empty", "Blog post is required", "Just select a blog post", "Which blog post are you referring to?", "Go ahead, select a blog post", "It's not that hard, just select a blog post", "If you can't find it, just select 'Other'", "Knowing which blog post would be helpful", "I'll try to be patient, but please select a blog post", "Thanks for the feedback! Which blog post is this about?"];
     const messageErrorMessage = ["Please enter a message", "Message cannot be empty", "Message is required", "Just enter a message", "What would you like to say?", "Go ahead, enter some text", "You can't think of anything to say?", "You're trying to send a message, right?", "I know you have something to say", "Did you lose your keyboard?", "Just type something!", "What's on your mind?", "You can do it, type something here", "A little more context would be nice", "Place your hands on your keyboard and start typing!"];
 
     let valid = true;
 
-    // console.log(name.value);
-    // console.log(email.value);
-    // console.log(category.value);
-    // console.log(project.value);
-    // console.log(message.value);
+    console.log(name.value);
+    console.log(email.value);
+    console.log(category.value);
+    console.log(project.value);
+    console.log(blog.value);
+    console.log(message.value);
 
     function shakeElement(element) {
         element.classList.remove("shake");
@@ -67,6 +72,7 @@ function validateForm() {
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
+        blogElement.classList.remove("error");
         message.classList.remove("error");
         name.placeholder = nameErrorMessage[Math.floor(Math.random() * nameErrorMessage.length)];
         email.placeholder = "Email";
@@ -79,6 +85,7 @@ function validateForm() {
         shakeElement(email);
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
+        blogElement.classList.remove("error");
         message.classList.remove("error");
         email.placeholder = emailErrorMessage[Math.floor(Math.random() * emailErrorMessage.length)];
         name.placeholder = "Name";
@@ -91,6 +98,7 @@ function validateForm() {
         categoryElement.classList.add("error");
         shakeElement(categoryElement);
         projectElement.classList.remove("error");
+        blogElement.classList.remove("error");
         message.classList.remove("error");
         name.placeholder = "Name";
         email.placeholder = "Email";
@@ -98,11 +106,12 @@ function validateForm() {
         categoryPlaceholder.textContent = categoryErrorMessage[Math.floor(Math.random() * categoryErrorMessage.length)];
         categoryElement.focus();
         valid = false;
-    } else if (category.value === "feedback" && project.value === "N/A") {
+    } else if (category.value === "project-feedback" && project.value === "N/A") {
         name.classList.remove("error");
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.add("error");
+        blogElement.classList.remove("error");
         shakeElement(projectElement);
         message.classList.remove("error");
         name.placeholder = "Name";
@@ -111,11 +120,26 @@ function validateForm() {
         projectPlaceholder.textContent = projectErrorMessage[Math.floor(Math.random() * projectErrorMessage.length)];
         projectElement.focus();
         valid = false;
+    } else if (category.value === "blog-feedback" && blog.value === "N/A") {
+        name.classList.remove("error");
+        email.classList.remove("error");
+        categoryElement.classList.remove("error");
+        projectElement.classList.remove("error");
+        blogElement.classList.add("error");
+        shakeElement(blogElement);
+        message.classList.remove("error");
+        name.placeholder = "Name";
+        email.placeholder = "Email";
+        message.placeholder = "Message";
+        blogPlaceholder.textContent = blogErrorMessage[Math.floor(Math.random() * blogErrorMessage.length)];
+        blogElement.focus();
+        valid = false;
     } else if (!message.value.trim()) {
         name.classList.remove("error");
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
+        blogElement.classList.remove("error");
         categoryElement.classList.remove("error");
         message.classList.add("error");
         shakeElement(message);
@@ -130,6 +154,7 @@ function validateForm() {
         email.classList.remove("error");
         categoryElement.classList.remove("error");
         projectElement.classList.remove("error");
+        blogElement.classList.remove("error");
         message.classList.remove("error");
         name.placeholder = "Name";
         email.placeholder = "Email";
@@ -176,6 +201,7 @@ runawayButton.addEventListener("click", (e) => {
     // Reset custom dropdowns
     const category = document.querySelector(".form-input-entry-category");
     const project = document.querySelector(".form-input-entry-project");
+    const blog = document.querySelector(".form-input-entry-blog");
     function resetDropdown(dropdown, label) {
         dropdown.querySelector(".dropdown-selected").textContent = label; // Reset selected text
         dropdown.querySelector("input[type=hidden]").value = "N/A"; // Reset hidden input value
@@ -183,5 +209,7 @@ runawayButton.addEventListener("click", (e) => {
     }
     resetDropdown(category, "Category");
     resetDropdown(project, "Project");
+    resetDropdown(blog, "Blog Post");
     project.classList.add("form-input-entry-project-hidden");
+    blog.classList.add("form-input-entry-blog-hidden");
 });

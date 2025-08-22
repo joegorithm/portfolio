@@ -33,6 +33,7 @@
     <script src="/js/contact-form.js" defer></script>
     <script src="/js/dropdown.js" defer></script>
     <script src="/js/projects.js" defer></script>
+    <script src="/js/blog.js" defer></script>
     <script src="/js/runaway-button.js" defer></script>
     <script src="/js/copy-url.js" defer></script>
     <script src="/js/header.js" defer></script>
@@ -64,7 +65,8 @@
                                     <li data-value="inquiry">General Inquiry</li>
                                     <li data-value="networking">Networking</li>
                                     <li data-value="collaboration">Collaboration Request</li>
-                                    <li data-value="feedback">Project Feedback</li>
+                                    <li data-value="project-feedback">Project Feedback</li>
+                                    <li data-value="blog-feedback">Blog Post Issue</li>
                                     <li data-value="hello">Just Saying Hello</li>
                                     <li data-value="other">Other</li>
                                 </ul>
@@ -72,6 +74,15 @@
                             </div>
                         </div>
                         <div class="form-input-entry form-input-entry-project form-input-entry-project-hidden"></div>
+                        <div class="form-input-entry form-input-entry-blog form-input-entry-blog-hidden">
+                            <div class="custom-dropdown" tabindex="0">
+                                <div class="dropdown-selected dropdown-placeholder">
+                                    Blog Post
+                                </div>
+                                <ul class="dropdown-options"></ul>
+                                <input type="hidden" name="blog" id="blog" value="N/A">
+                            </div>
+                        </div>
                         <div class="form-input-entry form-input-entry-message">
                             <!-- <label for="message" class="form-label">Message<span class="tooltip-element">*<span class="tooltip">Required</span></span></label> -->
                             <textarea name="message" id="message" class="form-input" placeholder="Message" rows="5"></textarea>

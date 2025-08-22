@@ -141,16 +141,30 @@ input.form-input:-webkit-autofill {
 }
 
 /* For project dropdown */
-.project-logo {
-    border: 0.5px solid var(--element-border-color);
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 0.4rem;
-}
-
 .form-input-entry-project-hidden {
     display: none;
 }
+
+.project-logo {
+    border: 0.5px solid var(--element-border-color);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+}
+
+
+/* For blog dropdown */
+.form-input-entry-blog-hidden {
+    display: none;
+}
+
+.blog-post-image {
+    border: 0.5px solid var(--element-border-color);
+    height: 2rem;
+    border-radius: 0.4rem;
+}
+
+
 
 .contact-form-status-entry {
     --contact-form-display: flex;
