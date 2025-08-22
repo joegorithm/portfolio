@@ -2613,6 +2613,7 @@ footer {
     border-top-right-radius: 2rem;
     transition: background-color 150ms ease;
     position: relative;
+    user-select: text;
 }
 
 .iaq-question:hover {
@@ -3235,6 +3236,11 @@ header::before {
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .search-placeholder kbd {
