@@ -3118,7 +3118,7 @@ header::after {
     background-color: rgba(255, 0, 204, 0);
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(10px);
-    /* mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.5)); */
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0));
     pointer-events: none;
 }
