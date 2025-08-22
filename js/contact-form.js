@@ -21,7 +21,10 @@
 // v11
 // const scriptURL = 'https://script.google.com/macros/s/AKfycbwabckfHt0vNcsWQDcK2AQerhNhAMbk-RV9oj23Nl7wElpyP_8BF07dShK-YuGkYNgc/exec';
 // v12
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwhUhA-EOgITFme07LW5LzOXwDbzCvkBlx8MKYTdiszGHf5Fo1gihSeSG-2n2YH9DxC/exec';
+// const scriptURL = 'https://script.google.com/macros/s/AKfycbwhUhA-EOgITFme07LW5LzOXwDbzCvkBlx8MKYTdiszGHf5Fo1gihSeSG-2n2YH9DxC/exec';
+
+// v13
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyVEn7J_Lpo-we_yzoqJkPnV2S2Qu0bsjYUtYKVAAghV5gGYFQzWH1m6_UcGEWqBPsh/exec';
 const form = document.forms['contact-form'];
 const entireContactPage = document.querySelector(".contact-form-page");
 const formStatusBackground = document.querySelector(".form-status-background");
