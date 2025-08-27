@@ -36,7 +36,12 @@ const createBlogDropdownList = (posts) => {
 fetch('/blog/posts.json')
     .then(response => response.json())
     .then(data => {
-        const blogTilesHtml = createBlogTiles(data);
+        // Filter out posts with key "template"
+        const filteredData = Object.fromEntries(
+            Object.entries(data).filter(([key]) => key !== "template")
+        );
+        
+        const blogTilesHtml = createBlogTiles(filteredData);
         const tilesContainer = document.querySelector('.blog-tiles');
         if (tilesContainer) tilesContainer.innerHTML = blogTilesHtml;
         // Initialize time-ago UI for newly injected tiles
@@ -44,7 +49,7 @@ fetch('/blog/posts.json')
             updateTimeAgo();
         }
         
-        const blogDropdownHtml = createBlogDropdownList(data);
+        const blogDropdownHtml = createBlogDropdownList(filteredData);
         const dropdownContainer = document.querySelector('.form-input-entry-blog .dropdown-options');
         if (dropdownContainer) {
             dropdownContainer.innerHTML = blogDropdownHtml;

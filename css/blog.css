@@ -32,12 +32,11 @@
     justify-content: space-between;
 }
 
-/* #blog-content {
-    margin: 1rem 0;
-} */
+#blog-content {
+    width: 100%;
 
-#blog-content img {
-    border-radius: 1rem;
+    /* Prevents content from expanding beyond available space */
+    min-width: 0;
 }
 
 .blog-post-details {
@@ -46,7 +45,7 @@
     background-color: var(--element-background-color);
     border-radius: 2rem 0 2rem 2rem;
     border: 1px solid var(--element-border-color);
-    min-width: calc(10rem + 8vw);
+    min-width: 17rem;
     width: auto;
     max-width: min-content;
     height: fit-content;
@@ -121,6 +120,14 @@
     margin: 1rem 0;
 } */
 
+/* Katex display math (not inline) */
+.katex-display {
+    color: var(--primary-text-color);
+    font-size: 2.5rem;
+    overflow: auto hidden;
+}
+
+
 code {
     font-family: "Sometype Mono", monospace;
     font-size: 0.875rem;
@@ -137,6 +144,8 @@ pre code.hljs {
     border-radius: 0 0 1rem 1rem;
     background-color: var(--element-background-color);
     font-size: 1rem;
+    /* overflow-x: scroll; */
+    /* width: auto; */
 }
 
 .code-label {
@@ -203,7 +212,7 @@ blockquote {
 /* Style hyperlinks */
 
 #blog-content a {
-    color: var(--theme-color);
+    color: var(--link-color);
     text-decoration: none;
     text-underline-offset: 5%;
     font-weight: 500;
@@ -214,36 +223,68 @@ blockquote {
 
 }
 
+pre, #calculator {
+    margin: 1.5rem 0;
+}
+
+#blog-content h1,
+#blog-content h2,
+#blog-content h3,
+#blog-content h4,
+#blog-content h5,
+#blog-content h6 {
+  /* font-weight: 600; */
+  line-height: 1.25;
+}
+
 #blog-content h1 {
-    margin: 0.67em 0;
+  margin: 1em 0;   /* more space above, tighter below */
 }
 
 #blog-content h2 {
-    margin: 0.83em 0;
+  margin: 1.25em 0 0.75em;
 }
 
 #blog-content h3 {
-    margin: 1em 0;
+  margin: 1em 0 0.5em;
 }
 
 #blog-content h4 {
-    margin: 1.33em 0;
+  margin: 1em 0 0.5em;
 }
 
 #blog-content h5 {
-    margin: 1.67em 0;
+  margin: 1em 0 0.25em;
 }
 
 #blog-content h6 {
-    margin: 2.33em 0;
+  margin: 0.75em 0 0.25em;
 }
 
 #blog-content p {
-    margin: 1em 0;
+  margin: 0 0 1em; /* only bottom margin for flow */
+  line-height: 1.75;
+  color: var(--blog-text-color);
+}
+
+#blog-content ul, #blog-content ol {
+    margin: 0 0 1em 0;
+    line-height: 1.75;
+    color: var(--blog-text-color);
+}
+
+#blog-content p:has(img) {
+    position: relative;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #blog-content img {
     max-width: 100%;
+    margin: 0;
+    border-radius: 1rem;
 }
 
 
@@ -304,7 +345,7 @@ blockquote {
     border-radius: 2rem;
     padding: 1rem;
     background-color: var(--element-background-color);
-    transition: background-color 150ms ease, scale 150ms ease;
+    transition: background-color 150ms ease, scale 150ms ease, box-shadow 150ms ease;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -313,6 +354,7 @@ blockquote {
 
 .blog-tile:hover {
     background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     scale: 1.02;
 }
 
@@ -491,10 +533,3 @@ blockquote {
 .citation-display:hover {
     background-color: var(--element-background-hover-color);
 }
-
-/* .copy-citation-button:disabled, .additional-copy-button:disabled {
-    background-color: var(--button-disabled-color);
-    color: var(--element-background-color);
-    fill: var(--element-background-color);
-    cursor: not-allowed;
-} */

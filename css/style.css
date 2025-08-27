@@ -513,11 +513,14 @@
     --logo-j-color: var(--yellow-color);
     --logo-h-color: var(--white-color);
 
+    --link-color: var(--theme-color);
+
     --background-color: var(--black-color);
     --header-background-color: rgba(0, 0, 0, 0.9);
     --primary-text-color: var(--white-color);
     --secondary-text-color: var(--light-gray-color);
     --subtle-text-color: var(--dark-gray-color);
+    --blog-text-color: #b2b2bc;
     --nav-button-hover-color: rgba(255, 255, 255, 0.06);
     --selected-nav-button-color: #ffc8191a;
     --selected-nav-button-hover-color: #ffc81926;
@@ -577,11 +580,14 @@
     --logo-j-color: var(--black-color);
     --logo-h-color: var(--black-color);
 
+    --link-color: #bf9713;
+
     --background-color: rgb(240, 240, 240); /* #dce0f2cc -> white -> rgb(238, 238, 238)*/
     --header-background-color: rgba(240, 240, 240, 0.9);
     --primary-text-color: var(--black-color);
     --secondary-text-color: var(--dark-gray-color);
     --subtle-text-color: var(--light-gray-color);
+    --blog-text-color: rgb(52, 53, 55);
     --nav-button-hover-color: rgba(187, 187, 187, 0.2);
     --selected-nav-button-color: var(--theme-color);
     --selected-nav-button-hover-color: rgba(255, 201, 25, 0.8);
@@ -2372,6 +2378,9 @@ footer {
     box-sizing: border-box;
     border-radius: 1.25rem;
     max-width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-details-preview-image {
@@ -2384,14 +2393,10 @@ footer {
     /* background-clip: border-area; */
 }
 
-#blog-content p:has(img) {
-    position: relative;
-}
-
 .project-details-preview-image-label, .blog-post-image-label {
     opacity: 0;
     position: absolute;
-    bottom: 0;
+    bottom: -0.5rem;
     left: 0.5rem;
     border: 1px solid rgba(115, 115, 115, 0.1);
     backdrop-filter: invert(15%) blur(0.5rem);
@@ -2406,7 +2411,7 @@ footer {
 
 .project-details-preview-image-container:hover .project-details-preview-image-label, #blog-content p:has(img):hover .blog-post-image-label {
     opacity: 1;
-    bottom: 1rem;
+    bottom: 0.5rem;
 }
 
 .project-details-tech {

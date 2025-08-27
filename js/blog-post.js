@@ -186,7 +186,7 @@ fetch(`/blog/${currentBlogPost}/post.md`).then(response => response.text()).then
         });
         themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-        calculator.setExpression({ id: 'graph1', latex: '\\sin(x + y^2)^{50}+\\log(x^2-y)^{50}=\\frac{1}{1000}', color: Desmos.Colors.RED });
+        calculator.setExpression({ id: 'graph1', latex: '\\cos(2x) + \\sin(2y) \\ge \\frac{1}{15}', color: Desmos.Colors.RED });
 
     }
 }).catch(err => {
