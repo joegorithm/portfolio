@@ -145,6 +145,13 @@
     fill: var(--github-theme-color);
 }
 
+.tool-markedjs {
+    background-color: var(--github-background-color);
+    border-color: var(--github-theme-color);
+    color: var(--github-theme-color);
+    fill: var(--github-theme-color);
+}
+
 .tool-css {
     background-color: rgba(171, 58, 223, 0.2);
     border-color: #ab3adf; /* Official: #663399 */
@@ -350,6 +357,11 @@
 }
 
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-markdown {
+    background-color: var(--github-theme-color);
+    outline: 2px solid var(--github-theme-color);
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-markedjs {
     background-color: var(--github-theme-color);
     outline: 2px solid var(--github-theme-color);
 }
