@@ -60,10 +60,164 @@ document.querySelector(".blog-post-cover-image-section").innerHTML = `
 // --------------------------------------------------------------------------------------------------
 // Fetch blog post content and render along with code blocks, code highlighting, KaTeX, and Desmos graphs
 fetch(`/blog/${currentBlogPost}/post.md`).then(response => response.text()).then(markdownContent => {
-    // Sanitize the HTML output from marked.parse to prevent XSS
+
+    // --- Q/A (collapse) Markdown extension (custom '?'-prefixed answer lines) ---
+    if (!window.__qaExtCustom) {
+        const qaExtension = {
+            extensions: [{
+                name: 'qa',
+                level: 'block',
+                start(src) {
+                    const m = src.match(/^\?\?\?\s+/m);
+                    return m ? m.index : undefined;
+                },
+                tokenizer(src) {
+                    if (!src.startsWith('??? ')) return;
+                    const lines = src.split('\n');
+                    const first = lines[0];
+                    const question = first.replace(/^\?\?\?\s+/, '').trim();
+                    let i = 1;
+                    const answerLines = [];
+                    while (i < lines.length) {
+                        const line = lines[i];
+                        if (/^\?(?:\s|$)/.test(line)) { // line starts with '?' then space or is just '?'
+                            // Strip leading '? ' or solitary '?'
+                            const stripped = line === '?' ? '' : line.replace(/^\?\s?/, '');
+                            answerLines.push(stripped);
+                            i++;
+                        } else {
+                            break; // end of block
+                        }
+                    }
+                    const raw = lines.slice(0, i).join('\n');
+                    const answerRaw = answerLines.join('\n');
+                    return {
+                        type: 'qa',
+                        raw,
+                        question,
+                        answer: answerRaw,
+                        tokens: this.lexer.blockTokens(answerRaw)
+                    };
+                },
+                renderer(token) {
+                    const inner = this.parser.parse(token.tokens);
+                    const question = DOMPurify.sanitize(token.question);
+                    // Render without inline event handlers; listeners added after sanitization
+                    return `\n<div class=\"iaq-tile qa-collapsible\">\n
+                                <button type=\"button\" class=\"iaq-question qa-question\">\n
+                                    <span class=\"iaq-question-text\">${question}</span>\n
+                                    <div class=\"iaq-question-icon-container tooltip-element\">
+                                        <svg class=\"iaq-question-icon-eye\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d=\"M320 96C239.2 96 174.5 132.8 127.4 176.6C80.6 220.1 49.3 272 34.4 307.7C31.1 315.6 31.1 324.4 34.4 332.3C49.3 368 80.6 420 127.4 463.4C174.5 507.1 239.2 544 320 544C400.8 544 465.5 507.2 512.6 463.4C559.4 419.9 590.7 368 605.6 332.3C608.9 324.4 608.9 315.6 605.6 307.7C590.7 272 559.4 220 512.6 176.6C465.5 132.9 400.8 96 320 96zM176 320C176 240.5 240.5 176 320 176C399.5 176 464 240.5 464 320C464 399.5 399.5 464 320 464C240.5 464 176 399.5 176 320zM320 256C320 291.3 291.3 320 256 320C244.5 320 233.7 317 224.3 311.6C223.3 322.5 224.2 333.7 227.2 344.8C240.9 396 293.6 426.4 344.8 412.7C396 399 426.4 346.3 412.7 295.1C400.5 249.4 357.2 220.3 311.6 224.3C316.9 233.6 320 244.4 320 256z\"/></svg>
+                                        <svg class=\"iaq-question-icon-eye-slash\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d=\"M73 39.1C63.6 29.7 48.4 29.7 39.1 39.1C29.8 48.5 29.7 63.7 39 73.1L567 601.1C576.4 610.5 591.6 610.5 600.9 601.1C610.2 591.7 610.3 576.5 600.9 567.2L504.5 470.8C507.2 468.4 509.9 466 512.5 463.6C559.3 420.1 590.6 368.2 605.5 332.5C608.8 324.6 608.8 315.8 605.5 307.9C590.6 272.2 559.3 220.2 512.5 176.8C465.4 133.1 400.7 96.2 319.9 96.2C263.1 96.2 214.3 114.4 173.9 140.4L73 39.1zM236.5 202.7C260 185.9 288.9 176 320 176C399.5 176 464 240.5 464 320C464 351.1 454.1 379.9 437.3 403.5L402.6 368.8C415.3 347.4 419.6 321.1 412.7 295.1C399 243.9 346.3 213.5 295.1 227.2C286.5 229.5 278.4 232.9 271.1 237.2L236.4 202.5zM357.3 459.1C345.4 462.3 332.9 464 320 464C240.5 464 176 399.5 176 320C176 307.1 177.7 294.6 180.9 282.7L101.4 203.2C68.8 240 46.4 279 34.5 307.7C31.2 315.6 31.2 324.4 34.5 332.3C49.4 368 80.7 420 127.5 463.4C174.6 507.1 239.3 544 320.1 544C357.4 544 391.3 536.1 421.6 523.4L357.4 459.2z\"/></svg>
+                                        <span class="tooltip">Expand</span>
+                                    </div>\n
+                                </button>\n
+                                <div class=\"iaq-answer qa-answer\">
+                                    <div class=\"iaq-answer-text\">${inner}</div>
+                                </div>\n
+                            </div>\n`;
+                }
+            }]
+        };
+        marked.use(qaExtension);
+        window.__qaExtCustom = true;
+    }
+    // -----------------------------------------------------------------------------
+
     const rawHtml = marked.parse(markdownContent);
-    // Use DOMPurify or a similar library to sanitize the HTML
-    document.getElementById('blog-content').innerHTML = DOMPurify.sanitize(rawHtml);
+    const safeHtml = DOMPurify.sanitize(rawHtml, {
+        ADD_TAGS: ["details", "summary"],
+        ADD_ATTR: ["open"]
+    });
+    document.getElementById('blog-content').innerHTML = safeHtml;
+
+    // Attach QA collapsible listeners (DOMPurify strips inline handlers). Use existing toggleAnswer if available, else fallback.
+    const qaButtons = document.querySelectorAll('.qa-collapsible .qa-question');
+    // Smooth expandable height that auto-grows with nested content.
+    const fallbackToggle = (btn) => {
+        const answer = btn.nextElementSibling;
+        if (!answer) return;
+        const answerText = answer.querySelector('.iaq-answer-text');
+        const eye = btn.querySelector('.iaq-question-icon-eye');
+        const eyeSlash = btn.querySelector('.iaq-question-icon-eye-slash');
+
+        const isOpen = btn.classList.toggle('active');
+
+        // OPEN: animate to measured height then set to 'none' so further internal growth (e.g. nested collapsibles) isn't clipped.
+        if (isOpen) {
+            // Prepare for animation from 0 to scrollHeight
+            // If previously left at 'none', reset to 0 first.
+            if (answer.style.maxHeight === 'none') {
+                answer.style.maxHeight = '0px';
+            }
+            // Force reflow to apply starting height (0)
+            answer.offsetHeight; // eslint-disable-line no-unused-expressions
+            const target = answer.scrollHeight;
+            answer.style.maxHeight = target + 'px';
+            const afterOpen = () => {
+                // Only keep if still open
+                if (btn.classList.contains('active')) {
+                    answer.style.maxHeight = 'none'; // allow auto-growth
+                }
+                answer.removeEventListener('transitionend', afterOpen);
+            };
+            answer.addEventListener('transitionend', afterOpen);
+            btn.style.transitionDelay = '0ms';
+            btn.style.borderBottomLeftRadius = '0';
+            btn.style.borderBottomRightRadius = '0';
+            const tip = btn.querySelector('.tooltip-element .tooltip');
+            if (tip) tip.textContent = 'Collapse';
+            if (answerText) answerText.style.opacity = '1';
+        } else { // CLOSE
+            // If currently auto-sized, capture current height, then animate to 0.
+            if (answer.style.maxHeight === 'none' || answer.style.maxHeight === '') {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                // Force reflow to lock measured height before collapsing
+                answer.offsetHeight; // eslint-disable-line no-unused-expressions
+            }
+            answer.style.maxHeight = '0px';
+            btn.style.transitionDelay = '50ms';
+            btn.style.borderBottomLeftRadius = '1rem';
+            btn.style.borderBottomRightRadius = '1rem';
+            const tip = btn.querySelector('.tooltip-element .tooltip');
+            if (tip) tip.textContent = 'Expand';
+            if (answerText) answerText.style.opacity = '0';
+        }
+
+        // Icon fade swap
+        if (eye && eyeSlash) {
+            if (isOpen) {
+                eye.classList.remove('is-active');
+                eyeSlash.classList.add('is-active');
+            } else {
+                eye.classList.add('is-active');
+                eyeSlash.classList.remove('is-active');
+            }
+        }
+        btn.setAttribute('aria-expanded', String(isOpen));
+    };
+    qaButtons.forEach((btn, idx) => {
+        // Initial state: collapsed
+        btn.setAttribute('aria-expanded', 'false');
+        const eye = btn.querySelector('.iaq-question-icon-eye');
+        const eyeSlash = btn.querySelector('.iaq-question-icon-eye-slash');
+        if (eye && eyeSlash) {
+            // Initial visible state
+            eye.classList.add('is-active');
+            eyeSlash.classList.remove('is-active');
+        }
+        // Provide an id on answer for aria-controls
+        const answer = btn.nextElementSibling;
+        if (answer) {
+            const id = answer.id || `qa-answer-${idx}`;
+            answer.id = id;
+            btn.setAttribute('aria-controls', id);
+        }
+        btn.addEventListener('click', () => {
+            // Always use local fallback since toggleAnswer expects plus icons
+            fallbackToggle(btn);
+        });
+    });
     
     // Add image labels under each image using its alt text
     document.querySelectorAll('#blog-content img').forEach((img) => {
@@ -165,6 +319,8 @@ fetch(`/blog/${currentBlogPost}/post.md`).then(response => response.text()).then
     // Initialize Desmos calculator if present
     const elt = document.getElementById('calculator');
     if (elt && window.Desmos && typeof Desmos.GraphingCalculator === 'function') {
+        elt.style.padding = '0';
+
         const calculator = Desmos.GraphingCalculator(elt);
 
         // Determine current theme: prefer localStorage, then body classes, then system preference
@@ -188,6 +344,10 @@ fetch(`/blog/${currentBlogPost}/post.md`).then(response => response.text()).then
 
         calculator.setExpression({ id: 'graph1', latex: '\\cos(2x) + \\sin(2y) \\ge \\frac{1}{15}', color: Desmos.Colors.RED });
 
+    } else {
+        elt.innerHTML = '<div class="desmos-error"><svg width="1.75rem" height="1.75rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 64C334.7 64 348.2 72.1 355.2 85L571.2 485C577.9 497.4 577.6 512.4 570.4 524.5C563.2 536.6 550.1 544 536 544L104 544C89.9 544 76.9 536.6 69.6 524.5C62.3 512.4 62.1 497.4 68.8 485L284.8 85C291.8 72.1 305.3 64 320 64zM320 232C306.7 232 296 242.7 296 256L296 368C296 381.3 306.7 392 320 392C333.3 392 344 381.3 344 368L344 256C344 242.7 333.3 232 320 232zM346.7 448C347.3 438.1 342.4 428.7 333.9 423.5C325.4 418.4 314.7 418.4 306.2 423.5C297.7 428.7 292.8 438.1 293.4 448C292.8 457.9 297.7 467.3 306.2 472.5C314.7 477.6 325.4 477.6 333.9 472.5C342.4 467.3 347.3 457.9 346.7 448z"/></svg>Desmos calculator is not available</div>';
+        elt.style.padding = '1rem';
+        console.warn('Desmos API not loaded');
     }
 }).catch(err => {
     console.error(`Failed to load blog post markdown from /blog/${currentBlogPost}/post.md:`, err);

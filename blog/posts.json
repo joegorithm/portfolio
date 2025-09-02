@@ -7,6 +7,14 @@
         "summary": "This is a summary of the blog post. There will be a couple sentences here.",
         "tools": "markdown, markedjs"
     },
+    "proving-two-plus-two-equals-five": {
+        "id": "proving-two-plus-two-equals-five",
+        "title": "Proving 2+2=5",
+        "authors": ["jonathan-hill"],
+        "date": "2025-09-01",
+        "summary": "This is a summary of the blog post. There will be a couple sentences here.",
+        "tools": ""
+    },
     "template": {
         "id": "template",
         "title": "Template",

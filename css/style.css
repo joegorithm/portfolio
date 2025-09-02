@@ -581,6 +581,12 @@
 
     --desmos-border-color: rgba(231, 235, 254, 0.2);
 
+    --table-alternate-background-color: rgb(12, 15, 18);
+    --table-border-color: rgb(49, 50, 54);
+
+    --error-text-color: rgb(255, 130, 0);
+    --error-background-color: rgba(255, 130, 0, 0.1);
+
     --modal-close-button-background-hover-color: var(--element-background-hover-color);
 }
 
@@ -647,6 +653,12 @@
     --inline-code-border-color: rgba(0, 0, 0, 0.1);
 
     --desmos-border-color: var(--element-border-color);
+
+    --table-alternate-background-color: rgb(246, 246, 246);
+    --table-border-color: rgb(203, 213, 222);
+
+    --error-text-color: rgb(255, 115, 0);
+    --error-background-color: rgba(255, 115, 0, 0.2);
 
     --modal-close-button-background-hover-color: rgba(0, 6, 34, 0.05);
 }
@@ -812,8 +824,8 @@ a {
 .tooltip-element {
     position: relative;
     /* display: inline-block; */
-    justify-content: center;
     display: flex;
+    justify-content: center;
 }
 
 .tooltip-element .tooltip {
@@ -828,6 +840,7 @@ a {
     
     white-space: nowrap;
     text-align: center;
+    line-height: 1.5;
     background-color: var(--black-color);
     padding: 0.4rem 1rem;
     color: var(--white-color);
@@ -2612,11 +2625,13 @@ footer {
     background-color: var(--element-background-color);
     border: 1px solid var(--element-border-color);
     border-radius: 2rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: box-shadow 150ms ease;
 }
 
 .iaq-question {
+    display: flex;
+    justify-content: space-between;
     border: none;
     background: none;
     color: var(--primary-text-color);
@@ -2625,10 +2640,8 @@ footer {
     font-weight: 600;
     text-align: left;
     padding: 1rem 1.25rem;
-    padding-right: 3rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    transition: background-color 150ms ease;
+    border-radius: 2rem;
+    transition: background-color 150ms ease, border-bottom-left-radius 125ms ease, border-bottom-right-radius 125ms ease;
     position: relative;
     user-select: text;
 }
@@ -2647,9 +2660,12 @@ footer {
     overflow: hidden;
     transition: max-height 150ms ease;
 }
+
 .iaq-answer-text {
-    padding: 0.5rem 1.25rem 1rem 1.25rem;
+    padding: 1rem 1.25rem;
     border-top: 1px solid var(--element-border-color);
+    opacity: 0;
+    transition: opacity 150ms ease;
 }
 
 .iaq-answer-text a {
@@ -2664,8 +2680,6 @@ footer {
 
 .iaq-question-icon-horizontal {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
     width: 2rem;
     height: 2rem;
     border-radius: 0.15rem;
@@ -2675,8 +2689,6 @@ footer {
 
 .iaq-question-icon-vertical {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
     width: 2rem;
     height: 2rem;
     border-radius: 0.15rem;
@@ -2685,6 +2697,25 @@ footer {
     transition: transform 150ms ease;
 }
 
+.iaq-question-icon-container {
+    position: relative;
+    min-width: 2rem;
+    height: 2rem;
+}
+
+.iaq-question-icon-eye, .iaq-question-icon-eye-slash {
+    position: absolute;
+    fill: var(--secondary-text-color);
+    opacity: 0;
+    transition: opacity 160ms linear;
+    pointer-events: none;
+}
+
+/* Visible state (mutually exclusive, managed by JS) */
+.iaq-question-icon-eye.is-active,
+.iaq-question-icon-eye-slash.is-active {
+    opacity: 1;
+}
 
 
 /* Certifications */
@@ -3218,6 +3249,7 @@ header::before {
     border: 1px solid var(--element-border-color);
     border-radius: 4rem;
     padding: 1.5rem;
+    padding-right: 4rem;
     height: 4rem;
     width: 100%;
     box-sizing: border-box;

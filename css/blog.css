@@ -24,6 +24,11 @@
 .blog-post-cover-image {
     width: 100%;
     border-radius: 1rem;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 .blog-post-section {
@@ -289,6 +294,66 @@ pre, #calculator {
 
 
 
+/* Table */
+#blog-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    outline: 1px solid var(--table-border-color);
+}
+
+#blog-content th, #blog-content td {
+    border-right: 1px solid var(--table-border-color);
+    border-bottom: 1px solid var(--table-border-color);
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+}
+
+#blog-content th {
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+#blog-content td:last-child, #blog-content th:last-child {
+    border-right: none;
+}
+
+#blog-content tr:last-child td {
+    border-bottom: none;
+}
+
+#blog-content th {
+    background-color: var(--element-background-color);
+    font-weight: 600;
+    color: var(--primary-text-color);
+    font-size: 1.17em;
+}
+
+#blog-content tr {
+    color: var(--blog-text-color);
+}
+
+#blog-content tr:nth-child(even) {
+    background-color: var(--table-alternate-background-color);
+}
+
+#blog-content table thead tr:first-child th:first-child {
+    border-radius: 1rem 0 0 0;
+}
+
+#blog-content table thead tr:first-child th:last-child {
+    border-radius: 0 1rem 0 0;
+}
+
+#blog-content table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 1rem;
+}
+
+#blog-content table tbody tr:last-child td:last-child {
+    border-radius: 0 0 1rem 0;
+}
+
+
 
 /* Desmos graphing calculator */
 #calculator {
@@ -297,6 +362,23 @@ pre, #calculator {
     outline: 1px solid var(--desmos-border-color);
     border-radius: 1rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#blog-content .desmos-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: fit-content;
+    color: var(--error-text-color);
+    fill: var(--error-text-color);
+    background-color: var(--error-background-color);
+    font-weight: 500;
+    border-radius: 2rem;
+    padding: 0.5rem 1.25rem 0.5rem 1rem;
+    margin: 1rem 0;
 }
 
 /* Remove default border from Desmos calculator */
@@ -532,4 +614,32 @@ pre, #calculator {
 
 .citation-display:hover {
     background-color: var(--element-background-hover-color);
+}
+
+
+
+/* Collapsible Q&A element */
+#blog-content .iaq-tile {
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.iaq-question {
+    border-radius: 1rem;
+}
+
+#blog-content .iaq-answer-text > :last-child {
+    margin-bottom: 0.5rem;
+}
+
+#blog-content .iaq-answer-text th {
+    background-color: var(--element-background-hover-color);
+}
+
+#blog-content .iaq-answer-text tr:nth-child(even) {
+    background-color: transparent;
+}
+
+#blog-content .iaq-answer-text tr:nth-child(odd) {
+    background-color: var(--table-alternate-background-color);
 }
