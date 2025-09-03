@@ -1585,6 +1585,12 @@ footer {
     padding: 2rem 0 1.5rem 0;
 }
 
+@media (max-width: 60rem) {
+    .project-grid {
+        gap: 2.5rem 1rem;
+    }
+}
+
 .project-tile {
     border-radius: 2rem;
     border-top-right-radius: 1rem;
@@ -2463,6 +2469,12 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
 }
 
+@media (max-width: 60rem) {
+    .education-list {
+        gap: 1rem;
+    }
+}
+
 .education-tile {
     display: flex;
     flex-direction: column;
@@ -2494,6 +2506,15 @@ footer {
     border-radius: 1.25rem;
     display: block;
     height: 10rem;
+}
+
+@media (max-width: 45rem) {
+    .education-banner {
+        height: 7rem;
+    }
+    .education-logo {
+        height: 7rem;
+    }
 }
 
 .education-information {
@@ -2867,7 +2888,13 @@ footer {
 }
 
 /* Responsive certification tile layout */
-@media (max-width: 41.5rem) {
+@media (max-width: 60rem) {
+    .certifications-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 42.5rem) {
     .certification-tile {
         border-radius: 1.5rem;
     }
@@ -2882,7 +2909,7 @@ footer {
     }
 }
 
-@media (max-width: 34rem) {
+@media (max-width: 35rem) {
     .certification-title {
         font-size: 1.4rem;
     }
@@ -2899,6 +2926,12 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
     gap: 1.5rem;
     padding: 1.5rem 0;
+}
+
+@media (max-width: 60rem) {
+    .blog-tiles {
+        gap: 1rem;
+    }
 }
 
 .blog-tile {
