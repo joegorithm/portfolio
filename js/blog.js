@@ -4,7 +4,7 @@ const createBlogTiles = (posts) => {
     return Object.values(posts).map(post => `
         <div class="blog-tile">
             <a href="/blog/${post.id}">
-                <img src="${post.id}/assets/cover.png" alt="${post.title} cover image" class="blog-tile-image">
+                <img src="/blog/${post.id}/assets/cover.png" alt="${post.title} cover image" class="blog-tile-image">
             </a>
             <a href="/blog/${post.id}">
                 <h2 class="blog-tile-title">${post.title}</h2>
@@ -32,31 +32,45 @@ const createBlogDropdownList = (posts) => {
 }
 
 
-// Fetch posts.json and create blog tiles
-fetch('/blog/posts.json')
-    .then(response => response.json())
-    .then(data => {
-        // Filter out posts with key "template"
-        const filteredData = Object.fromEntries(
-            Object.entries(data).filter(([key]) => key !== "template")
-        );
-        
-        const blogTilesHtml = createBlogTiles(filteredData);
+// Fetch posts.json and create/refresh blog tiles & dropdown
+async function renderBlogPosts() {
+    try {
+        const response = await fetch('/blog/posts.json');
+        const data = await response.json();
         const tilesContainer = document.querySelector('.blog-tiles');
-        if (tilesContainer) tilesContainer.innerHTML = blogTilesHtml;
-        // Initialize time-ago UI for newly injected tiles
-        if (typeof updateTimeAgo === 'function') {
-            updateTimeAgo();
+        const selectedTiles = [];
+        if (tilesContainer && tilesContainer.dataset.blogPosts) {
+            selectedTiles.push(...tilesContainer.dataset.blogPosts.split(", "));
         }
-        
-        const blogDropdownHtml = createBlogDropdownList(filteredData);
+
+        // Filter out posts with key "template" and apply selectedTiles filter if any
+        const filteredData = Object.fromEntries(
+            Object.entries(data).filter(([key]) => (key !== "template" && (selectedTiles.length > 0 ? selectedTiles.includes(key) : true)))
+        );
+
+        if (tilesContainer) {
+            const blogTilesHtml = createBlogTiles(filteredData);
+            tilesContainer.innerHTML = blogTilesHtml;
+            // Initialize time-ago UI for newly injected tiles
+            if (typeof updateTimeAgo === 'function') {
+                updateTimeAgo();
+            }
+        }
+
         const dropdownContainer = document.querySelector('.form-input-entry-blog .dropdown-options');
         if (dropdownContainer) {
+            const blogDropdownHtml = createBlogDropdownList(filteredData);
             dropdownContainer.innerHTML = blogDropdownHtml;
             // Notify that blog options are now populated
             document.dispatchEvent(new CustomEvent('blogDropdownOptionsReady'));
         }
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Error fetching blog posts:', error);
-    });
+    }
+}
+
+// Expose globally for other scripts to trigger a refresh
+window.renderBlogPosts = renderBlogPosts;
+
+// Initial load
+renderBlogPosts();

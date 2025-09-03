@@ -1,12 +1,4 @@
 {
-    "how-i-created-this-blog": {
-        "id": "how-i-created-this-blog",
-        "title": "How I Created This Blog",
-        "authors": ["jonathan-hill"],
-        "date": "2025-08-27",
-        "summary": "This is a summary of the blog post. There will be a couple sentences here.",
-        "tools": "markdown, markedjs"
-    },
     "proving-two-plus-two-equals-five": {
         "id": "proving-two-plus-two-equals-five",
         "title": "Proving 2+2=5",
@@ -14,6 +6,14 @@
         "date": "2025-09-01",
         "summary": "This is a summary of the blog post. There will be a couple sentences here.",
         "tools": ""
+    },
+    "how-i-created-this-blog": {
+        "id": "how-i-created-this-blog",
+        "title": "How I Created This Blog",
+        "authors": ["jonathan-hill"],
+        "date": "2025-08-27",
+        "summary": "This is a summary of the blog post. There will be a couple sentences here.",
+        "tools": "markdown, markedjs"
     },
     "template": {
         "id": "template",

@@ -56,10 +56,17 @@ const education = {
 // Render education as HTML tiles
 function renderEducation() {
     document.querySelectorAll(".education-tiles").forEach((container) => {
-        const educationTiles = container.dataset.education.split(", ");
+        const raw = container.dataset.education || "";
+        let keys = raw.split(",").map(s => s.trim()).filter(Boolean);
+        if (keys.length === 0) {
+            // Fallback: render all education entries
+            keys = Object.keys(education);
+        }
+
         let html = "";
-        educationTiles.forEach((tile) => {
-            const edu = education[tile];
+        keys.forEach((key) => {
+            const edu = education[key];
+            if (!edu) return;
             html += `
                 <div class="education-tile ui-element">
                     <a class="education-banner" style="background-color: ${edu.color}" href="${edu.url}" target="_blank">
@@ -82,7 +89,7 @@ function renderEducation() {
                                 <h3 class="education-major">${degree.degree}</h3>
                             </a>
                             <p class="education-type">${degree.type}</p>
-                            ${degree.coursework && degree.coursework.length > 0 ? `
+                            ${degree.coursework && degree.coursework.length ? `
                             <div class="education-relevant-coursework">
                                 <p>Relevant Coursework:</p>
                                 <ul class="education-relevant-coursework-list">
@@ -93,16 +100,16 @@ function renderEducation() {
                                         </li>
                                     `).join('')}
                                 </ul>
-                            </div>
-                            ` : ''}
-                        </div>
-                        `).join('')}
+                            </div>` : ''}
+                        </div>`).join('')}
                     </div>
                 </div>
             `;
         });
         container.innerHTML = html;
     });
+    if (typeof renderTechnologies === "function") renderTechnologies();
+    if (typeof updateTimeAgo === "function") updateTimeAgo();
 }
 
 renderEducation();

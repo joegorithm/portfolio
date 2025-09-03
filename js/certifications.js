@@ -70,12 +70,11 @@ const certificationIssuers = {
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.643 33.145c-3.292 0-6.51-.972-9.246-2.793a16.588 16.588 0 01-6.13-7.438A16.507 16.507 0 01.32 13.34a16.55 16.55 0 014.555-8.485A16.665 16.665 0 0113.396.318a16.71 16.71 0 019.616.944 16.628 16.628 0 017.47 6.103 16.522 16.522 0 012.804 9.207c0 4.396-1.753 8.61-4.874 11.719a16.68 16.68 0 01-11.769 4.854zm.125-6.628c6.906 0 12.517-5.698 12.517-12.73 0-7.03-5.61-12.725-12.517-12.725-6.906 0-12.517 5.698-12.517 12.725 0 7.027 5.611 12.73 12.517 12.73zm-.125-2.918c-6.289 0-11.386-4.925-11.386-11.002C5.257 6.52 10.36 1.59 16.643 1.59c6.284 0 11.386 4.93 11.386 11.007s-5.097 11.002-11.386 11.002zm-.242-4.508c4.77 0 8.633-3.679 8.633-8.218 0-4.538-3.885-8.221-8.633-8.221-4.747 0-8.632 3.679-8.632 8.221 0 4.543 3.885 8.218 8.632 8.218z"></path>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.643 33.145c-3.292 0-6.51-.972-9.246-2.793a16.588 16.588 0 01-6.13-7.438A16.507 16.507 0 01.32 13.34a16.55 16.55 0 014.555-8.485A16.665 16.665 0 0113.396.318a16.71 16.71 0 019.616.944 16.628 16.628 0 017.47 6.103 16.522 16.522 0 012.804 9.207c0 4.396-1.753 8.61-4.874 11.719a16.68 16.68 0 01-11.769 4.854zm.125-6.628c6.906 0 12.517-5.698 12.517-12.73 0-7.03-5.61-12.725-12.517-12.725-6.906 0-12.517 5.698-12.517 12.725 0 7.027 5.611 12.73 12.517 12.73z"></path>
                     </svg>`,
-                class: "certification-logo-deeplearning-ai"
+                class: "certification-logo-small-deeplearning-ai"
             },
             small: {
                 svg: `<svg width="1.3rem" height="1.3rem" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" alt="DeepLearning.AI logo">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.643 33.145c-3.292 0-6.51-.972-9.246-2.793a16.588 16.588 0 01-6.13-7.438A16.507 16.507 0 01.32 13.34a16.55 16.55 0 014.555-8.485A16.665 16.665 0 0113.396.318a16.71 16.71 0 019.616.944 16.628 16.628 0 017.47 6.103 16.522 16.522 0 012.804 9.207c0 4.396-1.753 8.61-4.874 11.719a16.68 16.68 0 01-11.769 4.854zm.125-6.628c6.906 0 12.517-5.698 12.517-12.73 0-7.03-5.61-12.725-12.517-12.725-6.906 0-12.517 5.698-12.517 12.725 0 7.027 5.611 12.73 12.517 12.73zm-.125-2.918c-6.289 0-11.386-4.925-11.386-11.002C5.257 6.52 10.36 1.59 16.643 1.59c6.284 0 11.386 4.93 11.386 11.007s-5.097 11.002-11.386 11.002zm-.242-4.508c4.77 0 8.633-3.679 8.633-8.218 0-4.538-3.885-8.221-8.633-8.221-4.747 0-8.632 3.679-8.632 8.221 0 4.543 3.885 8.218 8.632 8.218zm.126-1.59c-3.734 0-6.76-3.207-6.76-7.16 0-3.954 3.018-7.16 6.75-7.16 3.734 0 6.76 3.206 6.76 7.16s-3.021 7.16-6.76 7.16h.01zm-.126-6.28c.729 0 1.44-.214 2.046-.617a3.67 3.67 0 001.356-1.646 3.652 3.652 0 00-.798-3.995 3.687 3.687 0 00-4.012-.794 3.679 3.679 0 00-1.653 1.35 3.655 3.655 0 00-.62 2.037c.002.971.39 1.902 1.08 2.59a3.698 3.698 0 002.601 1.076z"></path>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.643 33.145c-3.292 0-6.51-.972-9.246-2.793a16.588 16.588 0 01-6.13-7.438A16.507 16.507 0 01.32 13.34a16.55 16.55 0 014.555-8.485A16.665 16.665 0 0113.396.318a16.71 16.71 0 019.616.944 16.628 16.628 0 017.47 6.103 16.522 16.522 0 012.804 9.207c0 4.396-1.753 8.61-4.874 11.719a16.68 16.68 0 01-11.769 4.854zm.125-6.628c6.906 0 12.517-5.698 12.517-12.73 0-7.03-5.61-12.725-12.517-12.725-6.906 0-12.517 5.698-12.517 12.725 0 7.027 5.611 12.73 12.517 12.73zm-.125-2.918c-6.289 0-11.386-4.925-11.386-11.002C5.257 6.52 10.36 1.59 16.643 1.59c6.284 0 11.386 4.93 11.386 11.007s-5.097 11.002-11.386 11.002zm-.242-4.508c4.77 0 8.633-3.679 8.633-8.218 0-4.538-3.885-8.221-8.633-8.221-4.747 0-8.632 3.679-8.632 8.221 0 4.543 3.885 8.218 8.632 8.218z"></path>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.643 33.145c-3.292 0-6.51-.972-9.246-2.793a16.588 16.588 0 01-6.13-7.438A16.507 16.507 0 01.32 13.34a16.55 16.55 0 014.555-8.485A16.665 16.665 0 0113.396.318a16.71 16.71 0 019.616.944 16.628 16.628 0 017.47 6.103 16.522 16.522 0 012.804 9.207c0 4.396-1.753 8.61-4.874 11.719a16.68 16.68 0 01-11.769 4.854zm.125-6.628c6.906 0 12.517-5.698 12.517-12.73 0-7.03-5.61-12.725-12.517-12.725-6.906 0-12.517 5.698-12.517 12.725 0 7.027 5.611 12.73 12.517 12.73z"></path>
                     </svg>`,
                 class: "certification-logo-small-deeplearning-ai"
@@ -245,52 +244,61 @@ const certifications = {
 // Render certifications as HTML tiles
 function renderCertifications() {
     document.querySelectorAll(".certification-tiles").forEach((element) => {
-        const certificationTiles = element.dataset.certifications.split(", ");
-        certificationTiles.forEach((tile) => {
-            element.innerHTML += `
+        const raw = element.dataset.certifications || "";
+        let keys = raw.split(",").map(s => s.trim()).filter(Boolean);
+        if (keys.length === 0) {
+            keys = Object.keys(certifications);
+        }
+
+        let html = "";
+        keys.forEach((key) => {
+            const cert = certifications[key];
+            if (!cert) return;
+            html += `
                 <div class="certification-tile ui-element" data-hover-effect>
                     <div class="glow"></div>
                     <div class="certification-main">
-                        <a href="${certifications[tile].url}" target="_blank" class="certification-logo-link">
-                            <div class="certification-logo ${certifications[tile].issuer.logo.normal.class}">
-                                ${certifications[tile].issuer.logo.normal.svg}
+                        <a href="${cert.url}" target="_blank" class="certification-logo-link">
+                            <div class="certification-logo ${cert.issuer.logo.normal.class}">
+                                ${cert.issuer.logo.normal.svg}
                             </div>
                         </a>
                         <div class="certification-information">
                             <div class="certification-header">
-                                <a href="${certifications[tile].url}" target="_blank" class="certification-link">
-                                    <h2 class="certification-title">${certifications[tile].title}</h2>
+                                <a href="${cert.url}" target="_blank" class="certification-link">
+                                    <h2 class="certification-title">${cert.title}</h2>
                                 </a>
-                                <a href="${certifications[tile].url}" target="_blank" class="certification-link">
+                                <a href="${cert.url}" target="_blank" class="certification-link">
                                     <div class="tooltip-element">
-                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                            <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                                        </svg>
+                                        <svg class="certification-external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
                                         <span class="tooltip tooltip-button">View Certificate</span>
                                     </div>
                                 </a>
                             </div>
-                            <a href="${certifications[tile].issuer.url}" target="_blank" class="certification-issuer">
-                                <div class="certification-logo-small ${certifications[tile].issuer.logo.small.class}">
-                                    ${certifications[tile].issuer.logo.small.svg}
+                            <a href="${cert.issuer.url}" target="_blank" class="certification-issuer">
+                                <div class="certification-logo-small ${cert.issuer.logo.small.class}">
+                                    ${cert.issuer.logo.small.svg}
                                 </div>
-                                <span class="certification-issuer-text">${certifications[tile].issuer.name}</span>
+                                <span class="certification-issuer-text">${cert.issuer.name}</span>
                             </a>
                             <div class="certification-time-ago">
                                 <div class="time-ago-status tooltip-element">
                                     <span class="time-ago-icon"></span>
-                                    <span class="time-ago-date" data-earned="${certifications[tile].date}"></span>
+                                    <span class="time-ago-date" data-earned="${cert.date}"></span>
                                     <span class="tooltip"></span>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                    <div class="tool-tags project-technologies" data-technologies="${certifications[tile].tools}"></div>
+                    <div class="tool-tags project-technologies" data-technologies="${cert.tools || ""}"></div>
                 </div>
             `;
         });
+        element.innerHTML = html;
     });
+    if (typeof renderTechnologies === "function") renderTechnologies();
+    if (typeof updateTimeAgo === "function") updateTimeAgo();
 }
 
 renderCertifications(); // Run on initial load

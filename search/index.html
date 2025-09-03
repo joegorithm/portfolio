@@ -32,6 +32,7 @@
     <script src="/js/education.js" defer></script>
     <script src="/js/projects.js" defer></script>
     <script src="/js/certifications.js" defer></script>
+    <script src="/js/blog.js" defer></script>
     <script src="/js/time-ago.js" defer></script>
     <script src="/js/technologies.js" defer></script>
     <script src="/js/search.js" defer></script>
@@ -53,6 +54,8 @@
                     <div class="search-project-tiles project-tiles project-grid" data-projects=""></div>
                     <h1 class="search-certifications-title">Certifications</h1>
                     <div class="search-certification-tiles certification-tiles certifications-grid" data-certifications=""></div>
+                    <h1 class="search-blog-title">Blog Posts</h1>
+                    <div class="search-blog-tiles blog-tiles" data-blogs=""></div>
                     <div class="search-no-results-container">
                         <div class="search-no-results-face">
                             <div class="face">
@@ -93,7 +96,7 @@
             <footer></footer>
         </div>
         <header>
-            <form class="search-form search-form-large" action="/search" method="GET">
+            <form class="search-form search-form-large" action="/search/" method="GET">
                 <input class="search-bar search-bar-complete" type="text" name="query" id="search-bar" placeholder="Search...">
                 <div class="search-placeholder">
                     <span>Search</span>

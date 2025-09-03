@@ -2891,6 +2891,64 @@ footer {
 
 
 
+/* Blog post tiles */
+
+.blog-tiles {
+    display: grid;
+    --grid-min-column-width: 18rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+.blog-tile {
+    border: 1px solid var(--element-border-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: var(--element-background-color);
+    transition: background-color 150ms ease, scale 150ms ease, box-shadow 150ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.blog-tile:hover {
+    background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    scale: 1.02;
+}
+
+.blog-tile-image {
+    width: 100%;
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.blog-tile-title {
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blog-tile-title:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
+}
+
+.blog-tile-summary {
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.4rem;
+    color: var(--secondary-text-color);
+}
+
+
+
 
 /* Responsive nav for portrait phones */
 @media (max-width: 30rem) {
@@ -3102,11 +3160,11 @@ header {
     z-index: 200;
 }
 
-.search-education-title, .search-project-title, .search-certifications-title {
+.search-education-title, .search-project-title, .search-certifications-title, .search-blog-title {
     display: none;
 }
 
-.search-education-tiles, .search-project-tiles, .search-certification-tiles {
+.search-education-tiles, .search-project-tiles, .search-certification-tiles, .search-blog-tiles {
     display: none;
 }
 

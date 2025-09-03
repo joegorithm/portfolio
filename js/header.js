@@ -30,7 +30,7 @@ Array.from(document.getElementsByTagName("header")).forEach((header) => {
                 <span class="tooltip copy-link-tooltip copy-link-tooltip-hide">Link copied!</span>
             </button>
         </h1>
-        <form class="search-form" action="/search" method="GET">
+    <form class="search-form" action="/search/" method="GET">
             <input class="search-bar" id="search-bar" type="text" name="query" placeholder="Search...">
             <div class="search-placeholder">
                 <span>Search</span>
