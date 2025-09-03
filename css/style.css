@@ -713,7 +713,7 @@ body {
 
 @media (max-width: 30rem) {
     .page-container {
-        margin: 1rem 0.5rem 0 0.5rem;
+        margin: 0rem 0.5rem 0 0.5rem;
         width: calc(100vw - 1rem);
     }
 }
@@ -3174,7 +3174,7 @@ header {
     display: none;
 }
 
-@media (max-width: 70rem) {
+@media (max-width: 60rem) {
     header {
         width: calc(100vw - 8rem - 2px);
     }
@@ -3206,7 +3206,7 @@ header h1 {
     z-index: 1000;
 }
 
-header::after {
+/* header::after {
     content: "";
     position: absolute;
     top: -2rem;
@@ -3214,10 +3214,12 @@ header::after {
     width: calc(100% + 8rem);
     height: 6rem;
     background-color: var(--background-color);
-}
+} */
 
 /* Testing with transparent blur gradient */
 header::after {
+    content: "";
+    position: absolute;
     top: -2rem;
     left: -4rem;
     width: calc(100% + 8rem);
@@ -3285,6 +3287,9 @@ header::before {
 }
 
 @media (max-width: 60rem) {
+    header::after, header::before {
+        top: -1rem;
+    }
     .search-form-large {
         /* margin: 1rem 1rem 0 calc(7rem + 2px); */
         width: calc(100vw - 8rem - 2px);
@@ -3292,6 +3297,14 @@ header::before {
 }
 
 @media (max-width: 30rem) {
+    header::after {
+        top: -0.5rem;
+        height: 8rem;
+    }
+    header::before {
+        top: -0.5rem;
+        height: 6rem;
+    }
     .search-form-large {
         /* margin: 1rem 0.5rem 0 0.5rem; */
         width: calc(100vw - 1rem);
