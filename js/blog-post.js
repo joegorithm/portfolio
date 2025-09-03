@@ -7,33 +7,6 @@ const authorData = {
         },
         avatar: "/media/jonathan-hill-cropped.png",
         website: "/about"
-    },
-    "white-chicken": {
-        id: "white-chicken",
-        name: {
-            first: "Pink",
-            last: "Chicken"
-        },
-        avatar: "/media/white-chicken.jpg",
-        website: "https://www.khanacademy.org/profile/tomthepinkchicken"
-    },
-    "paddington-bear": {
-        id: "paddington-bear",
-        name: {
-            first: "Paddington",
-            last: "Bear"
-        },
-        avatar: "/media/paddington-bear.png",
-        website: "https://www.paddington.com"
-    },
-    "henry-brown": {
-        id: "henry-brown",
-        name: {
-            first: "Henry",
-            last: "Brown"
-        },
-        avatar: "/media/henry-brown.png",
-        website: "https://www.paddington.com"
     }
     // Add more authors as needed
 };
