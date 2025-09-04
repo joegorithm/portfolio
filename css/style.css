@@ -3826,19 +3826,27 @@ header::before {
     -webkit-user-select: none;
     cursor: pointer;
     position: relative;
-    background: url("/icon/chevron-down-icon.svg") no-repeat right 1rem center;
-    background-size: 1rem;
 
     font-size: 1.1rem;
     font-weight: 300;
     line-height: 1.5rem;
     background-color: var(--element-background-color);
-    /* backdrop-filter: blur(4rem); */
     border: 1px solid var(--element-border-color);
     color: var(--primary-text-color);
     border-radius: 1rem;
     caret-color: var(--logo-j-color);
     transition: background-color 150ms ease;
+}
+
+.custom-dropdown::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 200ms ease;
+    right: 1rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    content: url("/icon/chevron-down-icon.svg");
 }
 
 .form-input-entry-category .custom-dropdown, .custom-dropdown-citation-style {
@@ -3863,9 +3871,8 @@ header::before {
     outline: 1px solid var(--logo-j-color);
 }
 
-.custom-dropdown.open {
-    background-image: url("/icon/chevron-up-icon.svg");
-    
+.custom-dropdown.open::after {
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .custom-dropdown.error {
