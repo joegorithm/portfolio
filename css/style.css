@@ -534,10 +534,10 @@
     --subtle-text-color: var(--dark-gray-color);
     --blog-text-color: #b2b2bc;
     --nav-button-hover-color: rgba(255, 255, 255, 0.06);
-    --selected-nav-button-color: #ffc8191a;
-    --selected-nav-button-hover-color: #ffc81926;
+    --selected-nav-button-color: #ffc919;
+    --selected-nav-button-hover-color: rgb(255, 201, 25);
     --selected-nav-button-border-color: var(--theme-color);
-    --selected-nav-icon-color: var(--theme-color);
+    --selected-nav-icon-color: var(--black-color);
     --nav-icon-color: var(--white-color);
     --element-background-color: rgb(20, 22, 26); /* Previously rgba(166, 179, 225, 0.12); And previously #16171c */
     --element-background-hover-color: rgb(25, 27, 33); /* Previously rgba(166, 179, 225, 0.15); And previously #1c1d25 */
@@ -763,6 +763,17 @@ a {
     text-decoration: none;
 }
 
+.element-3d {
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, 0.5), inset -1px -1px 2px hsla(0, 0%, 0%, 0.3);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.3);
+}
+.element-3d svg {
+    filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.4)) drop-shadow(-1px -1px 2px rgba(0, 0, 0, 0.3));
+}
+.element-3d:hover, .element-3d:focus {
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, 0.5), inset -1px -1px 2px hsla(0, 0%, 0%, 0.3), 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
 .button {
     display: flex;
     gap: 0.5rem;
@@ -777,7 +788,7 @@ a {
     font-weight: 700;
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
-    transition: 200ms ease;
+    transition: transform 200ms ease;
     width: fit-content;
 }
 
@@ -788,12 +799,12 @@ a {
 
 .button:hover, .button:focus {
     cursor: pointer;
-    /* scale: 1.05; */
-    box-shadow: 0 0 0 0.5rem rgba(255, 200, 25, 0.4);
+    transform: scale(1.05);
 }
 
 .button:active {
     opacity: 0.7;
+    transform: scale(0.95);
 }
 
 .button:disabled {
@@ -934,7 +945,6 @@ nav {
     }
     .nav-button {
         gap: 2rem;
-        transition: gap 200ms ease;
     }
     nav:hover, nav:focus-within {
         width: 15rem;
@@ -961,27 +971,28 @@ nav {
     display: flex;
     justify-content: left;
     align-items: center;
-    
+    transition: background-color 150ms ease, scale 150ms ease, gap 200ms ease;
 }
 
 .nav-button:hover, .nav-button:focus {
     background-color: var(--nav-button-hover-color);
+    scale: 1.04;
     cursor: pointer;
+}
+
+.nav-button:active {
+    scale: 0.95;
 }
 
 .nav-icon {
     fill: var(--nav-icon-color);
     display: flex;
-    /* align-items: center; */
     margin-left: 0.75rem;
 }
 
 .nav-icon-solid {
     fill: var(--selected-nav-icon-color);
     display: none;
-    /* width: 2.5rem; */
-    /* height: 2.5rem; */
-    /* align-items: center; */
     margin-left: 0.75rem;
 }
 
@@ -1234,10 +1245,12 @@ footer {
 
 .footer-theme-toggle:hover {
     cursor: pointer;
+    scale: 1.1;
 }
 
 .footer-theme-toggle:active {
     background-color: rgba(255, 201, 25, 0.8);
+    scale: 0.95;
 }
 
 .dark-theme {
@@ -1315,6 +1328,21 @@ footer {
     transform: scale(1.2);
 }
 
+.social-media-button:active .social-media-icon {
+    scale: 0.9;
+    opacity: 0.8;
+}
+
+.social-media-button-codecademy:active .social-media-icon {
+    scale: 1;
+    opacity: 1;
+}
+
+.social-media-button-codecademy:active .social-media-icon-codecademy-container {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
 .social-media-icon-codecademy-container {
     box-sizing: border-box;
     background-color: var(--nav-icon-color);
@@ -1339,7 +1367,7 @@ footer {
     box-sizing: border-box;
     width: 2rem;
     height: 2rem;
-    transition: scale 200ms ease;
+    transition: scale 200ms ease, opacity 200ms ease;
 }
 
 .social-media-icon-codecademy {
@@ -2271,7 +2299,7 @@ footer {
     box-sizing: border-box;
     border-radius: 2.5rem;
     display: flex;
-    transition: width 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    transition: width 200ms ease, background-color 200ms ease, box-shadow 200ms ease, filter 200ms ease;
     overflow: hidden;
 }
 
@@ -2292,7 +2320,7 @@ footer {
 .project-details-options-button:hover, .blog-post-options-button:hover {
     width: 15rem;
     background-color: var(--element-background-hover-color);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
     cursor: pointer;
 }
 
@@ -3466,11 +3494,20 @@ header::before {
     fill: black;
     z-index: 1001;
     box-sizing: border-box;
+    transition: transform 150ms ease;
 }
 
 .search-button-complete {
     top: 0.5rem;
     right: 5.5rem;
+}
+
+.search-button:hover, .search-button:focus {
+    transform: scale(1.1);
+}
+
+.search-button:active {
+    transform: scale(0.95);
 }
 
 .filter-button-container {
@@ -3618,6 +3655,11 @@ header::before {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    transition: transform 150ms ease;
+}
+
+.apply-filters-button:hover, .apply-filters-button:focus {
+    transform: scale(1.05);
 }
 
 .page-title {
@@ -3885,6 +3927,7 @@ header::before {
     background-color: var(--element-background-hover-color);
     border: 1px solid rgba(255, 0, 0);
     caret-color: rgb(255, 0, 0);
+    box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.5);
 }
 
 .custom-dropdown.shake {

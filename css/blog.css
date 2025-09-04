@@ -1,12 +1,20 @@
 /* Selected Nav Button */
 .nav-button-blog {
     background-color: var(--selected-nav-button-color);
-    /* box-shadow: inset 0 0 0 1px var(--selected-nav-button-border-color); */
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, 0.5), inset -1px -1px 2px hsla(0, 0%, 0%, 0.3);
 }
 
-.nav-button-blog:hover {
+.nav-button-blog svg {
+    filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.4)) drop-shadow(-1px -1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.nav-button-blog:hover, .nav-button-blog:focus {
     background-color: var(--selected-nav-button-hover-color);
-    cursor: pointer;
+    scale: 1.04;
+}
+
+.nav-button-blog:active {
+    scale: 0.95;
 }
 
 .nav-icon-blog {
@@ -19,7 +27,12 @@
 
 .nav-label-blog {
     color: var(--selected-nav-icon-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
 }
+
+
+
 
 .blog-post-cover-image {
     width: 100%;

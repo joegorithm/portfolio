@@ -1,11 +1,20 @@
 /* Selected Nav Button */
 .nav-button-contact {
     background-color: var(--selected-nav-button-color);
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, 0.5), inset -1px -1px 2px hsla(0, 0%, 0%, 0.3);
 }
 
-.nav-button-contact:hover {
+.nav-button-contact svg {
+    filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.4)) drop-shadow(-1px -1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.nav-button-contact:hover, .nav-button-contact:focus {
     background-color: var(--selected-nav-button-hover-color);
-    cursor: pointer;
+    scale: 1.04;
+}
+
+.nav-button-contact:active {
+    scale: 0.95;
 }
 
 .nav-icon-contact {
@@ -18,6 +27,8 @@
 
 .nav-label-contact {
     color: var(--selected-nav-icon-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
 }
 
 
@@ -105,6 +116,7 @@ main {
 }
 
 .form-input.error {
+    box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.5);
     border: 1px solid rgba(255, 0, 0);
     caret-color: rgb(255, 0, 0);
 }
@@ -259,20 +271,20 @@ input.form-input:-webkit-autofill {
     position: relative;
 }
 
-/* .runaway-button-ghost {
-    position: absolute;
-} */
+.runaway-button-ghost {
+    transform: scale(1);
+}
 
 .runaway-button {
     position: absolute;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
     z-index: 20000;
     top: 0;
-    transition: transform 1000ms linear(0, 0.008 1.1%, 0.031 2.2%, 0.129 4.8%, 0.257 7.2%, 0.671 14.2%, 0.789 16.5%, 0.881 18.6%, 0.957 20.7%, 1.019 22.9%, 1.063 25.1%, 1.094 27.4%, 1.114 30.7%, 1.112 34.5%, 1.018 49.9%, 0.99 59.1%, 1);
+    transition: transform 1000ms linear(0, 0.008 1.1%, 0.031 2.2%, 0.129 4.8%, 0.257 7.2%, 0.671 14.2%, 0.789 16.5%, 0.881 18.6%, 0.957 20.7%, 1.019 22.9%, 1.063 25.1%, 1.094 27.4%, 1.114 30.7%, 1.112 34.5%, 1.018 49.9%, 0.99 59.1%, 1), scale 150ms ease;
 }
 
 .runaway-button:hover {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    scale: 1.1;
 }
 
 
@@ -292,10 +304,14 @@ input.form-input:-webkit-autofill {
     align-items: center;
     margin-bottom: 1rem;
     transition: box-shadow 150ms ease, scale 150ms ease;
+    text-shadow: none;
+}
+
+.buy-me-a-coffee-tile svg {
+    filter: none;
 }
 
 .buy-me-a-coffee-tile:hover {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     scale: 1.02;
 }
 
