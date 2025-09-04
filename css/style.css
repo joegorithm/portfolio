@@ -551,6 +551,8 @@
 
     --form-input-placeholder-color: rgba(183, 189, 211, 0.4);
 
+    --input-box-shadow: 0 0 1.5rem rgba(255, 201, 25, 0.5);
+
     --dropdown-option-hover-color: rgba(239, 247, 255, 0.075);
     --dropdown-shadow-color: rgba(0, 0, 0, 0.5);
 
@@ -623,6 +625,8 @@
     --tooltip-shadow-color: rgba(0, 0, 0, 0.3);
 
     --form-input-placeholder-color: rgba(0, 0, 0, 0.3);
+
+    --input-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 
     --dropdown-option-hover-color: rgba(0, 6, 34, 0.075);
     --dropdown-shadow-color: rgba(0, 0, 0, 0.2);
@@ -3426,7 +3430,7 @@ header::before {
     border: 1px solid #00000000;
     background-color: var(--element-background-hover-color);
     outline: 1px solid var(--logo-j-color);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: var(--input-box-shadow);
 }
 
 .tool-bar::placeholder {
@@ -3835,7 +3839,7 @@ header::before {
     color: var(--primary-text-color);
     border-radius: 1rem;
     caret-color: var(--logo-j-color);
-    transition: background-color 150ms ease;
+    transition: background-color 150ms ease, box-shadow 150ms ease;
 }
 
 .custom-dropdown::after {
@@ -3863,10 +3867,12 @@ header::before {
 
 .custom-dropdown:hover {
     background-color: var(--element-background-hover-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .custom-dropdown:active, .custom-dropdown:focus {
     background-color: var(--element-background-hover-color);
+    box-shadow: var(--input-box-shadow);
     border: 1px solid #00000000;
     outline: 1px solid var(--logo-j-color);
 }
