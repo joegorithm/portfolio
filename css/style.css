@@ -2366,6 +2366,7 @@ footer {
 .project-details-preview-images {
     display: flex;
     gap: 1rem;
+    overflow-y: hidden;
     overflow-x: auto;
     padding: 0 1rem;
 }
@@ -2390,6 +2391,7 @@ footer {
     background: linear-gradient(to right, var(--background-color), transparent);
     opacity: 0;
     transition: opacity 200ms ease;
+    pointer-events: none;
 }
 
 .scroll-gradient-end {
@@ -2402,6 +2404,7 @@ footer {
     background: linear-gradient(to left, var(--background-color), transparent);
     opacity: 0;
     transition: opacity 200ms ease;
+    pointer-events: none;
 }
 
 .project-details-preview-image-container {
