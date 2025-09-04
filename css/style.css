@@ -932,17 +932,17 @@ nav {
         gap: 2rem;
         transition: gap 200ms ease;
     }
-    nav:hover {
+    nav:hover, nav:focus-within {
         width: 15rem;
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 
     }
 
-    nav:hover .nav-label {
+    nav:hover .nav-label, nav:focus-within .nav-label {
         opacity: 1;
     }
 
-    nav:hover .nav-button {
+    nav:hover .nav-button, nav:focus-within .nav-button {
         gap: 1rem;
     }
 }

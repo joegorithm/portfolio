@@ -49,25 +49,54 @@ document.addEventListener("sidebarLoaded", function () {
     updateNavLabels();
 });
 
-if (hoverEnabled) {
-    // Sidebar expanded
+if (hoverEnabled && nav) {
+    // Expand on mouse enter
     nav.addEventListener("mouseenter", () => {
         navHover = true;
-        clearTimeout(hideTimeout); // Stop hiding if the mouse re-enters
+        clearTimeout(hideTimeout);
         updateNavLabels();
     });
 
-    // Sidebar collapsed
+    // Collapse after brief delay when mouse leaves (unless focus stays inside)
     nav.addEventListener("mouseleave", () => {
-        navHover = false;
+        // Only collapse if nothing inside is focused
+        if (!nav.contains(document.activeElement)) {
+            navHover = false;
+            hideTimeout = setTimeout(() => {
+                updateNavLabels();
+            }, 200);
+        }
+    });
+}
 
-        // Wait 200ms before hiding labels
-        hideTimeout = setTimeout(() => {
+// Keyboard accessibility: treat focus within nav like hover (always attach if nav exists)
+if (nav) {
+    nav.addEventListener("focusin", () => {
+        if (!navHover) {
+            navHover = true;
+            clearTimeout(hideTimeout);
             updateNavLabels();
-        }, 200);
+        }
+    });
+
+    nav.addEventListener("focusout", (e) => {
+        // When focus leaves the entire nav and mouse isn't hovering, collapse
+        if (!nav.contains(e.relatedTarget) && !nav.matches(":hover")) {
+            navHover = false;
+            hideTimeout = setTimeout(() => {
+                updateNavLabels();
+            }, 200);
+        }
     });
 }
 
 window.addEventListener("resize", updateNavLabels);
 
 updateNavLabels(); // Initial check
+
+// Handle case where page loads with pointer already over nav (e.g., reload while hovering)
+if (hoverEnabled && nav && nav.matches(":hover")) {
+    navHover = true;
+    // Run again on next frame after potential sidebarLoaded event triggers
+    requestAnimationFrame(() => updateNavLabels());
+}
