@@ -10,11 +10,6 @@
 
 .nav-button-blog:hover, .nav-button-blog:focus {
     background-color: var(--selected-nav-button-hover-color);
-    scale: 1.04;
-}
-
-.nav-button-blog:active {
-    scale: 0.95;
 }
 
 .nav-icon-blog {

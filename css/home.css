@@ -10,11 +10,6 @@
 
 .nav-button-home:hover, .nav-button-home:focus {
     background-color: var(--selected-nav-button-hover-color);
-    scale: 1.04;
-}
-
-.nav-button-home:active {
-    scale: 0.95;
 }
 
 .nav-icon-home {

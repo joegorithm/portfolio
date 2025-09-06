@@ -971,17 +971,17 @@ nav {
     display: flex;
     justify-content: left;
     align-items: center;
-    transition: background-color 150ms ease, scale 150ms ease, gap 200ms ease;
+    transition: background-color 150ms ease, transform 150ms ease, gap 200ms ease;
 }
 
 .nav-button:hover, .nav-button:focus {
     background-color: var(--nav-button-hover-color);
-    scale: 1.04;
+    transform: scaleX(1.03) scaleY(1.05);
     cursor: pointer;
 }
 
 .nav-button:active {
-    scale: 0.95;
+    transform: scaleX(0.95) scaleY(0.95);
 }
 
 .nav-icon {
@@ -3036,21 +3036,21 @@ footer {
     }
     nav {
         margin: 0;
-        /* padding-top: 0.25rem; */
+        padding-top: 0.75rem 0.25rem;
         background-color: var(--mobile-nav-background-color);
         position: fixed;
-        bottom: -1.5rem;
-        padding-bottom: 2rem;
+        bottom: 0;
+        padding-bottom: 0;
         left: 0;
         width: calc(100% - 1rem - 2px);
-        height: 4rem;
+        height: 4.25rem;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        border-radius: 0;
-        border-top-left-radius: 2.5rem;
-        border-top-right-radius: 2.5rem;
+        border-radius: 2.6rem 2.6rem 0 0;
         box-shadow: 0 0.5rem 1rem 1rem var(--nav-shadow-color);
+        border-bottom: 5px solid var(--theme-color);
+        gap: 0;
     }
 }
 
@@ -3095,6 +3095,9 @@ footer {
         align-items: center;
         width: 4rem;
         height: 4rem;
+        border-radius: 2rem 2rem 0 0;
+        gap: 0.25rem;
+        padding-top: 0.25rem;
     }
     .nav-icon {
         width: 1.9rem;

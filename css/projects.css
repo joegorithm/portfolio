@@ -10,11 +10,6 @@
 
 .nav-button-projects:hover, .nav-button-projects:focus {
     background-color: var(--selected-nav-button-hover-color);
-    scale: 1.04;
-}
-
-.nav-button-projects:active {
-    scale: 0.95;
 }
 
 .nav-icon-projects {

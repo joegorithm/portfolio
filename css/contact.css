@@ -10,11 +10,6 @@
 
 .nav-button-contact:hover, .nav-button-contact:focus {
     background-color: var(--selected-nav-button-hover-color);
-    scale: 1.04;
-}
-
-.nav-button-contact:active {
-    scale: 0.95;
 }
 
 .nav-icon-contact {
