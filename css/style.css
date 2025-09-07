@@ -2862,6 +2862,10 @@ footer {
     background: none;
 }
 
+.certification-logo-google, .certification-logo-small-google {
+    background: var(--github-theme-color);
+}
+
 .certification-information {
     width: calc(100% - 7.5rem);
     display: flex;
