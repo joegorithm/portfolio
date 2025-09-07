@@ -61,7 +61,7 @@ const projects = {
             {image: "/media/portfolio-project-preview-5.png", label: "Contact page"},
             {image: "/media/portfolio-project-preview-6.png", label: "Search page"}
         ],
-        tools: "html, css, javascript"
+        tools: "html, css, javascript, markdown, markedjs, highlightjs, katex"
     },
     "clock": {
         id: "clock",
@@ -96,7 +96,7 @@ const projects = {
         summary: "A dynamic user-friendly web application for performing matrix calculations.",
         description: "Description coming soon",
         preview: [],
-        tools: "html, css, javascript, react"
+        tools: "typescript, react, tailwind-css"
     },
     "age-in-days-calculator": {
         id: "age-in-days-calculator",

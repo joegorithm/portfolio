@@ -79,6 +79,11 @@
     scale: 1.05;
 }
 
+.tool-tile-icon {
+    width: 100%;
+    height: 100%;
+}
+
 .tool-tags {
     display: flex;
     flex-wrap: wrap;
@@ -152,6 +157,20 @@
     fill: var(--github-theme-color);
 }
 
+.tool-highlightjs {
+    background-color: rgba(203, 34, 20, 0.2);
+    fill: #CB2214;
+    border-color: #CB2214;
+    color: #CB2214;
+}
+
+.tool-katex {
+    background-color: rgba(50, 152, 149, 0.2);
+    border-color: #329894;
+    color: #329894;
+    fill: #329894;
+}
+
 .tool-css {
     background-color: rgba(171, 58, 223, 0.2);
     border-color: #ab3adf; /* Official: #663399 */
@@ -164,6 +183,13 @@
     border-color: #F7DF1E;
     color: #F7DF1E;
     fill: #F7DF1E;
+}
+
+.tool-typescript {
+    background-color: rgba(49, 120, 198, 0.2);
+    border-color: #3178C6;
+    color: #3178C6;
+    fill: #3178C6;
 }
 
 .tool-github {
@@ -366,6 +392,16 @@
     outline: 2px solid var(--github-theme-color);
 }
 
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-highlightjs {
+    background-color: #CB2214;
+    outline: 2px solid #CB2214;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-katex {
+    background-color: #329894;
+    outline: 2px solid #329894;
+}
+
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-css {
     background-color: #ab3adf;
     outline: 2px solid #ab3adf;
@@ -374,6 +410,11 @@
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-javascript {
     background-color: #F7DF1E;
     outline: 2px solid #F7DF1E;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-typescript {
+    background-color: #3178C6;
+    outline: 2px solid #3178C6;
 }
 
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-github {
