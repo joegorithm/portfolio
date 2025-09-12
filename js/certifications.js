@@ -185,6 +185,13 @@ const certificationIssuers = {
 
 // Certifications data
 const certifications = {
+    "learn-react-codecademy": {
+        title: "Learn React",
+        date: "2025-09-12",
+        url: "https://www.codecademy.com/profiles/Jonathan-Hill/certificates/af00e5032d0a68cc84879983f5d8333b",
+        issuer: certificationIssuers["codecademy"],
+        tools: "react, javascript, html"
+    },
     "get-started-using-google-analytics-google": {
         title: "Get Started Using Google Analytics",
         date: "2025-09-06",

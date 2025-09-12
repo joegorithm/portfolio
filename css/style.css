@@ -848,7 +848,7 @@ a {
     transform: scale(0.95);
 }
 
-.button:disabled {
+.button:disabled, .button.disabled {
     background-color: var(--button-disabled-color);
     opacity: 0.1;
     color: var(--element-background-color);
@@ -2828,6 +2828,7 @@ footer {
 .certification-tile {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: var(--element-background-color);
     transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
     border-radius: 2rem;

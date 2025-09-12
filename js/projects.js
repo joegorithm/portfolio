@@ -87,7 +87,6 @@ const projects = {
         id: "matricat",
         title: "Matricat",
         category: "Web App",
-        url: "https://matrix.jh.codes",
         github: "https://github.com/joegorithm/matrix",
         started: "2025-04-16",
         completed: "",
@@ -208,7 +207,7 @@ function renderProjects() {
                                 </div>
                                 <span class="tooltip tooltip-button">GitHub Repository</span>
                             </a>` : ""}
-                            <a href="${proj.url}" target="_blank" class="project-options-button tooltip-element">
+                            ${proj.url ? `<a href="${proj.url}" target="_blank" class="project-options-button tooltip-element">
                                 <div class="project-options-icon">
                                     <svg width="1.4rem" height="1.4rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -216,7 +215,7 @@ function renderProjects() {
                                     </svg>
                                 </div>
                                 <span class="tooltip tooltip-button">Live Site</span>
-                            </a>
+                            </a>` : ""}
                         </div>
                     </div>
                     <div class="tool-tags project-technologies" data-technologies="${proj.tools}"></div>
