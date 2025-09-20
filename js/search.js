@@ -1,6 +1,8 @@
 // Search tool tags filter
 const filterButton = document.querySelector('.filter-button'); 
 const searchToolTags = document.querySelector('.search-tool-tags');
+const toolListElement = document.querySelector('.search-bar-complete-tool-list');
+
 
 filterButton.addEventListener('click', function() {
     searchToolTags.style.display = searchToolTags.style.display === 'block' ? 'none' : 'block';
@@ -288,6 +290,39 @@ if (certificationTiles && finalCertifications.length > 0) {
 if (typeof updateTimeAgo === "function") updateTimeAgo();
 if (typeof renderTechnologies === "function") renderTechnologies();
 
+
+// const toolListElement = document.querySelector('.search-bar-complete-tool-list');
+let toolList = [];
+for (const tool of tools) {
+    toolList.push(tool);
+}
+toolListElement.setAttribute('data-technologies', toolList.join(', '));
+if (typeof renderTechnologies === "function") renderTechnologies();
+
+console.log("Height of tool list element:", toolListElement.offsetHeight);
+
+// event listener for change of height of tool list element
+const observer = new ResizeObserver(entries => {
+    for (let entry of entries) {
+        const height = entry.contentRect.height;
+        console.log('Height changed to:', height);
+        const header = document.querySelector('header');
+        if (header) {
+            document.documentElement.style.setProperty('--additional-header-height', `calc(2rem + ${height}px)`);
+        }
+    }
+});
+
+// Set display flex if there are tools
+if (toolListElement) {
+    if (tools.length > 0) {
+        toolListElement.style.display = 'flex';
+        observer.observe(toolListElement);
+    } else {
+        toolListElement.style.display = 'none';
+        document.documentElement.style.setProperty('--additional-header-height', '0px');
+    }
+}
 
 // (???)
 for (const tool of tools) {

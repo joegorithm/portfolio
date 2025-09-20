@@ -88,6 +88,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .tool-tag-link {
@@ -556,6 +557,8 @@
 
     --hover: true;
     --sidebar: true;
+
+    --additional-header-height: 0px;
 }
 
 .dark-theme {
@@ -616,7 +619,6 @@
     --future-tech-color: rgba(255, 255, 255, 0.3);
     --future-tech-background-color: rgba(255, 255, 255, 0.15);
 
-    --useless-black-rectangle-border-color: rgba(255, 255, 255, 0.2);
     --tool-tag-selected-foreground-color: rgba(0, 0, 0, 0.7);
 
     --inline-code-color: rgb(210, 219, 226);
@@ -691,7 +693,6 @@
     --future-tech-color: rgba(0, 0, 0, 0.3);
     --future-tech-background-color: rgba(0, 0, 0, 0.1);
     
-    --useless-black-rectangle-border-color: rgba(0, 0, 0, 0.13);
     --tool-tag-selected-foreground-color: rgba(255, 255, 255, 0.9);
 
     --inline-code-color: rgb(38, 40, 41);
@@ -3244,27 +3245,6 @@ main {
     }
 }
 
-/* Search Bar */
-/* .section-results {
-    min-height: calc(100dvh - 23.5rem + 2px);
-}
-
-@media (max-width: 60rem) {
-    .section-results {
-        min-height: calc(100dvh - 22.5rem + 2px);
-    }
-}
-@media (max-width: 42rem) {
-    .section-results {
-        min-height: calc(100dvh - 24.5rem - 3px);
-    }
-}
-@media (max-width: 30rem) {
-    .section-results {
-        min-height: calc(100dvh - 30rem - 3px);
-    }
-} */
-
 header {
     position: fixed;
     color: var(--primary-text-color);
@@ -3275,6 +3255,10 @@ header {
     max-width: 75rem;
     width: calc(100vw - 10rem - 2px);
     z-index: 200;
+}
+
+.section-results {
+    padding-top: var(--additional-header-height);
 }
 
 .search-education-title, .search-project-title, .search-certifications-title, .search-blog-title {
@@ -3344,8 +3328,8 @@ header::after {
     background-color: rgba(255, 0, 204, 0);
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(10px);
-    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0));
-    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 6rem, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 6rem, rgba(0, 0, 0, 0));
     pointer-events: none;
 }
 
@@ -3356,7 +3340,7 @@ header::before {
     left: -4rem;
     width: calc(100% + 8rem);
     height: 8rem;
-    background: linear-gradient(to bottom, var(--header-background-color) 40%, transparent); /* Remove if wanting transparent blur gradient */
+    background: linear-gradient(to bottom, var(--header-background-color) 3.2rem, transparent);
 }
 
 .search-form {
@@ -3451,6 +3435,23 @@ header::before {
 
 .search-bar-complete {
     width: calc(100% - 5rem);
+}
+
+.search-bar-complete-tool-list {
+    --subtract-tool-list-width: 0px;
+    display: none;
+    background-color: var(--element-background-color);
+    border: 1px solid var(--element-border-color);
+    border-top: none;
+    border-radius: 0 0 2rem 2rem;
+    padding: 3rem 1rem 1rem;
+    width: calc(100% - 7rem - 2px - var(--subtract-tool-list-width));
+    transition: width 100ms ease;
+    position: absolute;
+    top: 2rem;
+    z-index: 998;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .search-bar::placeholder {
@@ -3589,20 +3590,6 @@ header::before {
     z-index: 1000;
 }
 
-.useless-black-rectangle {
-    content: "";
-    position: absolute;
-    top: calc(-3rem - 1px);
-    right: calc(4rem - 2px);
-    width: calc(3rem + 1px);
-    height: 3rem;
-    background-color: var(--background-color);
-    border-right: 1px solid var(--useless-black-rectangle-border-color);
-    border-bottom: 1px solid var(--useless-black-rectangle-border-color);
-    border-bottom-right-radius: 3rem;
-    z-index: 1000;
-}
-
 .filter-button svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -3662,14 +3649,29 @@ header::before {
 }
 
 .useless-gray-rectangle {
+    position: absolute;
+    top: calc(-3rem - 2px);
+    right: -1px;
+    width: calc(7rem + 1px);
+    height: 5rem;
+    background-color: var(--table-border-color);
+    /* border-right: 1px solid var(--element-border-color); */
+
+    -webkit-mask: radial-gradient(circle at 0 0, transparent calc(3rem + 1px), var(--element-background-color) 3rem);
+    mask: radial-gradient(circle at 0 0, transparent calc(3rem + 1px), var(--element-background-color) 3rem);
+}
+
+.useless-gray-rectangle::after {
     content: "";
     position: absolute;
-    top: -3rem;
-    right: -1px;
-    width: 7rem;
-    height: 5rem;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1px);
+    height: calc(100%);
     background-color: var(--element-background-color);
-    border-right: 1px solid var(--element-border-color);
+    /* border-right: 1px solid var(--element-border-color); */
+    -webkit-mask: radial-gradient(circle at 0 0, transparent calc(3rem + 2px), var(--element-background-color) calc(3rem + 2px));
+    mask: radial-gradient(circle at 0 0, transparent calc(3rem + 2px), var(--element-background-color) calc(3rem + 2px));
 }
 
 .tool-tags-checkboxes {
