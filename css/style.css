@@ -633,6 +633,9 @@
     --error-background-color: rgba(255, 130, 0, 0.1);
 
     --modal-close-button-background-hover-color: var(--element-background-hover-color);
+
+    --project-details-status-completed-background-color: rgba(0, 130, 0, 0.35);
+    --project-details-status-wip-background-color: rgba(208, 164, 17, 0.3);
 }
 
 .light-theme {
@@ -707,6 +710,9 @@
     --error-background-color: rgba(255, 115, 0, 0.2);
 
     --modal-close-button-background-hover-color: rgba(0, 6, 34, 0.05);
+
+    --project-details-status-completed-background-color: rgba(30, 230, 30, 0.4);
+    --project-details-status-wip-background-color: rgba(235, 187, 31, 0.4);
 }
 
 
@@ -981,7 +987,7 @@ nav {
     display: none;
 }
 
-@media (min-width: 31rem) and (hover: hover) and (pointer: fine) {
+@media (min-width: 30rem) and (hover: hover) and (pointer: fine) {
     nav, .nav-label {
         transition: width 200ms ease, opacity 200ms ease, box-shadow 200ms ease;
     }
@@ -2125,13 +2131,13 @@ footer {
 }
 
 .project-details-status-completed {
-    background-color: rgba(0, 128, 0, 0.4);
+    background-color: var(--project-details-status-completed-background-color);
     color: rgb(0, 174, 0);
     fill: rgb(0, 174, 0);
 }
 
 .project-details-status-work-in-progress {
-    background-color: rgba(255, 201, 25, 0.3);
+    background-color: var(--project-details-status-wip-background-color);
     color: orange;
     fill: orange;
 }
@@ -2427,6 +2433,17 @@ footer {
 .blog-post-options-icon-share {
     width: 2.5rem;
     height: 2.5rem;
+}
+
+/* If project has no live site button */
+.project-details-options:not(:has(.project-details-options-button-live-site.element-3d)) {
+    height: calc(10.5rem + 4px);
+    .project-details-options-button-github {
+        top: calc(1rem + 1px);
+    }
+    .project-details-options-button-feedback {
+        top: calc(5.5rem + 1px);
+    }
 }
 
 .project-details-preview {
@@ -3324,12 +3341,12 @@ header::after {
     top: -2rem;
     left: -4rem;
     width: calc(100% + 8rem);
-    height: 10rem;
+    height: calc(10rem + var(--additional-header-height));
     background-color: rgba(255, 0, 204, 0);
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(10px);
-    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 6rem, rgba(0, 0, 0, 0));
-    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 6rem, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(6rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(6rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
     pointer-events: none;
 }
 
@@ -3339,8 +3356,8 @@ header::before {
     top: -2rem;
     left: -4rem;
     width: calc(100% + 8rem);
-    height: 8rem;
-    background: linear-gradient(to bottom, var(--header-background-color) 3.2rem, transparent);
+    height: calc(8rem + var(--additional-header-height));
+    background: linear-gradient(to bottom, var(--header-background-color) calc(3.2rem + var(--additional-header-height)), transparent);
 }
 
 .search-form {
@@ -3388,8 +3405,17 @@ header::before {
 }
 
 @media (max-width: 60rem) {
-    header::after, header::before {
+    header::after {
         top: -1rem;
+        height: calc(9rem + var(--additional-header-height));
+        mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(5rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
+        -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(5rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
+
+    }
+    header::before {
+        top: -1rem;
+        height: calc(7rem + var(--additional-header-height));
+        background: linear-gradient(to bottom, var(--header-background-color) calc(2.2rem + var(--additional-header-height)), transparent);
     }
     .search-form-large {
         /* margin: 1rem 1rem 0 calc(7rem + 2px); */
@@ -3400,11 +3426,15 @@ header::before {
 @media (max-width: 30rem) {
     header::after {
         top: -0.5rem;
-        height: 8rem;
+        height: calc(8rem + var(--additional-header-height));
+        mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(4rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
+        -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) calc(4rem + var(--additional-header-height)), rgba(0, 0, 0, 0));
     }
     header::before {
         top: -0.5rem;
-        height: 6rem;
+        height: calc(6rem + var(--additional-header-height));
+        background: linear-gradient(to bottom, var(--header-background-color) calc(1.2rem + var(--additional-header-height)), transparent);
+
     }
     .search-form-large {
         /* margin: 1rem 0.5rem 0 0.5rem; */

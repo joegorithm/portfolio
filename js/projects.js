@@ -153,6 +153,20 @@ const projects = {
             date: "2023-03-09",
             link: "https://www.kachallengecouncil.org/results/43"
         }]
+    },
+    "compass-hat": {
+         id: "compass-hat",
+         title: "Compass Hat",
+         category: "Wearable Tech",
+         github: "https://github.com/joegorithm/compass-hat",
+         started: "2021-11-21",
+         completed: "2023-07-21",
+         contributors: [creatorData["jonathan-hill"]],
+         logo: "/logos/compass-hat-logo.png",
+         summary: "A smart hat with a built-in 3-axis accelerometer and magnetometer compass sensor and 16 vibration motors to inform the wearer of the direction of true north.",
+         description: "The Compass Hat is a wearable technology project that integrates a digital compass into a stylish hat. It provides real-time directional information to the wearer, making it perfect for outdoor adventures.",
+         preview: [{image: "/media/compass-hat-project-preview-1.png", label: "Compass Hat curcuit diagram"}, {image: "/media/compass-hat-project-preview-2.png", label: "Compass Hat schematic"}],
+         tools: "arduino, cpp"
     }
 };
 
@@ -237,9 +251,15 @@ function renderProjects() {
             <div class="project-details-header project-details-header-${project.id}">
                 <div class="project-details-header-main">
                     <div class="project-details-high-level project-details-high-level-${project.id}">
-                        <a href="${project.url}" class="project-details-logo-link project-details-logo-link-${project.id}">
-                            <img src="${project.logo}" class="project-details-logo project-details-logo-${project.id}" alt="${project.title} logo">
-                        </a>
+                        ${project.url ? `
+                            <a href="${project.url}" class="project-details-logo-link project-details-logo-link-${project.id}">
+                                <img src="${project.logo}" class="project-details-logo project-details-logo-${project.id}" alt="${project.title} logo">
+                            </a>
+                            ` : `
+                            <div class="project-details-logo-link project-details-logo-link-${project.id}">
+                                <img src="${project.logo}" class="project-details-logo project-details-logo-${project.id}" alt="${project.title} logo">
+                            </div>
+                        `}
                         <div class="project-details-header-information">
                             <h1 class="project-details-title project-details-title-${project.id}">${project.title}</h1>
                             <p class="project-details-category project-details-category-${project.id}">${project.category}</p>
@@ -316,12 +336,14 @@ function renderProjects() {
                     `).join('') : ''}
                         
                     <div class="project-details-options">
-                        <a href="${project.url}" target="_blank" class="project-details-options-button project-details-options-button-live-site element-3d">
-                            <div class="project-details-options-label">Live Site</div>
-                            <div class="project-details-options-icon">
-                                <svg width="1.8rem" height="1.8rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-                            </div>
-                        </a>
+                        ${project.url ? `
+                            <a href="${project.url}" target="_blank" class="project-details-options-button project-details-options-button-live-site element-3d">
+                                <div class="project-details-options-label">Live Site</div>
+                                <div class="project-details-options-icon">
+                                    <svg width="1.8rem" height="1.8rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
+                                </div>
+                            </a>
+                        ` : ''}
                         <a href="${project.github}" target="_blank" class="project-details-options-button project-details-options-button-github">
                             <div class="project-details-options-label">GitHub Repo</div>
                             <div class="project-details-options-icon">
