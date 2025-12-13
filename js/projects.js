@@ -364,7 +364,7 @@ function renderProjects() {
             <div class="project-details-preview">
                 <div class="project-details-preview-images scroll-gradient-element">
                     ${project.preview.map(element => `
-                        <div class="project-details-preview-image-container">
+                        <div class="project-details-preview-image-container" onClick="openImageViewerDialog('${element.image}', '${element.label}')">
                             <img src="${element.image}" class="project-details-preview-image" alt="${project.title} preview image">
                             <span class="project-details-preview-image-label">${element.label}</span>
                         </div>

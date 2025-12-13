@@ -207,6 +207,45 @@ fetch(`/blog/${currentBlogPost}/post.md`).then(response => response.text()).then
         const insertionTarget = (img.parentElement && img.parentElement.tagName === 'A') ? img.parentElement : img;
         insertionTarget.insertAdjacentElement('afterend', label);
     });
+
+    // Attach click handlers to images to open the image viewer modal.
+    document.querySelectorAll('#blog-content img').forEach((img) => {
+        const alt = (img.getAttribute('alt') || '').trim();
+        const imageSrc = (img.parentElement && img.parentElement.tagName === 'A' && img.parentElement.href)
+            ? img.parentElement.href
+            : img.src;
+
+        const openHandler = (e) => {
+            if (e && typeof e.preventDefault === 'function') e.preventDefault();
+            try {
+                openImageViewerDialog(imageSrc, alt || 'Image');
+            } catch (_) {
+                // openImageViewerDialog may not be available in some contexts
+            }
+        };
+
+        // Make it obvious the image is interactive
+        img.style.cursor = 'zoom-in';
+        img.tabIndex = 0; // make focusable for keyboard users
+
+        img.addEventListener('click', openHandler);
+        img.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                openHandler(ev);
+            }
+        });
+
+        // If wrapped in a link, prevent navigation and open viewer instead
+        if (img.parentElement && img.parentElement.tagName === 'A') {
+            const a = img.parentElement;
+            a.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                openHandler(ev);
+            });
+            a.style.cursor = 'zoom-in';
+        }
+    });
     // Add language labels after content is loaded (works even without explicit language-* classes)
     document.querySelectorAll("pre code").forEach(code => {
         const classList = [...code.classList];
