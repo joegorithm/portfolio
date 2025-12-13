@@ -59,4 +59,4 @@ I decided to create a citation generator, which would operate in a popup modal a
 
 ## Conclusion
 
-These custom elements, in addition to standard Markdown capabilities, allow for effortless creation of richly formatted and interactive blog posts. The most important goal of my blog sharing insights through simple, clear communication, and I believe I've built a system capable of supporting this objective.
+These custom elements, in addition to standard Markdown capabilities, allow for effortless creation of richly formatted and interactive blog posts. The most important goal of my blog is sharing insights through simple, clear communication, and I believe I've built a system capable of supporting this objective.
