@@ -253,6 +253,13 @@
     fill: #0098FF;
 }
 
+.tool-xcode {
+    background-color: rgba(20, 126, 251, 0.2);
+    border-color: #147EFB;
+    color: #147EFB;
+    fill: #147EFB;
+}
+
 .tool-p5js {
     background-color: rgba(237, 34, 91, 0.2);
     border-color: #ED225D;
@@ -325,6 +332,20 @@
     border-color: #06B6D4;
     color: #06B6D4;
     fill: #06B6D4;
+}
+
+.tool-vite {
+    background-color: rgba(100, 108, 255, 0.2);
+    border-color: #646CFF;
+    color: #646CFF;
+    fill: #646CFF;
+}
+
+.tool-supabase {
+    background-color: rgba(63, 207, 142, 0.2);
+    border-color: #3FCF8E;
+    color: #3FCF8E;
+    fill: #3FCF8E;
 }
 
 .tool-tile-grid .tool-processingjs {
@@ -458,6 +479,11 @@
     outline: 2px solid #0098FF;
 }
 
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-xcode {
+    background-color: #147EFB;
+    outline: 2px solid #147EFB;
+}
+
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-p5js {
     background-color: #ED225D;
     outline: 2px solid #ED225D;
@@ -506,6 +532,16 @@
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-tailwind-css {
     background-color: #06B6D4;
     outline: 2px solid #06B6D4;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-vite {
+    background-color: #646CFF;
+    outline: 2px solid #646CFF;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-supabase {
+    background-color: #3FCF8E;
+    outline: 2px solid #3FCF8E;
 }
 
 

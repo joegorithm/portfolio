@@ -68,7 +68,7 @@ const education = {
                 url: "https://www.codepath.org/courses/web-development",
                 type: "Course",
                 coursework: [
-                    {class: "React", tools: "react"},
+                    {class: "React", tools: "react, vite"},
                     {class: "APIs"},
                     {class: "Conditional Rendering", tools: "javascript"},
                     {class: "React Router", tools: "react"},
