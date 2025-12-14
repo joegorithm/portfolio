@@ -2557,11 +2557,10 @@ footer {
 }
 
 .education-list {
-    display: grid;
     padding: 1.5rem 0;
     gap: 1.5rem;
-    --grid-min-column-width: 31rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-column-width), 100%), 1fr));
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 60rem) {
@@ -2572,8 +2571,7 @@ footer {
 
 .education-tile {
     display: flex;
-    flex-direction: column;
-    /* align-items: start; */
+    flex-direction: row;
     background-color: var(--element-background-color);
     transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
     border-radius: 2rem;
@@ -2588,9 +2586,9 @@ footer {
 }
 
 .education-banner {
-    width: 100%;
-    height: 10rem;
-    border-radius: 1.25rem 1.25rem 0 0;
+    width: 10rem;
+    height: auto;
+    border-radius: 1.25rem 0 0 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2600,19 +2598,27 @@ footer {
 .education-logo {
     border-radius: 1.25rem;
     display: block;
-    height: 10rem;
+    width: 8rem;
+    height: auto;
 }
 
-@media (max-width: 45rem) {
+@media (max-width: 60rem) {
+    .education-tile {
+        flex-direction: column;
+    }
     .education-banner {
-        height: 7rem;
+        height: 6rem;
+        width: auto;
+        border-radius: 1.25rem 1.25rem 0 0;
     }
     .education-logo {
-        height: 7rem;
+        height: 5rem;
+        width: auto;
     }
 }
 
 .education-information {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -2636,7 +2642,13 @@ footer {
     text-decoration-thickness: 0.20rem;
 }
 
+.education-degrees {
+    display: flex;
+    gap: 1rem;
+}
+
 .education-degree {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -2644,6 +2656,15 @@ footer {
     border: 1px solid var(--element-border-color);
     border-radius: 1.25rem;
     transition: background-color 150ms ease, box-shadow 150ms ease, scale 150ms ease;
+}
+
+@media (max-width: 60rem) {
+    .education-degrees {
+        flex-direction: column;
+    }
+    .education-degree {
+        width: auto;
+    }
 }
 
 .education-degree:hover {
@@ -2720,6 +2741,7 @@ footer {
     line-height: 1;
     color: var(--primary-text-color);
 }
+
 
 
 

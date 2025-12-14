@@ -1,12 +1,13 @@
 // Education data
 const education = {
     "oit": {
+        isDegree: true,
         id: "oit",
         title: "Oregon Institute of Technology",
         color: "#ffd351",
         url: "https://www.oit.edu",
         started: "2026-09-28",
-        graduate: "2029-06-16",
+        graduate: "2028-06-16",
         logo: "/logos/oregon-tech-logo.png",
         degrees: [
             {
@@ -24,6 +25,7 @@ const education = {
         ]
     },
     "rcc": {
+        isDegree: true,
         id: "rcc",
         title: "Rogue Community College",
         color: "#006eb6",
@@ -51,6 +53,38 @@ const education = {
             }
         ]
     },
+    "codepath": {
+        isDegree: false,
+        id: "codepath",
+        title: "CodePath",
+        color: "#283e46",
+        url: "https://www.codepath.org/",
+        started: "2025-09-17",
+        graduate: "",
+        logo: "/logos/codepath-logo.png",
+        degrees: [
+            {
+                degree: "Intermediate Web Development",
+                url: "https://www.codepath.org/courses/web-development",
+                type: "Course",
+                coursework: [
+                    {class: "React", tools: "react"},
+                    {class: "APIs"},
+                    {class: "Conditional Rendering", tools: "javascript"},
+                    {class: "React Router", tools: "react"},
+                    {class: "Databases", tools: "supabase"},
+                    {class: "UX"}
+                ]
+            },
+            {
+                degree: "Advanced Web Development",
+                url: "https://www.codepath.org/courses/web-development",
+                type: "Course",
+                coursework: [
+                ]
+            }
+        ]
+    }
 }
 
 // Render education as HTML tiles
@@ -83,25 +117,27 @@ function renderEducation() {
                                 <span class="tooltip"></span>
                             </div>
                         </div>
-                        ${edu.degrees.map(degree => `
-                        <div class="education-degree">
-                            <a class="education-major-link" href="${degree.url}" target="_blank">
-                                <h3 class="education-major">${degree.degree}</h3>
-                            </a>
-                            <p class="education-type">${degree.type}</p>
-                            ${degree.coursework && degree.coursework.length ? `
-                            <div class="education-relevant-coursework">
-                                <p>Relevant Coursework:</p>
-                                <ul class="education-relevant-coursework-list">
-                                    ${degree.coursework.map(cw => `
-                                        <li>
-                                            ${cw.class}
-                                            <span class="tool-tags education-relevant-coursework-tools" data-technologies="${cw.tools}"></span>
-                                        </li>
-                                    `).join('')}
-                                </ul>
-                            </div>` : ''}
-                        </div>`).join('')}
+                        <div class="education-degrees">
+                            ${edu.degrees.map(degree => `
+                            <div class="education-degree">
+                                <a class="education-major-link" href="${degree.url}" target="_blank">
+                                    <h3 class="education-major">${degree.degree}</h3>
+                                </a>
+                                <p class="education-type">${degree.type}</p>
+                                ${degree.coursework && degree.coursework.length ? `
+                                <div class="education-relevant-coursework">
+                                    <p>${edu.isDegree ? "Relevant Coursework:" : "Focuses:"}</p>
+                                    <ul class="education-relevant-coursework-list">
+                                        ${degree.coursework.map(cw => `
+                                            <li>
+                                                ${cw.class}
+                                                <span class="tool-tags education-relevant-coursework-tools" data-technologies="${cw.tools}"></span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>` : ''}
+                            </div>`).join('')}
+                        </div>
                     </div>
                 </div>
             `;
