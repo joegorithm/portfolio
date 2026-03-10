@@ -165,8 +165,31 @@ const projects = {
          logo: "/logos/compass-hat-logo.png",
          summary: "A smart hat with a built-in 3-axis accelerometer and magnetometer compass sensor and 16 vibration motors to inform the wearer of the direction of true north.",
          description: "The Compass Hat is a wearable technology project that integrates a digital compass into a stylish hat. It provides real-time directional information to the wearer, making it perfect for outdoor adventures.",
-         preview: [{image: "/media/compass-hat-project-preview-1.png", label: "Compass Hat curcuit diagram"}, {image: "/media/compass-hat-project-preview-2.png", label: "Compass Hat schematic"}],
+         preview: [
+            {image: "/media/compass-hat-project-preview-1.png", label: "Compass Hat curcuit diagram"},
+            {image: "/media/compass-hat-project-preview-2.png", label: "Compass Hat schematic"}
+        ],
          tools: "arduino, cpp"
+    },
+    "axiom": {
+        id: "axiom",
+        title: "Axiom",
+        category: "Web App",
+        github: "#",
+        started: "2025-11-17",
+        completed: "2025-11-19",
+        contributors: [creatorData["jonathan-hill"]],
+        logo: "/logos/axiom-logo-4.png",
+        summary: "A mathematics forum for sharing Desmos graphs and discussing math topics.",
+        description: "Axiom was my capstone project for an Intermediate Web Development course I took through CodePath in Fall of 2025. The course's focus was frontend development with React, but I also learned how to use APIs and how to connect a web app to a database. Axiom is a full-stack web app, with a frontend created using React and a lightweight backend powered by Supabase. The app's primary purpose is to facilitate forum-like math discussions and Desmos graph sharing, made possible by KaTeX and the Desmos API, respectively.",
+        preview: [
+            {image: "/media/axiom-project-preview-1.png", label: "Axiom dashboard feed"},
+            {image: "/media/axiom-project-preview-2.png", label: "Create post form"},
+            {image: "/media/axiom-project-preview-3.png", label: "Post page with Desmos graph"},
+            {image: "/media/axiom-project-preview-4.png", label: "Post page with embedded image"},
+            {image: "/media/axiom-project-preview-5.png", label: "Edit post form"}
+        ],
+        tools: "javascript, react, supabase, katex"
     }
 };
 
