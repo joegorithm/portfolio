@@ -348,6 +348,13 @@
     fill: #3FCF8E;
 }
 
+.tool-postgresql {
+    background-color: rgb(65, 105, 225, 0.2);
+    border-color: #4169E1;
+    color: #4169E1;
+    fill: #4169E1;
+}
+
 .tool-tile-grid .tool-processingjs {
     font-size: 0.7rem;
 }
@@ -542,6 +549,11 @@
 .tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-supabase {
     background-color: #3FCF8E;
     outline: 2px solid #3FCF8E;
+}
+
+.tool-tag-checkbox:has(input[type="checkbox"]:checked) .tool-postgresql {
+    background-color: #4169E1;
+    outline: 2px solid #4169E1;
 }
 
 
